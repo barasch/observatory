@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "people": [
+    {
+      "id": "example-person",
+      "display_name": "Example Person",
+      "category": "writer",
+      "aliases": [
+        "Example A. Person"
+      ],
+      "distinctive_name": false,
+      "require_any": [
+        "essayist",
+        "Example Review"
+      ],
+      "exclude_any": [
+        "unrelated namesake"
+      ],
+      "search_query": "\"Example Person\" (essayist OR \"Example Review\")",
+      "official_feeds": [
+        {
+          "name": "Official publications",
+          "url": "https://example.com/feed.xml"
+        }
+      ],
+      "openalex_id": null,
+      "enabled": true
+    }
+  ]
+}
+

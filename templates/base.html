@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f7f4ec">
+  <meta name="robots" content="index,follow">
+  <title>{{TITLE}} · Observatory</title>
+  <link rel="icon" href="{{ROOT}}assets/mark.svg" type="image/svg+xml">
+  <link rel="alternate" href="{{ROOT}}feed.xml" type="application/rss+xml" title="Observatory">
+  <link rel="stylesheet" href="{{ROOT}}assets/styles.css">
+  <script defer src="{{ROOT}}assets/app.js"></script>
+</head>
+<body data-root="{{ROOT}}">
+  <a class="skip-link" href="#content">Skip to the record</a>
+  <header class="masthead">
+    <a class="wordmark" href="{{ROOT}}index.html" aria-label="Observatory home">
+      <span aria-hidden="true" class="wordmark-mark">O</span>
+      <span>Observatory</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="{{ROOT}}index.html"{{NAV_LATEST}}>Latest</a>
+      <a href="{{ROOT}}sources/index.html"{{NAV_SOURCES}}>Sources</a>
+      <a href="{{ROOT}}archive/index.html"{{NAV_ARCHIVE}}>Archive</a>
+      <a href="{{ROOT}}method/index.html"{{NAV_METHOD}}>Method</a>
+    </nav>
+  </header>
+  <main id="content">
+    {{CONTENT}}
+  </main>
+  <footer class="site-footer">
+    <p>This page is generated automatically from public sources. Inclusion means only that an item matched a configured source or subject query; it does not imply endorsement, verification, importance, or agreement. Titles and descriptions are attributed to originating sources.</p>
+    <p><a href="{{ROOT}}method/index.html">Method and limitations</a> · <a href="https://github.com/barasch/observatory">Source code</a> · Updated {{UPDATED}}</p>
+  </footer>
+</body>
+</html>
+

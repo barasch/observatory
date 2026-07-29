@@ -1,0 +1,70 @@
+name: Update and publish Observatory
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5,11,17,23 * * *"
+      timezone: "America/New_York"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: observatory-pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      PEOPLE_WATCHLIST_JSON: ${{ secrets.PEOPLE_WATCHLIST_JSON }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Collect public records
+        run: python scripts/collect.py
+
+      - name: Build and check static site
+        run: |
+          python scripts/build.py --check
+          python -m unittest discover -s tests -v
+
+      - name: Preserve new records
+        run: |
+          git config user.name "observatory-bot"
+          git config user.email "observatory-bot@users.noreply.github.com"
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Observatory record [skip ci]"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
