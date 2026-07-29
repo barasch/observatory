@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from collect import collect_scotus, feed_entries, make_item, person_matches
-from build import item_local, render_item
+from build import item_local, item_sort_key, render_item
 from common import canonical_url, validate_people
 
 
@@ -58,6 +58,24 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(item["published_precision"], "date")
         self.assertEqual(item_local(item).date().isoformat(), "2026-07-23")
         self.assertNotIn("PM", render_item(item))
+
+    def test_date_only_records_do_not_split_local_date_groups(self) -> None:
+        date_only = {
+            "id": "date-only",
+            "published": "2026-07-29T00:00:00Z",
+            "published_precision": "date",
+        }
+        prior_evening = {
+            "id": "prior-evening",
+            "published": "2026-07-29T01:33:00Z",
+            "published_precision": "datetime",
+        }
+        ordered = sorted(
+            [prior_evening, date_only],
+            key=item_sort_key,
+            reverse=True,
+        )
+        self.assertEqual([item["id"] for item in ordered], ["date-only", "prior-evening"])
 
     def test_people_match_requires_name_and_context(self) -> None:
         person = {

@@ -84,6 +84,18 @@ def item_local(item: dict[str, Any]) -> datetime:
     return published.astimezone(EASTERN)
 
 
+def item_sort_key(item: dict[str, Any]) -> tuple[int, int, int, str]:
+    local = item_local(item)
+    known_time = item.get("published_precision") != "date"
+    seconds = local.hour * 3600 + local.minute * 60 + local.second
+    return (
+        local.date().toordinal(),
+        int(known_time),
+        seconds if known_time else 0,
+        clean_text(item.get("id")),
+    )
+
+
 def render_item(item: dict[str, Any]) -> str:
     local = item_local(item)
     time_display = (
@@ -391,7 +403,7 @@ def build() -> int:
     sources = source_data.get("sources", [])
     items = item_data.get("items", [])
     statuses = status_data.get("sources", {})
-    items.sort(key=lambda item: (item["published"], item["id"]), reverse=True)
+    items.sort(key=item_sort_key, reverse=True)
     updated_display = freshness_text(item_data.get("updated_at"))
 
     if SITE.exists():
