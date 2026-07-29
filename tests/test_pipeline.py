@@ -139,6 +139,8 @@ class PipelineTests(unittest.TestCase):
         self.assertIn("A personal utility", output)
         self.assertIn("data-current-date", output)
         self.assertIn('data-evidence-section="ESTIMATED"', output)
+        self.assertIn('<span class="panel-title">Estimates</span>', output)
+        self.assertIn('<span class="badge badge-estimated">Estimate</span>', output)
         self.assertIn("Estimate: 1", output)
         self.assertIn("data-people-section", output)
         self.assertIn("People matches</span><span>1.", output)
