@@ -73,11 +73,24 @@ def page(
 
 
 def item_local(item: dict[str, Any]) -> datetime:
-    return parse_date(item["published"]).astimezone(EASTERN)
+    published = parse_date(item["published"])
+    if item.get("published_precision") == "date":
+        return datetime(
+            published.year,
+            published.month,
+            published.day,
+            tzinfo=EASTERN,
+        )
+    return published.astimezone(EASTERN)
 
 
 def render_item(item: dict[str, Any]) -> str:
     local = item_local(item)
+    time_display = (
+        f"{local.strftime('%b %-d')}<br>{local.strftime('%Y')}"
+        if item.get("published_precision") == "date"
+        else f"{local.strftime('%-I:%M %p')}<br>{local.strftime('%b %-d')}"
+    )
     evidence = clean_text(item["evidence"]).upper()
     channel = clean_text(item["channel"]).lower()
     author = esc(item.get("author"))
@@ -105,7 +118,7 @@ def render_item(item: dict[str, Any]) -> str:
     )
     return f"""
 <article class="item" data-item="{esc(item['id'])}" data-evidence="{esc(evidence)}" data-channel="{esc(channel)}">
-  <time class="item-time" datetime="{esc(item['published'])}">{local.strftime('%-I:%M %p')}<br>{local.strftime('%b %-d')}</time>
+  <time class="item-time" datetime="{esc(item['published'])}">{time_display}</time>
   <div>
     <div class="item-meta">
       <span class="badge badge-{evidence.lower()}">{esc(evidence)}</span>
