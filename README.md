@@ -1,6 +1,6 @@
 # Observatory
 
-Observatory is a public, chronological reading surface for recurring measurements, estimates, filings, adjudications, attributed reports, and a private people-as-topics watchlist.
+Observatory is a public reading surface for recurring records and a private people-as-topics watchlist.
 
 The deployed site is intended to live at <https://barasch.github.io/observatory/>.
 
@@ -8,12 +8,13 @@ The deployed site is intended to live at <https://barasch.github.io/observatory/
 
 - Collects a deliberately narrow set of official statistical, regulatory, health, fiscal, and judicial sources.
 - Labels each item by the kind of record it is instead of assigning a universal “reliability score.”
-- Shows the newest 30 items in publication-time order and retains a prospective 365-day date archive.
+- Shows the newest 30 items in collapsible category sections, with people matches kept separate.
+- Retains a rolling 30-day date archive.
 - Republishes only source-supplied metadata: title, abbreviated description, publisher, date, and link.
-- Provides local browser filters, visited-link differentiation, and “save for later” storage.
+- Provides local browser filters, visited-link differentiation, and browser-local “save for later” storage.
 - Reads a private people registry from the encrypted `PEOPLE_WATCHLIST_JSON` repository secret.
 - Searches configured direct feeds, OpenAlex author identifiers, and exact-name Google News RSS queries.
-- Runs at 5:17 a.m., 11:17 a.m., 5:17 p.m., and 11:17 p.m. in `America/New_York`, and on relevant pushes.
+- Collects once daily at 5:17 a.m. in `America/New_York`; ordinary code pushes redeploy the existing daily edition without recollecting it.
 
 ## Repository map
 
@@ -25,9 +26,12 @@ scripts/collect.py           collection and deterministic match rules
 scripts/build.py             static-site and archive generator
 site_src/                    source CSS, JavaScript, and mark
 site/                        generated, git-ignored GitHub Pages artifact
+METHOD.md                    public collection and classification method
 WATCHLIST.md                 exact instructions for the private registry
 DECISIONS.md                 provisional design decisions
 ```
+
+The operational method is in [METHOD.md](METHOD.md), and the complete public source registry is in [config/sources.json](config/sources.json).
 
 ## Run locally
 

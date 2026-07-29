@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from collect import collect_scotus, feed_entries, make_item, person_matches
-from build import item_local, item_sort_key, render_item
+from build import archive_window, item_local, item_sort_key, render_home, render_item
 from common import canonical_url, validate_people
 
 
@@ -104,6 +104,62 @@ class PipelineTests(unittest.TestCase):
             ],
         }
         self.assertTrue(any("duplicates" in error for error in validate_people(registry)))
+
+    def test_home_uses_category_and_people_sections(self) -> None:
+        base = {
+            "published": "2026-07-29T12:00:00Z",
+            "published_precision": "datetime",
+            "channel": "economy",
+            "author": "",
+            "publisher": "Example publisher",
+            "source_name": "Example publisher",
+            "geography": "United States",
+            "summary": "Source-supplied description.",
+            "url": "https://example.gov/item",
+        }
+        estimate = {
+            **base,
+            "id": "estimate",
+            "title": "An estimate",
+            "evidence": "ESTIMATED",
+        }
+        person = {
+            **base,
+            "id": "person",
+            "title": "A people match",
+            "evidence": "REPORTED",
+            "person_id": "example-person",
+            "person_name": "Example Person",
+        }
+        output = render_home(
+            [estimate, person],
+            {"example-source": {"ok": True}},
+            "2026-07-29T09:17:00Z",
+        )
+        self.assertIn("A personal utility", output)
+        self.assertIn("data-current-date", output)
+        self.assertIn('data-evidence-section="ESTIMATED"', output)
+        self.assertIn("Estimate: 1", output)
+        self.assertIn("data-people-section", output)
+        self.assertIn("People matches</span><span>1.", output)
+        self.assertNotIn("filter-evidence", output)
+        self.assertNotIn("Look past", output)
+
+    def test_archive_window_is_thirty_calendar_days(self) -> None:
+        items = [
+            {
+                "id": "inside",
+                "published": "2026-06-30T00:00:00Z",
+                "published_precision": "date",
+            },
+            {
+                "id": "outside",
+                "published": "2026-06-29T00:00:00Z",
+                "published_precision": "date",
+            },
+        ]
+        retained = archive_window(items, "2026-07-29T09:17:00Z")
+        self.assertEqual([item["id"] for item in retained], ["inside"])
 
 
 if __name__ == "__main__":

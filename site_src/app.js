@@ -1,12 +1,27 @@
 (() => {
+  const currentDate = document.querySelector("[data-current-date]");
+  if (currentDate) {
+    const now = new Date();
+    const localDate = [
+      now.getFullYear(),
+      String(now.getMonth() + 1).padStart(2, "0"),
+      String(now.getDate()).padStart(2, "0"),
+    ].join("-");
+    currentDate.dateTime = localDate;
+    currentDate.textContent = new Intl.DateTimeFormat("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }).format(now);
+  }
+
   const stream = document.querySelector("[data-stream]");
   if (!stream) return;
 
-  const evidence = document.querySelector("#filter-evidence");
   const channel = document.querySelector("#filter-channel");
   const search = document.querySelector("#filter-search");
   const savedOnly = document.querySelector("#filter-saved");
-  const count = document.querySelector("[data-visible-count]");
   const storageKey = "observatory:saved:v1";
 
   const readSaved = () => {
@@ -37,20 +52,15 @@
   };
 
   const apply = () => {
-    const evidenceValue = evidence?.value || "";
     const channelValue = channel?.value || "";
     const query = (search?.value || "").trim().toLocaleLowerCase();
     const onlySaved = savedOnly?.getAttribute("aria-pressed") === "true";
-    let visible = 0;
     for (const item of items) {
-      const matchesEvidence = !evidenceValue || item.dataset.evidence === evidenceValue;
       const matchesChannel = !channelValue || item.dataset.channel === channelValue;
       const matchesSearch = !query || item.textContent.toLocaleLowerCase().includes(query);
       const matchesSaved = !onlySaved || saved.has(item.dataset.item);
-      item.hidden = !(matchesEvidence && matchesChannel && matchesSearch && matchesSaved);
-      if (!item.hidden) visible += 1;
+      item.hidden = !(matchesChannel && matchesSearch && matchesSaved);
     }
-    if (count) count.textContent = String(visible);
 
     for (const heading of stream.querySelectorAll("[data-date-group]")) {
       let sibling = heading.nextElementSibling;
@@ -61,9 +71,19 @@
       }
       heading.hidden = !hasVisible;
     }
+
+    for (const section of stream.querySelectorAll("[data-category-section]")) {
+      const visible = [...section.querySelectorAll("[data-item]")].filter(
+        (item) => !item.hidden,
+      ).length;
+      const counter = section.querySelector("[data-section-count]");
+      if (!counter) continue;
+      counter.textContent = section.hasAttribute("data-people-section")
+        ? `${visible} ${visible === 1 ? "match" : "matches"}`
+        : `${visible} ${visible === 1 ? "item" : "items"}`;
+    }
   };
 
-  evidence?.addEventListener("change", apply);
   channel?.addEventListener("change", apply);
   search?.addEventListener("input", apply);
   savedOnly?.addEventListener("click", () => {
@@ -87,4 +107,3 @@
   updateButtons();
   apply();
 })();
-
