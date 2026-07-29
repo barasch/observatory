@@ -34,6 +34,17 @@ from common import (
 USER_AGENT = "Observatory/0.1 (+https://github.com/barasch/observatory)"
 TIMEOUT_SECONDS = 30
 RETENTION_DAYS = 365
+MONTH_DATE_RE = re.compile(
+    r"\b(?:January|February|March|April|May|June|July|August|"
+    r"September|October|November|December)\s+\d{1,2},\s+\d{4}\b"
+)
+DATE_ONLY_RE = re.compile(
+    r"(?:\d{4}-\d{2}-\d{2}|"
+    r"(?:January|February|March|April|May|June|July|August|"
+    r"September|October|November|December)\s+\d{1,2},\s+\d{4}|"
+    r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},\s+\d{4}|"
+    r"\d{1,2}/\d{1,2}/\d{2})"
+)
 
 
 def http_get(url: str, accept: str = "*/*") -> tuple[bytes, str]:
@@ -123,7 +134,15 @@ def make_item(
 ) -> dict[str, Any]:
     title = clean_text(raw.get("title"), 240)
     url = canonical_url(raw.get("url", ""))
-    published = parse_date(raw.get("published"), fetched_at)
+    published_value = clean_text(raw.get("published"))
+    if not published_value and source.get("date_from_summary"):
+        date_match = MONTH_DATE_RE.search(clean_text(raw.get("summary"), 600))
+        if date_match:
+            published_value = date_match.group(0)
+    published = parse_date(published_value, fetched_at)
+    published_precision = (
+        "date" if DATE_ONLY_RE.fullmatch(published_value) else "datetime"
+    )
     external_id = clean_text(raw.get("external_id")) or url
     item = {
         "id": fingerprint(source["id"], external_id, url, title),
@@ -135,6 +154,7 @@ def make_item(
         "summary": clean_text(raw.get("summary"), 420),
         "author": clean_text(raw.get("author"), 120),
         "published": iso_utc(published),
+        "published_precision": published_precision,
         "first_seen": iso_utc(fetched_at),
         "last_seen": iso_utc(fetched_at),
         "evidence": source["evidence"],
