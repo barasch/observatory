@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: "17 5,11,17,23 * * *"
+    - cron: "17 5 * * *"
       timezone: "America/New_York"
 
 permissions:
@@ -38,6 +38,7 @@ jobs:
           python-version: "3.13"
 
       - name: Collect public records
+        if: github.event_name != 'push'
         run: python scripts/collect.py
 
       - name: Build and check static site
@@ -46,6 +47,7 @@ jobs:
           python -m unittest discover -s tests -v
 
       - name: Preserve new records
+        if: github.event_name != 'push'
         run: |
           git config user.name "observatory-bot"
           git config user.email "observatory-bot@users.noreply.github.com"

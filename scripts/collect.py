@@ -33,7 +33,7 @@ from common import (
 
 USER_AGENT = "Observatory/0.1 (+https://github.com/barasch/observatory)"
 TIMEOUT_SECONDS = 30
-RETENTION_DAYS = 365
+RETENTION_DAYS = 30
 MONTH_DATE_RE = re.compile(
     r"\b(?:January|February|March|April|May|June|July|August|"
     r"September|October|November|December)\s+\d{1,2},\s+\d{4}\b"
