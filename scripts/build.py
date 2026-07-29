@@ -33,6 +33,14 @@ EVIDENCE_LABELS = {
     "REPORTED": "Report",
     "INTERPRETED": "Analysis",
 }
+EVIDENCE_SECTION_LABELS = {
+    "MEASURED": "Measurements",
+    "ESTIMATED": "Estimates",
+    "FILED": "Filings",
+    "ADJUDGED": "Adjudications",
+    "REPORTED": "Reports",
+    "INTERPRETED": "Analysis",
+}
 
 
 def esc(value: Any) -> str:
@@ -50,7 +58,6 @@ def page(
     description: str,
     content: str,
     active_nav: str,
-    updated: str,
 ) -> None:
     root = root_for(path)
     template = (ROOT / "templates" / "base.html").read_text(encoding="utf-8")
@@ -61,7 +68,6 @@ def page(
         "DESCRIPTION": esc(description),
         "ROOT": root,
         "CONTENT": content,
-        "UPDATED": esc(updated),
         "NAV_HOME": ' aria-current="page"' if active_nav == "home" else "",
         "NAV_ARCHIVE": ' aria-current="page"' if active_nav == "archive" else "",
     }
@@ -198,7 +204,7 @@ def render_current_sections(items: list[dict[str, Any]]) -> str:
         ]
         if not section_items:
             continue
-        label = EVIDENCE_LABELS.get(evidence, evidence.title())
+        label = EVIDENCE_SECTION_LABELS.get(evidence, evidence.title())
         count = len(section_items)
         chunks.append(
             f"""
@@ -344,7 +350,6 @@ def build() -> int:
     items = item_data.get("items", [])
     statuses = status_data.get("sources", {})
     items.sort(key=item_sort_key, reverse=True)
-    updated_display = freshness_text(item_data.get("updated_at"))
     archived_items = archive_window(items, item_data.get("updated_at"))
 
     if SITE.exists():
@@ -360,7 +365,6 @@ def build() -> int:
         "A personal utility for recurring public records and people matches.",
         render_home(items, statuses, item_data.get("updated_at")),
         "home",
-        updated_display,
     )
     page(
         "archive/index.html",
@@ -368,7 +372,6 @@ def build() -> int:
         "The Observatory 30-day date archive.",
         render_archive_index(archived_items),
         "archive",
-        updated_display,
     )
 
     by_date: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -391,7 +394,6 @@ def build() -> int:
             f"Observatory items published on {heading}.",
             content,
             "archive",
-            updated_display,
         )
 
     (SITE / "data").mkdir(parents=True)
@@ -429,7 +431,6 @@ def build() -> int:
   <p><a href="./index.html">Return to Observatory</a>.</p>
 </article>""",
         "",
-        updated_display,
     )
     return len(items)
 
