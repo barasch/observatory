@@ -208,7 +208,7 @@ def render_current_sections(items: list[dict[str, Any]]) -> str:
         count = len(section_items)
         chunks.append(
             f"""
-<details class="category-panel category-{esc(evidence.lower())}" data-category-section data-evidence-section="{esc(evidence)}" open>
+<details class="category-panel category-{esc(evidence.lower())}" data-category-section data-evidence-section="{esc(evidence)}">
   <summary>
     <span class="panel-title">{esc(label)}</span>
     <span class="panel-count" data-section-count>{count} item{"s" if count != 1 else ""}</span>
@@ -227,7 +227,7 @@ def render_current_sections(items: list[dict[str, Any]]) -> str:
     )
     chunks.append(
         f"""
-<details class="category-panel people-panel" data-category-section data-people-section open>
+<details class="category-panel people-panel" data-category-section data-people-section>
   <summary>
     <span class="panel-title">People</span>
     <span class="panel-count" data-section-count>{people_count} match{"es" if people_count != 1 else ""}</span>
@@ -241,11 +241,11 @@ def render_current_sections(items: list[dict[str, Any]]) -> str:
     return "".join(chunks)
 
 
-def freshness_text(updated_at: str | None) -> str:
+def assembled_text(updated_at: str | None) -> str:
     if not updated_at:
-        return "Awaiting first collection"
+        return "Page not yet assembled."
     local = parse_date(updated_at).astimezone(EASTERN)
-    return local.strftime("%B %-d, %Y at %-I:%M %p ET")
+    return local.strftime("Page assembled at %-I:%M %p ET.")
 
 
 def render_home(
@@ -257,46 +257,18 @@ def render_home(
     active_statuses = list(statuses.values())
     good = sum(1 for status in active_statuses if status.get("ok"))
     failed = sum(1 for status in active_statuses if not status.get("ok"))
-    people_items = sum(1 for item in shown if item.get("person_id"))
-    evidence_count = Counter(
-        item["evidence"] for item in shown if not item.get("person_id")
-    )
-    evidence_summary = "".join(
-        f"""<span class="status-count">
-          <strong>{evidence_count[key]}</strong>
-          <span>{esc(EVIDENCE_LABELS.get(key, key.title()))}</span>
-        </span>"""
-        for key in EVIDENCE_ORDER
-        if evidence_count[key]
-    )
-    status_class = "status-good" if active_statuses and failed == 0 else "status-warn"
+    collector_label = "collector" if good == 1 else "collectors"
+    failure_class = ' class="status-warn"' if failed else ""
     now = datetime.now(EASTERN)
     content = f"""
 <section class="utility-intro">
   <p class="utility-kicker">A personal utility</p>
   <div class="daily-status">
     <h1><time data-current-date datetime="{now.date().isoformat()}">{now.strftime("%A, %B %-d, %Y")}</time></h1>
-    <dl class="status-lines">
-      <div class="status-row">
-        <dt>Assembled</dt>
-        <dd>{esc(freshness_text(updated_at))}</dd>
-      </div>
-      <div class="status-row">
-        <dt>Collectors</dt>
-        <dd class="collector-status">
-          <span>{good} responding</span>
-          <span class="{status_class}">{failed} failed</span>
-        </dd>
-      </div>
-      <div class="status-row">
-        <dt>Items</dt>
-        <dd class="status-counts">{evidence_summary or '<span>None</span>'}</dd>
-      </div>
-      <div class="status-row">
-        <dt>People matches</dt>
-        <dd class="people-count">{people_items}</dd>
-      </div>
-    </dl>
+    <div class="status-lines">
+      <p>{esc(assembled_text(updated_at))}</p>
+      <p>{good} {collector_label} responding <span{failure_class}>{failed} failed</span></p>
+    </div>
   </div>
 </section>
 <section class="record-board" aria-label="Current Observatory items">
