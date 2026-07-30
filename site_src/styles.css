@@ -75,7 +75,6 @@ input:focus-visible {
 
 .masthead {
   align-items: baseline;
-  border-bottom: 1px solid var(--rule);
   display: flex;
   gap: 3rem;
   justify-content: space-between;
@@ -195,62 +194,14 @@ h3 {
 }
 
 .status-lines {
-  display: grid;
   font-family: var(--sans);
   font-size: .78rem;
   font-variant-numeric: tabular-nums;
-  gap: .38rem;
-  margin: 0;
-  max-width: 52rem;
-  padding: .15rem 0;
+  line-height: 1.5;
 }
 
-.status-row {
-  align-items: baseline;
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: 8.5rem minmax(0, 1fr);
-}
-
-.status-row dt {
-  color: var(--muted);
-  font-size: .66rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  margin: 0;
-  text-align: right;
-  text-transform: uppercase;
-}
-
-.status-row dd {
-  margin: 0;
-}
-
-.collector-status,
-.status-counts {
-  align-items: baseline;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.collector-status {
-  gap: .25rem 1rem;
-}
-
-.status-counts {
-  gap: .25rem 1.15rem;
-}
-
-.status-count {
-  align-items: baseline;
-  display: inline-grid;
-  gap: .28rem;
-  grid-template-columns: minmax(1.1rem, auto) auto;
-}
-
-.status-count strong,
-.people-count {
-  font-weight: 600;
+.status-lines p {
+  margin: .08rem 0;
 }
 
 .margin-note {
@@ -723,21 +674,6 @@ button[aria-pressed="true"] {
   .source-card,
   .definition-list {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 620px) {
-  .status-lines {
-    gap: .7rem;
-  }
-
-  .status-row {
-    gap: .08rem;
-    grid-template-columns: 1fr;
-  }
-
-  .status-row dt {
-    text-align: left;
   }
 }
 
