@@ -196,7 +196,7 @@ def render_stream(items: list[dict[str, Any]], controls: bool = True) -> str:
 def render_current_sections(items: list[dict[str, Any]]) -> str:
     category_items = [item for item in items if not item.get("person_id")]
     people_items = [item for item in items if item.get("person_id")]
-    chunks = [render_tools(items), '<div class="category-grid" data-stream>']
+    chunks = ['<div class="category-grid" data-stream>']
 
     for evidence in EVIDENCE_ORDER:
         section_items = [
@@ -261,8 +261,11 @@ def render_home(
     evidence_count = Counter(
         item["evidence"] for item in shown if not item.get("person_id")
     )
-    evidence_line = " · ".join(
-        f"{EVIDENCE_LABELS.get(key, key.title())}: {evidence_count[key]}"
+    evidence_summary = "".join(
+        f"""<span class="status-count">
+          <strong>{evidence_count[key]}</strong>
+          <span>{esc(EVIDENCE_LABELS.get(key, key.title()))}</span>
+        </span>"""
         for key in EVIDENCE_ORDER
         if evidence_count[key]
     )
@@ -273,12 +276,27 @@ def render_home(
   <p class="utility-kicker">A personal utility</p>
   <div class="daily-status">
     <h1><time data-current-date datetime="{now.date().isoformat()}">{now.strftime("%A, %B %-d, %Y")}</time></h1>
-    <div class="status-lines">
-      <p><span>Assembled</span><span>{esc(freshness_text(updated_at))}.</span></p>
-      <p class="{status_class}"><span>Collectors</span><span>{good} responding · {failed} failure{"s" if failed != 1 else ""}.</span></p>
-      <p><span>Items</span><span>{esc(evidence_line or "none")}.</span></p>
-      <p><span>People matches</span><span>{people_items}.</span></p>
-    </div>
+    <dl class="status-lines">
+      <div class="status-row">
+        <dt>Assembled</dt>
+        <dd>{esc(freshness_text(updated_at))}</dd>
+      </div>
+      <div class="status-row">
+        <dt>Collectors</dt>
+        <dd class="collector-status">
+          <span>{good} responding</span>
+          <span class="{status_class}">{failed} failed</span>
+        </dd>
+      </div>
+      <div class="status-row">
+        <dt>Items</dt>
+        <dd class="status-counts">{evidence_summary or '<span>None</span>'}</dd>
+      </div>
+      <div class="status-row">
+        <dt>People matches</dt>
+        <dd class="people-count">{people_items}</dd>
+      </div>
+    </dl>
   </div>
 </section>
 <section class="record-board" aria-label="Current Observatory items">
