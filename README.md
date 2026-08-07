@@ -24,7 +24,7 @@ config/people.example.json   non-secret watchlist schema example
 data/                        retained public records and adapter status
 scripts/collect.py           collection and deterministic match rules
 scripts/build.py             static-site and archive generator
-site_src/                    source CSS, JavaScript, and mark
+site_src/                    source CSS, JavaScript, typefaces, and marks
 site/                        generated, git-ignored GitHub Pages artifact
 METHOD.md                    public collection and classification method
 WATCHLIST.md                 exact instructions for the private registry
@@ -52,4 +52,4 @@ The workflow in `.github/workflows/update.yml` builds and deploys through GitHub
 
 ## License and design
 
-Code is available under the MIT License. The visual system is strongly informed by the article typography, proportions, marginal notes, and restrained palette of [Tufte CSS](https://github.com/edwardtufte/tufte-css), while using original CSS and system fonts rather than copying its font assets.
+Code is available under the MIT License. The visual system uses the ET Book typeface and is strongly informed by the article typography, proportions, marginal notes, and restrained palette of [Tufte CSS](https://github.com/edwardtufte/tufte-css). The SB mark is the active site identifier; the earlier Observatory mark remains in `site_src/observatory-mark.svg` for possible later use.

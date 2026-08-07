@@ -5,32 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{DESCRIPTION}}">
   <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#f7f4ec">
+  <meta name="theme-color" content="#fffff8">
   <meta name="robots" content="index,follow">
   <title>{{DOCUMENT_TITLE}}</title>
-  <link rel="icon" href="{{ROOT}}assets/mark.svg" type="image/svg+xml">
+  <link rel="icon" href="{{ROOT}}assets/sb-mark.png" type="image/png">
   <link rel="alternate" href="{{ROOT}}feed.xml" type="application/rss+xml" title="Observatory">
   <link rel="stylesheet" href="{{ROOT}}assets/styles.css">
   <script defer src="{{ROOT}}assets/app.js"></script>
 </head>
-<body data-root="{{ROOT}}">
+<body id="top" data-root="{{ROOT}}">
   <a class="skip-link" href="#content">Skip to the record</a>
-  <header class="masthead">
-    <a class="wordmark" href="{{ROOT}}index.html" aria-label="Observatory home">
-      <span aria-hidden="true" class="wordmark-mark">O</span>
+  <header class="site-header">
+    <a class="site-wordmark" href="{{ROOT}}index.html" aria-label="Observatory home"{{NAV_HOME}}>
+      <img class="site-mark" src="{{ROOT}}assets/sb-mark.png" alt="">
       <span>Observatory</span>
     </a>
-    <nav aria-label="Primary">
-      <a href="{{ROOT}}index.html"{{NAV_HOME}}>Observatory</a>
+    <nav class="site-links" aria-label="Primary">
       <a href="{{ROOT}}archive/index.html"{{NAV_ARCHIVE}}>Archive</a>
+      <a href="https://barasch.github.io/notes/">Notes</a>
+      <a href="https://barasch.github.io/the-city/">The City</a>
     </nav>
   </header>
   <main id="content">
     {{CONTENT}}
   </main>
   <footer class="site-footer">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#top">Top</a>
+      <a href="{{ROOT}}index.html">Observatory home</a>
+      <a href="https://github.com/barasch/observatory">Methods, sources, and code</a>
+    </nav>
     <p>This page is generated automatically from public sources. Inclusion means only that an item matched a configured source or subject query; it does not imply endorsement, verification, importance, or agreement. Titles and descriptions are attributed to originating sources.</p>
-    <p><a href="https://github.com/barasch/observatory">Methods, sources, and code</a></p>
   </footer>
 </body>
 </html>

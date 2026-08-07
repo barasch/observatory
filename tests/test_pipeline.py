@@ -136,7 +136,8 @@ class PipelineTests(unittest.TestCase):
             {"example-source": {"ok": True}},
             "2026-07-29T09:17:00Z",
         )
-        self.assertIn("A personal utility", output)
+        self.assertIn('class="page-title"', output)
+        self.assertNotIn("A personal utility", output)
         self.assertIn("data-current-date", output)
         self.assertIn('data-evidence-section="ESTIMATED"', output)
         self.assertIn('<span class="panel-title">Estimates</span>', output)

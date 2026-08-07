@@ -262,9 +262,8 @@ def render_home(
     now = datetime.now(EASTERN)
     content = f"""
 <section class="utility-intro">
-  <p class="utility-kicker">A personal utility</p>
   <div class="daily-status">
-    <h1><time data-current-date datetime="{now.date().isoformat()}">{now.strftime("%A, %B %-d, %Y")}</time></h1>
+    <h1 class="page-title"><time data-current-date datetime="{now.date().isoformat()}">{now.strftime("%A, %B %-d, %Y")}</time></h1>
     <div class="status-lines">
       <p>{esc(assembled_text(updated_at))}</p>
       <p>{good} {collector_label} responding <span{failure_class}>{failed} failed</span></p>
@@ -288,8 +287,7 @@ def render_archive_index(items: list[dict[str, Any]]) -> str:
     listing = "".join(rows) or "<li>No archived dates yet.</li>"
     return f"""
 <article class="prose">
-  <p class="eyebrow">Thirty-day record</p>
-  <h1>Archive</h1>
+  <h1 class="page-title">Archive</h1>
   <p class="subtitle">The latest 30 calendar days of collected items, grouped by publication date.</p>
   <ul class="archive-list">{listing}</ul>
 </article>"""
@@ -347,7 +345,8 @@ def build() -> int:
     (SITE / "assets").mkdir(parents=True)
     shutil.copy2(ROOT / "site_src" / "styles.css", SITE / "assets" / "styles.css")
     shutil.copy2(ROOT / "site_src" / "app.js", SITE / "assets" / "app.js")
-    shutil.copy2(ROOT / "site_src" / "mark.svg", SITE / "assets" / "mark.svg")
+    shutil.copy2(ROOT / "site_src" / "sb-mark.png", SITE / "assets" / "sb-mark.png")
+    shutil.copytree(ROOT / "site_src" / "et-book", SITE / "assets" / "et-book")
 
     page(
         "index.html",
@@ -371,8 +370,7 @@ def build() -> int:
         heading = datetime.fromisoformat(date_key).strftime("%B %-d, %Y")
         content = f"""
 <article class="prose">
-  <p class="eyebrow">Date record</p>
-  <h1>{esc(heading)}</h1>
+  <h1 class="page-title">{esc(heading)}</h1>
   <p class="subtitle">{len(date_items)} collected item{"s" if len(date_items) != 1 else ""}, ordered by publication time.</p>
 </article>
 <section class="stream" aria-label="{esc(heading)} items">
@@ -416,8 +414,7 @@ def build() -> int:
         "The requested Observatory page was not found.",
         """
 <article class="prose">
-  <p class="eyebrow">Not found</p>
-  <h1>This page is outside the record.</h1>
+  <h1 class="page-title">This page is outside the record.</h1>
   <p><a href="./index.html">Return to Observatory</a>.</p>
 </article>""",
         "",
@@ -432,6 +429,8 @@ def check_site() -> list[str]:
         SITE / "archive" / "index.html",
         SITE / "assets" / "styles.css",
         SITE / "assets" / "app.js",
+        SITE / "assets" / "sb-mark.png",
+        SITE / "assets" / "et-book" / "et-book-roman-line-figures.woff",
         SITE / "feed.xml",
     ]
     for path in required:
