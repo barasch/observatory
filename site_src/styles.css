@@ -54,7 +54,11 @@ html {
 }
 
 body {
-  margin: 0;
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding-left: 12.5%;
+  width: 87.5%;
   background: var(--paper);
   font-family: var(--serif);
   line-height: 1.55;
@@ -100,8 +104,9 @@ input:focus-visible {
   display: flex;
   gap: 45px;
   justify-content: space-between;
-  margin: 0 clamp(1.1rem, 5vw, 5rem);
+  margin: 0;
   padding: 21px 0 16px;
+  width: 90%;
 }
 
 .site-wordmark {
@@ -153,11 +158,17 @@ input:focus-visible {
   color: var(--ink);
 }
 
-main,
+main {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+
 .site-footer {
-  margin-left: clamp(1.1rem, 5vw, 5rem);
-  margin-right: clamp(1.1rem, 5vw, 5rem);
-  max-width: 86rem;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+  width: 90%;
 }
 
 .lede-grid {
@@ -680,6 +691,17 @@ button[aria-pressed="true"] {
 }
 
 @media (max-width: 760px) {
+  body {
+    padding-left: 8%;
+    padding-right: 8%;
+    width: 84%;
+  }
+
+  .site-header,
+  .site-footer {
+    width: 100%;
+  }
+
   .site-header {
     align-items: flex-start;
     flex-direction: column;
