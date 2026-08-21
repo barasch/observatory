@@ -1,106 +1,106 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20T09:29:40Z",
+  "updated_at": "2026-08-21T09:30:01Z",
   "sources": {
     "bea-releases": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 10,
       "error": null
     },
     "eia-today": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 4,
       "error": null
     },
     "eia-products": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 10,
       "error": null
     },
     "bls-principal-indicators": {
       "ok": false,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 0,
       "error": "RuntimeError: HTTP Error 403: Forbidden"
     },
     "federal-reserve-sloos": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 4,
       "error": null
     },
     "federal-reserve-press": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 8,
       "error": null
     },
     "federal-reserve-h8": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 4,
       "error": null
     },
     "federal-reserve-h41": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 4,
       "error": null
     },
     "cbo-publications": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 10,
       "error": null
     },
     "cdc-mmwr": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 10,
       "error": null
     },
     "federal-register-significant": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 12,
       "error": null
     },
     "scotus-opinions": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 12,
       "error": null
     },
     "gao-reports": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 8,
       "error": null
     },
     "ny-first-department": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:41Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 12,
       "error": null
     },
     "ny-court-appeals": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 12,
       "error": null
     },
     "ny-commercial-division": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:41Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 5,
       "error": null
     },
     "people-watch": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:40Z",
+      "checked_at": "2026-08-21T09:30:01Z",
       "item_count": 0,
       "error": null,
       "configured_entries": null,
@@ -108,8 +108,8 @@
     },
     "how-appealing": {
       "ok": true,
-      "checked_at": "2026-08-20T09:29:41Z",
-      "item_count": 9,
+      "checked_at": "2026-08-21T09:30:01Z",
+      "item_count": 10,
       "error": null
     }
   }
