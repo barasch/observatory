@@ -68,6 +68,7 @@ def page(
         "DESCRIPTION": esc(description),
         "ROOT": root,
         "CONTENT": content,
+        "ACCOUNT": (ROOT / "templates/account.html").read_text(encoding="utf-8"),
         "NAV_HOME": ' aria-current="page"' if active_nav == "home" else "",
         "NAV_ARCHIVE": ' aria-current="page"' if active_nav == "archive" else "",
     }
@@ -332,7 +333,7 @@ def write_feed(items: list[dict[str, Any]], updated_at: str | None) -> None:
     (SITE / "feed.xml").write_text(feed, encoding="utf-8")
 
 
-def build() -> int:
+def build_legacy() -> int:
     item_data = load_json(ROOT / "data" / "items.json", {"items": [], "updated_at": None})
     status_data = load_json(ROOT / "data" / "status.json", {"sources": {}})
     items = item_data.get("items", [])
@@ -422,6 +423,13 @@ def build() -> int:
     return len(items)
 
 
+def build() -> int:
+    from editions import load_editions, overwrite_site
+    load_editions()  # Reject invalid public data before touching generated output.
+    build_legacy()
+    return overwrite_site(SITE, page)
+
+
 def check_site() -> list[str]:
     errors = []
     required = [
@@ -431,6 +439,7 @@ def check_site() -> list[str]:
         SITE / "assets" / "app.js",
         SITE / "assets" / "sb-mark.png",
         SITE / "assets" / "et-book" / "et-book-roman-line-figures.woff",
+        SITE / "data" / "editorial-index.json",
         SITE / "feed.xml",
     ]
     for path in required:

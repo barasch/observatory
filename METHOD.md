@@ -1,38 +1,15 @@
 # Observatory method
 
-Observatory collects public metadata from a fixed source registry and a private people-as-topics registry. It publishes links, source-supplied titles and compact descriptions, dates, publishers, and collection status. The public source registry is [`config/sources.json`](config/sources.json).
+Observatory publishes approximately fifteen primary sources each day, selected and summarized by a scheduled ChatGPT task. Research starts at 2:00 a.m. America/New_York; publication follows completion. The public page groups tiles under Courts & Law, Economy & Finance, Government & Public Services, and Science & Research. Category balance is a soft target over thirty days.
 
-## Collection and publication
+Each editorial run is bounded by countable retrieval limits: one agent, no more than ten search queries, sixty total retrieval actions, twenty-two primary documents, twenty discovery pages, and 30,000 retrieved source words. It publishes no more than fifteen tiles and permits one validation repair. Reaching any ceiling ends research; the edition may therefore contain fewer than fifteen items. These are operational limits, not a claim to meter hidden model tokens, which ChatGPT Scheduled does not expose.
 
-- Collection runs once daily at 5:17 a.m. Eastern Time.
-- The home page shows the newest 30 collected items and remains unchanged until the next collection.
-- The archive contains the latest 30 calendar days, grouped by publication date.
-- A successful retrieval establishes that an item appeared at the configured endpoint. It does not independently verify every assertion in the linked material.
-- Automated access can fail, feeds can change, timestamps can be incomplete, and public search indexes can omit relevant results. The page reports collector failures rather than silently substituting another source.
+Government releases, court opinions and filings, original academic research, corporate filings, and original institutional reports are eligible. News may lead to a primary document but cannot replace access to it. Selection gives equal weight to consequence, research usefulness, and discovery. The issuing institution, publication date, geographic scope, and original source accompany each summary. Primary status does not establish the truth of every claim; summaries should distinguish estimates, allegations, findings, and legal holdings.
 
-## Public category labels
+Private, explicit thumbs-up and thumbs-down feedback guides future selection. Votes are reversible and may include an explanation. Dismissal only moves an item into a collapsed section; restoring it is neutral. Non-engagement and clicks are not preference signals. Exploration remains possible in every subject, including those repeatedly rated negatively.
 
-The collector retains stable internal codes so existing records and adapters remain compatible.
+The site is publicly readable. A passphrase unlocks private feedback and preferences. These are stored in a separate private GitHub repository, never in the public site data. The publicly downloadable credential record is encrypted; a long randomly generated passphrase protects it. Browser credentials and decrypted feedback remain only in memory for that tab. The task uses the owner's authorized GitHub connection to read private inputs independently.
 
-| Public label | Internal code | Operational meaning |
-| --- | --- | --- |
-| Measured | `MEASURED` | An instrument, transaction system, administrative process, or accounting record directly produced the underlying observation. |
-| Estimate | `ESTIMATED` | Sampling, modeling, seasonal adjustment, imputation, or projection materially contributes to the reported value. |
-| Filing | `FILED` | A party formally submitted the record. This establishes the submission and attribution, not every assertion in it. |
-| Adjudged | `ADJUDGED` | A court issued the disposition or opinion. This identifies legal effect, not independent proof of every factual recital. |
-| Report | `REPORTED` | An identified institution or person made the statement or published the finding. |
-| Analysis | `INTERPRETED` | The item primarily synthesizes, argues, explains, or forecasts from other facts. |
+Each public edition is schema-validated before rendering. The curated archive shows the last thirty calendar days, while the last successful edition stays on the homepage during failures. Historical source records from the previous collector remain separately accessible. Public repository history retains earlier editions.
 
-The label describes what kind of record the linked item is. It is not a universal quality score for the publisher.
-
-## Ordering and text
-
-Items are selected and ordered by publication time. Date-only records remain date-only and do not receive a fabricated clock time. Titles and descriptions are source supplied; Observatory does not insert generated summaries or use engagement, sentiment, or personalized importance scores.
-
-## People matches
-
-The identity registry is stored in the encrypted `PEOPLE_WATCHLIST_JSON` repository secret and is not committed. Instructions and the complete schema are in [`WATCHLIST.md`](WATCHLIST.md) and [`config/people.example.json`](config/people.example.json).
-
-Direct feeds and stable author identifiers are accepted as direct matches. Broad-news results must contain a canonical name or configured alias and, unless the name is marked distinctive, a disambiguating term. Configured exclusions are then applied. There is no manual review queue; candidates below the fixed threshold are discarded.
-
-Published matches necessarily reveal some interests, but not the complete registry, unused disambiguators, people who never match, or discarded candidates.
+See [scheduled setup](docs/SCHEDULED_TASK.md), [editorial instructions](docs/DAILY_EDITOR.md), and [edition format](docs/EDITION_FORMAT.md). A configured schedule is not evidence that a particular run completed; check the edition date and actual deployment result.

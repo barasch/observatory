@@ -1,0 +1,30 @@
+<dialog id="account-dialog" aria-labelledby="account-title">
+  <div class="dialog-heading"><h2 id="account-title">Private Observatory</h2><button type="button" id="close-account" aria-label="Close">×</button></div>
+  <p id="account-status" role="status" aria-live="polite"></p>
+  <section data-account-view="unlock">
+    <form id="unlock-form"><label>Passphrase<input id="unlock-passphrase" type="password" autocomplete="current-password" required></label><button type="submit">Unlock</button></form>
+    <button type="button" class="text-button" id="show-setup">Setup or replace access token</button>
+  </section>
+  <section data-account-view="setup" hidden>
+    <p>Set up once; use your passphrase on each device. Feedback and preferences stay in your private repository.</p>
+    <ol class="setup-instructions">
+      <li><a href="https://github.com/new?name=observatory-private&visibility=private" target="_blank" rel="noopener noreferrer">Create observatory-private</a>. Choose <strong>Private</strong>, add a README, and use the main branch.</li>
+      <li>Create a <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">fine-grained token</a> with access to <strong>observatory</strong> and <strong>observatory-private</strong>, and <strong>Contents: Read and write</strong>.</li>
+      <li>Save the generated passphrase in your password manager. The public site stores only the encrypted token. Use a long, unique passphrase because the encrypted record is publicly downloadable.</li>
+      <li>Give ChatGPT’s GitHub connection access to the private repository so the daily task can read your feedback.</li>
+    </ol>
+    <form id="setup-form">
+      <label>Private repository<input id="setup-repository" value="barasch/observatory-private" autocomplete="off" required></label>
+      <label>GitHub token<input id="setup-token" type="password" autocomplete="off" required></label>
+      <label>Passphrase<input id="setup-passphrase" type="text" autocomplete="new-password" minlength="24" required></label>
+      <button type="button" id="generate-passphrase">Generate another</button>
+      <label class="checkbox-label"><input type="checkbox" required> I have saved this passphrase.</label>
+      <button type="submit">Save setup & unlock</button>
+    </form>
+    <button type="button" class="text-button" id="show-unlock">Back to unlock</button>
+  </section>
+  <section data-account-view="preferences" hidden>
+    <p>These notes are private and guide future selection. Votes express interest in the material, not agreement with its conclusions. Dismissal never teaches a preference.</p>
+    <form id="preferences-form"><label>Selection preferences<textarea id="preference-notes" rows="7" maxlength="12000" placeholder="Subjects to explore, qualities you value, or corrections to earlier selections…"></textarea></label><button type="submit">Save preferences</button></form>
+  </section>
+</dialog>

@@ -19,3 +19,13 @@ These choices were made to put a coherent first version on its feet without wait
 15. **Date precision is preserved.** Date-only records display without a fabricated clock time. The New York reporter feeds omit standard publication-date fields, so their decision dates are extracted only from the official summaries and only because those three source entries explicitly authorize that rule.
 16. **One category per row.** Evidence categories and People occupy separate full-width rows at every viewport size. Text within each row retains a restrained reading measure.
 17. **Current date is local to the reader.** The edition heading is rendered from the visitor’s browser date. The separate assembly timestamp remains fixed for the edition and uses Eastern Time.
+
+## 2026-09-17 — Curated editions with private feedback
+
+Supersedes the earlier fixed-registry selection and source-description-only rules for new daily editions. A scheduled ChatGPT task searches primary sources, weighs consequence/research usefulness/discovery equally, and writes approximately fifteen summaries under four stable subject categories. Counts vary daily, with a soft thirty-day balance and continuing exploration.
+
+The public page is readable without authentication. Unlock enables private, reversible votes, optional explanations, preferences, and neutral dismissal. Dismissed items appear in a collapsed section and can be restored. Neither dismissal nor non-engagement is a learning signal. Browser credentials use the notes-editor pattern: a public encrypted envelope, a long random passphrase, and a token scoped to the necessary repositories. Private feedback lives only in a separate private repository. The task accesses it through the authorized GitHub connection, not through the passphrase.
+
+The daily task is intended to start at 02:00 America/New_York and publish when complete. The repository's previous collector schedule is removed to avoid competing publications. Commits containing schema-validated editions trigger the existing GitHub Pages deployment. Enabling the new task requires private storage and connector access first; the current implementation must not describe the task as active until scheduling succeeds.
+
+The Scheduled interface does not provide a hard per-run token quota. The recurring prompt therefore uses an auditable work ceiling rather than a duration or unsupported token estimate: one agent, 10 search queries, 60 retrieval actions, at most 22 primary documents and 20 discovery pages, at most 30,000 source words, 15 public tiles, and one validation repair. Any ceiling stops discovery. An edition may run short rather than exceed it.

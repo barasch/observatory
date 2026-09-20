@@ -1,55 +1,28 @@
 # Observatory
 
-Observatory is a public reading surface for recurring records and a private people-as-topics watchlist.
+A public daily selection of primary sources, with private feedback for its owner.
 
-The deployed site is intended to live at <https://barasch.github.io/observatory/>.
+- Site: https://barasch.github.io/observatory/
+- [Method](METHOD.md)
+- [One-time setup and exact scheduled-task instructions](docs/SCHEDULED_TASK.md)
+- [Daily editorial procedure](docs/DAILY_EDITOR.md)
+- [Public edition schema](docs/EDITION_FORMAT.md)
 
-## What the first version does
+## Build and verify
 
-- Collects a deliberately narrow set of official statistical, regulatory, health, fiscal, and judicial sources.
-- Labels each item by the kind of record it is instead of assigning a universal “reliability score.”
-- Shows the newest 30 items in collapsible category sections, with people matches kept separate.
-- Retains a rolling 30-day date archive.
-- Republishes only source-supplied metadata: title, abbreviated description, publisher, date, and link.
-- Provides local browser filters, visited-link differentiation, and browser-local “save for later” storage.
-- Reads a private people registry from the encrypted `PEOPLE_WATCHLIST_JSON` repository secret.
-- Searches configured direct feeds, OpenAlex author identifiers, and exact-name Google News RSS queries.
-- Collects once daily at 5:17 a.m. in `America/New_York`; ordinary code pushes redeploy the existing daily edition without recollecting it.
+Building needs Python 3.11+. Feedback and interface tests use Node 22+ and the locked development dependencies.
 
-## Repository map
-
-```text
-config/sources.json          public source catalog and adapters
-config/people.example.json   non-secret watchlist schema example
-data/                        retained public records and adapter status
-scripts/collect.py           collection and deterministic match rules
-scripts/build.py             static-site and archive generator
-site_src/                    source CSS, JavaScript, typefaces, and marks
-site/                        generated, git-ignored GitHub Pages artifact
-METHOD.md                    public collection and classification method
-WATCHLIST.md                 exact instructions for the private registry
-DECISIONS.md                 provisional design decisions
-```
-
-The operational method is in [METHOD.md](METHOD.md), and the complete public source registry is in [config/sources.json](config/sources.json).
-
-## Run locally
-
-The pipeline uses only the Python standard library.
-
-```bash
-python scripts/collect.py
+```sh
 python scripts/build.py --check
 python -m unittest discover -s tests -v
-python -m http.server 8000 --directory site
+npm ci
+npm test
 ```
 
-To test a private registry locally, copy `config/people.example.json` to `.private/people.json`, replace the example, and run `python scripts/validate_people.py .private/people.json`. The `.private` directory is ignored by Git.
+`site/` is generated and ignored. GitHub Actions builds and deploys commits to main. A scheduled ChatGPT task supplies validated `data/editions/YYYY-MM-DD.json` files; GitHub Actions no longer runs a competing feed collector. `scripts/collect.py` and the historical data remain available for reference, but do not author current editions.
 
-## Publishing
+The scheduled task has a countable daily work ceiling rather than a fictional time-to-token conversion: one agent, at most 10 search queries and 60 total retrieval actions, no more than 22 primary documents or 30,000 retrieved source words, at most 15 published tiles, and one validation repair. The final report states the counts. ChatGPT Scheduled does not offer a mechanically enforced all-in token quota; that would require an API runner with usage metering.
 
-The workflow in `.github/workflows/update.yml` builds and deploys through GitHub Pages. If GitHub does not permit the workflow to enable Pages automatically, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**, then rerun the workflow.
+Private feedback requires a separate private repository. Never commit `feedback.json`, `preferences.json`, or `profile.json` here. `feedback-auth.json`, created by the site setup form, contains only an encrypted credential and the private repository reference. A build allowlist validates this envelope before it can be served.
 
-## License and design
-
-Code is available under the MIT License. The visual system uses the ET Book typeface and is strongly informed by the article typography, proportions, marginal notes, and restrained palette of [Tufte CSS](https://github.com/edwardtufte/tufte-css). The SB mark is the active site identifier; the earlier Observatory mark remains in `site_src/observatory-mark.svg` for possible later use.
+The site never stores the plaintext token, passphrase, votes, or explanations in browser storage. Reload or Lock clears the unlocked session. Saves verify private visibility and use optimistic concurrency to preserve changes from other devices; failed saves remain visibly unsaved.
