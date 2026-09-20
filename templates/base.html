@@ -11,7 +11,8 @@
   <link rel="icon" href="{{ROOT}}assets/sb-mark.png" type="image/png">
   <link rel="alternate" href="{{ROOT}}feed.xml" type="application/rss+xml" title="Observatory">
   <link rel="stylesheet" href="{{ROOT}}assets/styles.css">
-  <script defer src="{{ROOT}}assets/app.js"></script>
+  <link rel="stylesheet" href="{{ROOT}}assets/edition.css">
+  <script type="module" src="{{ROOT}}assets/edition.js"></script>
 </head>
 <body id="top" data-root="{{ROOT}}">
   <a class="skip-link" href="#content">Skip to the record</a>
@@ -23,19 +24,22 @@
     <nav class="site-links" aria-label="Primary">
       <a href="{{ROOT}}archive/index.html"{{NAV_ARCHIVE}}>Archive</a>
       <a href="https://barasch.github.io/notes/">Notes</a>
-      <a href="https://barasch.github.io/the-city/">The City</a>
+      <button type="button" id="unlock">Unlock</button>
+      <button type="button" id="preferences" hidden>Preferences</button>
+      <button type="button" id="lock" hidden>Lock</button>
     </nav>
   </header>
   <main id="content">
     {{CONTENT}}
   </main>
+  {{ACCOUNT}}
   <footer class="site-footer">
     <nav class="footer-links" aria-label="Footer">
       <a href="#top">Top</a>
       <a href="{{ROOT}}index.html">Observatory home</a>
       <a href="https://github.com/barasch/observatory">Methods, sources, and code</a>
     </nav>
-    <p>This page is generated automatically from public sources. Inclusion means only that an item matched a configured source or subject query; it does not imply endorsement, verification, importance, or agreement. Titles and descriptions are attributed to originating sources.</p>
+    <p>Daily editions contain summaries composed by ChatGPT. Earlier collected records retain source-supplied descriptions. Read the original documents for their evidence, methods, and qualifications.</p>
   </footer>
 </body>
 </html>

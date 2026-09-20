@@ -1,0 +1,11 @@
+{
+  "name": "observatory",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^27.4.0"
+  }
+}

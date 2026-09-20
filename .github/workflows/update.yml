@@ -1,16 +1,13 @@
-name: Update and publish Observatory
+name: Publish Observatory editions
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-  schedule:
-    - cron: "17 5 * * *"
-      timezone: "America/New_York"
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -20,13 +17,12 @@ concurrency:
 
 jobs:
   update:
-    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     env:
-      PEOPLE_WATCHLIST_JSON: ${{ secrets.PEOPLE_WATCHLIST_JSON }}
+      PYTHONDONTWRITEBYTECODE: "1"
 
     steps:
       - name: Check out repository
@@ -37,25 +33,21 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Collect public records
-        if: github.event_name != 'push'
-        run: python scripts/collect.py
-
       - name: Build and check static site
         run: |
           python scripts/build.py --check
           python -m unittest discover -s tests -v
 
-      - name: Preserve new records
-        if: github.event_name != 'push'
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Check feedback and browser interactions
         run: |
-          git config user.name "observatory-bot"
-          git config user.email "observatory-bot@users.noreply.github.com"
-          git add data
-          if ! git diff --cached --quiet; then
-            git commit -m "Update Observatory record [skip ci]"
-            git push
-          fi
+          npm ci
+          npm test
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

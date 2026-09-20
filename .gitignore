@@ -4,3 +4,9 @@ __pycache__/
 .private/
 .venv/
 site/
+node_modules/
+feedback.json
+preferences.json
+profile.json
+playwright-report/
+test-results/
