@@ -13,6 +13,12 @@ EXAMPLE = {'schema_version':1,'date':'2026-09-17','prepared_at':'2026-09-17T06:1
     'source_url':'https://example.gov/report','document_url':'https://example.gov/report.pdf','source_type':'Statistical release','tags':['prices']}]}
 
 class EditionTests(unittest.TestCase):
+    def test_observatory_header_stays_visible_while_scrolling(self):
+        css=(Path(__file__).resolve().parents[1] / 'site_src' / 'edition.css').read_text()
+        self.assertIn('.site-header{position:sticky;',css)
+        self.assertIn('top:0;',css)
+        self.assertIn('background:var(--paper)',css)
+
     def test_accepts_plain_public_edition(self):
         self.assertEqual(validate_edition(copy.deepcopy(EXAMPLE)),EXAMPLE)
     def test_private_fields_rejected_at_both_levels(self):
