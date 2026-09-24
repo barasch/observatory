@@ -1,6 +1,6 @@
 body{padding:0 12.5%;width:auto;max-width:1600px;margin:0 auto}
 .site-header,.site-footer{width:100%}
-.site-header{border-bottom:1px solid var(--rule);padding:24px 0}
+.site-header{position:sticky;z-index:40;top:0;border-bottom:1px solid var(--rule);padding:24px 0;background:var(--paper)}
 .site-wordmark img{width:24px;height:24px}
 .site-wordmark span{font-size:15px;letter-spacing:.08em;text-transform:uppercase}
 .site-links{gap:22px;align-items:center;flex-wrap:wrap}
