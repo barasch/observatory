@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-27",
+  "prepared_at": "2026-09-27T02:08:55-04:00",
+  "coverage_note": "Five items are included. The compact editorial index was inaccessible, several source links failed, and other candidates lacked a verified publication date or an accessible underlying research paper within the daily retrieval ceiling; the edition was not padded.",
+  "items": [
+    {
+      "id": "coast-guard-passenger-ship-training-2026-19652",
+      "category": "government",
+      "title": "Coast Guard extends emergency and crowd-management training across passenger-ship crews",
+      "publisher": "U.S. Coast Guard",
+      "published": "2026-09-25",
+      "geography": "United States",
+      "summary": "The Coast Guard’s final rule requires all personnel on U.S.-flagged ships carrying more than 12 passengers internationally to complete role-appropriate emergency familiarization before shipboard duty, and expands crowd-management training to additional certified ratings. Operators must retain completion records. Effective October 26, the rule incorporates the 2017 international training standards; it changes who must be trained while leaving basic familiarization courses outside the agency-approval process.",
+      "source_type": "Final rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/25/2026-19652/implementation-of-training-requirements-for-personnel-serving-on-us-flagged-passenger-ships-that",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/25/2026-19652/implementation-of-training-requirements-for-personnel-serving-on-us-flagged-passenger-ships-that",
+      "tags": ["passenger ships", "maritime safety", "crew training", "Coast Guard"]
+    },
+    {
+      "id": "irs-estate-tax-closing-letter-fee-2026-19666",
+      "category": "law",
+      "title": "IRS raises the estate-tax closing-letter fee from $56 to $76",
+      "publisher": "Internal Revenue Service",
+      "published": "2026-09-25",
+      "geography": "United States",
+      "summary": "The IRS adopted final regulations increasing the fee for an estate-tax closing letter from $56 to $76, effective October 26. One commenter asked the agency to disclose its detailed 2025 cost model before proceeding; the IRS adopted the proposal unchanged and said its calculation used fiscal 2023–2024 direct and indirect costs under federal managerial-accounting standards. The rule affects authorized persons who request formal confirmation that an estate-tax examination is closed.",
+      "source_type": "Final rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/25/2026-19666/estate-tax-closing-letter-user-fee-update",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/25/2026-19666/estate-tax-closing-letter-user-fee-update",
+      "tags": ["estate tax", "user fees", "IRS", "administrative costs"]
+    },
+    {
+      "id": "bls-employee-benefits-2026-03",
+      "category": "economy",
+      "title": "Benefit access and participation diverge sharply across private and public employment",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "published": "2026-09-25",
+      "geography": "United States",
+      "summary": "In March, 72 percent of private-industry workers had access to retirement benefits but 52 percent participated; among state and local government workers, the corresponding figures were 92 and 81 percent. Medical-plan access was 71 percent in private industry, with 46 percent participating, versus 89 and 67 percent in government. The release also finds paid family and medical leave available to 49 percent of private workers and 57 percent of public workers.",
+      "source_type": "Official statistical release",
+      "source_url": "https://www.bls.gov/news.release/ebs2.nr0.htm",
+      "document_url": "https://www.bls.gov/news.release/ebs2.nr0.htm",
+      "tags": ["employee benefits", "retirement", "health insurance", "paid leave"]
+    },
+    {
+      "id": "fda-vitamin-d2-yeast-2026-19656",
+      "category": "science",
+      "title": "FDA permits vitamin D2 inactive bakers yeast as a food additive",
+      "publisher": "U.S. Food and Drug Administration",
+      "published": "2026-09-25",
+      "geography": "United States",
+      "summary": "The Food and Drug Administration amended its food-additive regulations to permit vitamin D2 inactive bakers yeast as a vitamin D2 source in specified food categories, granting a petition from Lallemand Inc. The order took effect September 25; objections and hearing requests are due October 26. This is a regulatory safety determination for the petitioned uses, not a new clinical finding about the benefits of vitamin D supplementation.",
+      "source_type": "Food-additive order",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/25/2026-19656/food-additives-permitted-for-direct-addition-to-food-for-human-consumption-vitamin-d2-inactive",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/25/2026-19656/food-additives-permitted-for-direct-addition-to-food-for-human-consumption-vitamin-d2-inactive",
+      "tags": ["vitamin D2", "food additives", "bakers yeast", "FDA"]
+    },
+    {
+      "id": "nisar-krasheninnikov-eruption-2026",
+      "category": "science",
+      "title": "NISAR radar tracks a Kamchatka lava field through eight months of change",
+      "publisher": "NASA Jet Propulsion Laboratory",
+      "published": "2026-09-24",
+      "geography": "Russia / Kamchatka Peninsula",
+      "summary": "A sequence of NASA–Indian Space Research Organisation radar observations from December 2025 through August 2026 maps the expanding lava field at Krasheninnikov on Russia’s Kamchatka Peninsula. The volcano began erupting days after a nearby magnitude-8.8 earthquake on July 30, 2025, apparently ending nearly five centuries of dormancy. The time series demonstrates how synthetic-aperture radar can follow surface change despite the clouds and darkness that often obstruct conventional volcanic imaging.",
+      "source_type": "Agency observation report",
+      "source_url": "https://www.nasa.gov/missions/nisar/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption/",
+      "document_url": "https://www.nasa.gov/missions/nisar/us-india-satellite-captures-time-lapse-video-of-volcanic-eruption/",
+      "tags": ["NISAR", "volcanology", "synthetic-aperture radar", "Kamchatka"]
+    }
+  ]
+}
