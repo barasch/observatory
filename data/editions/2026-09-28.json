@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-28",
+  "prepared_at": "2026-09-28T02:14:35-04:00",
+  "items": [
+    {
+      "id": "doj-minnesota-firearm-waiting-period-2026",
+      "category": "law",
+      "title": "Justice Department challenges Minnesota firearm-purchase delays under the Second Amendment",
+      "publisher": "U.S. Department of Justice",
+      "published": "2026-09-24",
+      "geography": "Minnesota, United States",
+      "summary": "A Justice Department complaint alleges that Minnesota’s permit-to-purchase system imposes a 30-day delay on residents without carry permits and that Minneapolis and St. Paul sometimes take nearly 60 days. The filing contends that acquisition is a necessary predicate to keeping arms and invokes the federal police pattern-or-practice statute to seek declaratory and injunctive relief. These are the government’s allegations; the district court has not adjudicated them.",
+      "source_type": "Federal court complaint",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-sues-minnesota-st-paul-and-minneapolis-over-firearm-purchase-waiting",
+      "document_url": "https://www.justice.gov/crt/media/1462611/dl",
+      "tags": [
+        "Second Amendment",
+        "firearm purchases",
+        "waiting periods",
+        "civil litigation"
+      ]
+    },
+    {
+      "id": "civil-rights-cold-case-records-2026-19783",
+      "category": "law",
+      "title": "Cold-case review board rejects seven of nine additional DOJ requests to postpone records",
+      "publisher": "Civil Rights Cold Case Records Review Board",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "The Civil Rights Cold Case Records Review Board approved two and rejected seven additional Justice Department requests to postpone disclosure of records tied to incident 2024-003-003. The notice does not identify the incident or explain the individual postponement rulings, but it records the board’s formal exercise of authority under the 2018 collection law. That law requires publication of disclosure or postponement determinations within fourteen days of a decision.",
+      "source_type": "Administrative determination",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19783/notice-of-formal-determination-on-records-release",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19783/notice-of-formal-determination-on-records-release",
+      "tags": [
+        "civil rights cold cases",
+        "records disclosure",
+        "DOJ",
+        "archives"
+      ]
+    },
+    {
+      "id": "epa-gasoline-distribution-reconsideration-2026-19774",
+      "category": "law",
+      "title": "EPA proposes technical revisions to 2024 gasoline-distribution emissions rules",
+      "publisher": "U.S. Environmental Protection Agency",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "EPA proposes reconsidering operating limits and continuous-compliance requirements for emission-control devices, vapor-tightness rules for gasoline cargo tanks, and modification criteria for bulk terminals. The agency characterizes the revisions as technical and says they would not reduce the stringency of the 2024 standards or change expected volatile-organic-compound and hazardous-air-pollutant emissions. Comments are due November 12; other portions of the 2024 rule are not reopened.",
+      "source_type": "Proposed rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19774/national-emission-standards-for-hazardous-air-pollutants-for-gasoline-distribution-facilities-and",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19774/national-emission-standards-for-hazardous-air-pollutants-for-gasoline-distribution-facilities-and",
+      "tags": [
+        "gasoline terminals",
+        "air pollution",
+        "hazardous pollutants",
+        "regulatory reconsideration"
+      ]
+    },
+    {
+      "id": "phmsa-transport-tank-codes-2026-19741",
+      "category": "law",
+      "title": "PHMSA authorizes 2015 pressure-vessel codes for hazardous-material transport tanks",
+      "publisher": "Pipeline and Hazardous Materials Safety Administration",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "PHMSA’s final rule incorporates 2015 engineering codes for constructing and maintaining cargo-tank vehicles, cryogenic portable tanks, and multi-unit tank-car tanks. The agency says the change supplies additional compliance options without imposing new costs and estimates annualized savings of about $8.1 million at a seven-percent discount rate. Voluntary compliance begins immediately and the rule becomes effective October 28, concluding a standards project initiated by PHMSA’s predecessor agency.",
+      "source_type": "Final rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19741/hazardous-materials-incorporation-of-asme-code-section-xii-and-the-national-board-inspection-code",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19741/hazardous-materials-incorporation-of-asme-code-section-xii-and-the-national-board-inspection-code",
+      "tags": [
+        "hazardous materials",
+        "transport tanks",
+        "engineering standards",
+        "regulatory costs"
+      ]
+    },
+    {
+      "id": "hud-section-184-fee-2026-19782",
+      "category": "economy",
+      "title": "HUD raises the upfront Section 184 Indian housing guarantee fee to 1.5 percent",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "published": "2026-09-28",
+      "geography": "United States / Tribal areas",
+      "summary": "Beginning October 1, HUD will raise the upfront guarantee fee on new and refinanced Section 184 mortgages from 1.0 to 1.5 percent; the Skilled Workers Demonstration fee rises from zero to 1.0 percent. Annual fees remain zero. HUD reports an approximately 3.5-percent lifetime default rate and says the increase can make the program self-sustaining without annual appropriations while preserving mortgage access on trust land and in other eligible Native areas.",
+      "source_type": "Program fee notice",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19782/section-184-indian-housing-loan-guarantee-program-increase-in-the-loan-guarantee-fee",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19782/section-184-indian-housing-loan-guarantee-program-increase-in-the-loan-guarantee-fee",
+      "tags": [
+        "Indian housing",
+        "mortgage guarantees",
+        "loan fees",
+        "HUD"
+      ]
+    },
+    {
+      "id": "sec-occ-extended-trading-hours-2026-19726",
+      "category": "economy",
+      "title": "SEC lets the Options Clearing Corporation assess new overnight products by procedure",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "The SEC approved Options Clearing Corporation rules allowing OCC to decide through a published procedure whether additional products can be cleared during overnight or extended sessions. The framework replaces a product-by-product rule filing where existing risk controls suffice, while preserving filings for changes to those controls. It also permits designated officers to revoke a member’s overnight authorization, subject to review rights, and extends uninterrupted monitoring through the 8:30 a.m. Central opening.",
+      "source_type": "SEC approval order",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19726/self-regulatory-organizations-the-options-clearing-corporation-order-approving-proposed-rule-change",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19726/self-regulatory-organizations-the-options-clearing-corporation-order-approving-proposed-rule-change",
+      "tags": [
+        "options clearing",
+        "overnight trading",
+        "risk management",
+        "market structure"
+      ]
+    },
+    {
+      "id": "hud-section-108-fee-fy2027-2026-19743",
+      "category": "economy",
+      "title": "HUD nearly doubles the fiscal 2027 Section 108 loan-guarantee fee",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "HUD set the fiscal 2027 fee for newly committed Section 108 community-development loan guarantees at 1.05 percent of principal, up from 0.58 percent in fiscal 2026, if Congress again authorizes fee collection. The fee is calibrated to reduce the federal credit subsidy cost to zero. HUD says its model incorporates the portfolio’s current composition, expected default and recovery cash flows, and federally prescribed discount rates.",
+      "source_type": "Program fee notice",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19743/section-108-loan-guarantee-program-announcement-of-fee-to-cover-credit-subsidy-costs-for-fy-2027",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19743/section-108-loan-guarantee-program-announcement-of-fee-to-cover-credit-subsidy-costs-for-fy-2027",
+      "tags": [
+        "community development",
+        "loan guarantees",
+        "credit subsidy",
+        "HUD"
+      ]
+    },
+    {
+      "id": "faa-cessna-single-pilot-exemptions-2026-19843",
+      "category": "government",
+      "title": "FAA ends Cessna Citation single-pilot exemptions after finding widespread noncompliance",
+      "publisher": "Federal Aviation Administration",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "FAA will stop issuing and separately rescind exemptions that allowed specified two-pilot Cessna Citation CE-500 variants to operate with one pilot. A 2024 review found widespread failures to follow exemption conditions, including training offered by entities that did not hold exemptions. Pilots who received endorsements from exempt training providers must cease single-pilot operations where regulations require two crew members. The policy takes effect September 29, ending a practice begun in 1984.",
+      "source_type": "Aviation policy statement",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19843/notice-of-policy-change-and-rescission-of-single-pilot-training-exemptions-for-certain-cessna",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19843/notice-of-policy-change-and-rescission-of-single-pilot-training-exemptions-for-certain-cessna",
+      "tags": [
+        "Cessna Citation",
+        "pilot training",
+        "aviation safety",
+        "exemptions"
+      ]
+    },
+    {
+      "id": "nhtsa-honda-odyssey-airbag-petition-2026-19791",
+      "category": "government",
+      "title": "NHTSA declines a defect investigation into inadvertent Honda Odyssey airbag deployments",
+      "publisher": "National Highway Traffic Safety Administration",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "NHTSA denied a petition seeking an investigation of alleged uncommanded airbag deployments and conflicting diagnostic records in model-year 2011–2017 Honda Odysseys. The petitioner cited online reports and ten complaints in NHTSA’s database. After reviewing those materials, its own complaint records, and other available information, the Office of Defects Investigation concluded that further work was unlikely to establish a safety-related defect. The decision is an agency screening judgment, not proof that no individual malfunction occurred.",
+      "source_type": "Defect-petition decision",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19791/denial-of-motor-vehicle-defect-petition-dp26-005",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19791/denial-of-motor-vehicle-defect-petition-dp26-005",
+      "tags": [
+        "Honda Odyssey",
+        "airbags",
+        "vehicle defects",
+        "NHTSA"
+      ]
+    },
+    {
+      "id": "hud-race-ethnic-data-collection-2026-19784",
+      "category": "government",
+      "title": "HUD seeks to reinstate its race and ethnicity data form without changes",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "HUD asked the Office of Management and Budget to reinstate, without change, the form its programs use to collect race and ethnicity information about populations intended to benefit from federal housing funds. The agency estimates 14,375 respondents, 17,250 annual responses, 8,625 burden hours, and about $459,195 in labor cost. The collection supports Title VI, Fair Housing Act, and regulatory compliance; comments on necessity, burden, and design are due October 28.",
+      "source_type": "Information-collection notice",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19784/30-day-notice-of-proposed-information-collection-race-and-ethnic-data-collection",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19784/30-day-notice-of-proposed-information-collection-race-and-ethnic-data-collection",
+      "tags": [
+        "race and ethnicity data",
+        "housing programs",
+        "Paperwork Reduction Act",
+        "HUD"
+      ]
+    },
+    {
+      "id": "epa-corpus-christi-dredge-sites-2026-19745",
+      "category": "government",
+      "title": "EPA expands two Corpus Christi ocean sites for long-term dredged-material disposal",
+      "publisher": "U.S. Environmental Protection Agency",
+      "published": "2026-09-28",
+      "geography": "Corpus Christi, Texas",
+      "summary": "EPA’s final rule enlarges the Corpus Christi Ship Channel and New Work ocean-disposal sites rather than designating new locations for suitable dredged material. The sites serve channel maintenance and construction near a major port and will operate under monitoring and management requirements. EPA reports that past monitoring found no significant adverse environmental consequences in the area and says one biologically sensitive portion excluded in an earlier siting decision remains outside the disposal footprint.",
+      "source_type": "Final rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19745/marine-protection-modification-to-expand-ocean-dredged-material-disposal-sites-offshore-of-corpus",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19745/marine-protection-modification-to-expand-ocean-dredged-material-disposal-sites-offshore-of-corpus",
+      "tags": [
+        "dredged material",
+        "ocean disposal",
+        "Corpus Christi",
+        "port infrastructure"
+      ]
+    },
+    {
+      "id": "nhtsa-recalls-next-2026-19712",
+      "category": "government",
+      "title": "NHTSA opens a public process on technology and vehicle-recall completion",
+      "publisher": "National Highway Traffic Safety Administration",
+      "published": "2026-09-28",
+      "geography": "United States",
+      "summary": "NHTSA will convene manufacturers and the public on November 5 to examine recall-completion trends, owner outreach, risk communication, and technologies that might improve repair rates. The agency says it will use stakeholder input to inform upcoming work; written comments remain open through December 5. The Washington meeting will be in person only and will neither be streamed nor recorded, making the public docket the durable record for outside participation.",
+      "source_type": "Public-meeting notice",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19712/recalls-next-technological-innovations-and-safety-recalls",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19712/recalls-next-technological-innovations-and-safety-recalls",
+      "tags": [
+        "vehicle recalls",
+        "repair completion",
+        "risk communication",
+        "NHTSA"
+      ]
+    },
+    {
+      "id": "noaa-queets-chinook-rebuilding-2026-19813",
+      "category": "science",
+      "title": "NOAA adopts a rebuilding plan for overfished Queets River Chinook salmon",
+      "publisher": "National Marine Fisheries Service",
+      "published": "2026-09-28",
+      "geography": "Washington State / Pacific Coast",
+      "summary": "NOAA’s final rule implements the Pacific Fishery Management Council’s plan for Queets River spring and summer Chinook. The stock was classified as overfished after its 2019–2021 geometric-mean spawning escapement fell to 314 fish, below the minimum stock-size threshold of 350. The rule becomes effective October 28. NOAA says tribal officials serving on the council and the Northwest Indian Fish Commission agreed with the plan; no responsive public comments required changes.",
+      "source_type": "Fishery rebuilding rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19813/fisheries-off-west-coast-states-west-coast-salmon-fisheries-rebuilding-plan-for-the-overfished",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19813/fisheries-off-west-coast-states-west-coast-salmon-fisheries-rebuilding-plan-for-the-overfished",
+      "tags": [
+        "Chinook salmon",
+        "stock rebuilding",
+        "spawning escapement",
+        "Pacific fisheries"
+      ]
+    },
+    {
+      "id": "faa-terran-r-fonsi-2026-19716",
+      "category": "science",
+      "title": "FAA adopts a no-significant-impact finding for Relativity’s Terran R launches",
+      "publisher": "Federal Aviation Administration",
+      "published": "2026-09-28",
+      "geography": "Cape Canaveral, Florida",
+      "summary": "FAA formally adopted the Space Force’s 2024 supplemental environmental assessment and issued a finding of no significant impact and record of decision for Relativity Space’s Terran R program at Launch Complex 16. The action covers FAA licensing of commercial launches and related airspace closures after retirement of the Terran 1 program. It is an environmental-review and licensing determination, not a finding about the rocket’s technical performance or launch readiness.",
+      "source_type": "Environmental decision notice",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19716/notice-of-availability-on-the-finding-of-no-significant-impact-and-record-of-decision-for-relativity",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19716/notice-of-availability-on-the-finding-of-no-significant-impact-and-record-of-decision-for-relativity",
+      "tags": [
+        "Terran R",
+        "commercial spaceflight",
+        "environmental review",
+        "Cape Canaveral"
+      ]
+    },
+    {
+      "id": "noaa-snapper-grouper-amendment-36-2026-19801",
+      "category": "science",
+      "title": "NOAA revises grouper vessel limits and ropeless-pot transit rules",
+      "publisher": "National Marine Fisheries Service",
+      "published": "2026-09-28",
+      "geography": "U.S. South Atlantic",
+      "summary": "NOAA’s final rule changes recreational vessel limits for gag and black grouper and permits more practical transit through gear-restricted areas with commercial on-demand black-sea-bass pots aboard. The biological problem is compounded by fishermen’s difficulty distinguishing gag from black grouper: the gag stock is overfished and undergoing overfishing, so limits on both species indirectly protect gag. The rule implements Regulatory Amendment 36 and becomes effective October 28.",
+      "source_type": "Fishery management rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19801/fisheries-of-the-caribbean-gulf-of-america-and-south-atlantic-snapper-grouper-fishery-of-the-south",
+      "document_url": "https://www.federalregister.gov/documents/2026/09/28/2026-19801/fisheries-of-the-caribbean-gulf-of-america-and-south-atlantic-snapper-grouper-fishery-of-the-south",
+      "tags": [
+        "gag grouper",
+        "black grouper",
+        "fisheries management",
+        "ropeless gear"
+      ]
+    }
+  ]
+}
