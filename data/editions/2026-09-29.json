@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-29",
+  "prepared_at": "2026-09-29T02:07:12-04:00",
+  "coverage_note": "This limited edition omits candidates whose primary documents or publication dates could not be verified after several official feeds and source pages failed to load.",
+  "items": [
+    {
+      "id": "scotus-ramey-texas-26-5637",
+      "category": "law",
+      "title": "Supreme Court denies a stay and certiorari in a Texas execution case",
+      "publisher": "Supreme Court of the United States",
+      "published": "2026-09-23",
+      "geography": "Texas / United States",
+      "summary": "The Supreme Court denied Ker’Sean O. Ramey’s application to stay his Texas death sentence and denied his petition for certiorari. The one-page order records no vote, reasoning, or separate writing, so it establishes only the disposition—not the Court’s view of any underlying legal claim. Justice Alito received the stay application and referred it to the full Court. The order was issued September 23.",
+      "source_type": "Supreme Court order",
+      "source_url": "https://www.supremecourt.gov/orders/ordersofthecourt/25",
+      "document_url": "https://www.supremecourt.gov/orders/courtorders/092326zr_g3bi.pdf",
+      "tags": [
+        "certiorari",
+        "death penalty",
+        "stay application",
+        "Texas"
+      ]
+    },
+    {
+      "id": "federal-reserve-stablecoin-framework-2026-09-24",
+      "category": "law",
+      "title": "Federal Reserve proposes reserve, capital, and application rules for payment stablecoins",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "published": "2026-09-24",
+      "geography": "United States",
+      "summary": "The Federal Reserve requested comment on two proposals implementing its responsibilities under the GENIUS Act. One would require Board-supervised stablecoin issuers to hold specified liquid reserve assets, maintain standardized capital, meet risk-management standards, and govern custody of backing assets. The other would create a tailored application, hearing, appeal, and decision process for supervised banks seeking to issue payment stablecoins. Comments close sixty days after Federal Register publication; these are proposals, not final rules.",
+      "source_type": "Regulatory proposal announcement",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260924a.htm",
+      "document_url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260924a.htm",
+      "tags": [
+        "payment stablecoins",
+        "GENIUS Act",
+        "bank supervision",
+        "reserve assets"
+      ]
+    },
+    {
+      "id": "bls-metro-compensation-march-2026",
+      "category": "economy",
+      "title": "Private-employer compensation varies nearly twofold across fifteen major metropolitan areas",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "published": "2026-09-28",
+      "geography": "United States metropolitan areas",
+      "summary": "Bureau of Labor Statistics estimates for March place average private-industry compensation at $75.12 per hour in San Jose–San Francisco–Oakland and $37.84 in Miami–Fort Lauderdale, the highest and lowest figures among fifteen large combined statistical areas. New York–Newark averaged $57.87, including $38.73 in wages and $19.14 in benefits. The figures are not seasonally adjusted and describe employer cost per hour worked, not what a typical individual worker earns.",
+      "source_type": "Statistical release",
+      "source_url": "https://www.bls.gov/opub/ted/2026/employer-costs-for-employee-compensation-in-san-jose-area-averaged-75-12-in-march-2026.htm",
+      "document_url": "https://www.bls.gov/opub/ted/2026/employer-costs-for-employee-compensation-in-san-jose-area-averaged-75-12-in-march-2026.htm",
+      "tags": [
+        "employee compensation",
+        "metropolitan areas",
+        "wages",
+        "benefits"
+      ]
+    },
+    {
+      "id": "eia-public-producers-lower-48-2025",
+      "category": "economy",
+      "title": "Two percent of Lower 48 oil and gas producers account for 68 percent of production",
+      "publisher": "U.S. Energy Information Administration",
+      "published": "2026-09-22",
+      "geography": "Lower 48 United States",
+      "summary": "An Energy Information Administration analysis of Enverus data reports that publicly traded firms were only 2 percent of roughly 12,000 Lower 48 oil and gas producers in 2025 but supplied 68 percent of output. Scale and high-quality acreage partly explain the concentration. Public firms produced nearly five times private-company volume in Appalachia and four times as much in the Permian; Haynesville was the exception, with private firms supplying 55 percent.",
+      "source_type": "Government data analysis",
+      "source_url": "https://www.eia.gov/todayinenergy/detail.php?id=68184",
+      "document_url": "https://www.eia.gov/todayinenergy/detail.php?id=68184",
+      "tags": [
+        "oil production",
+        "natural gas",
+        "industry concentration",
+        "public companies"
+      ]
+    },
+    {
+      "id": "nasa-greenland-subglacial-valleys-2026",
+      "category": "science",
+      "title": "New mapping method identifies 1,943 valleys beneath Greenland’s ice",
+      "publisher": "NASA Earth Observatory",
+      "published": "2026-09-28",
+      "geography": "Greenland",
+      "summary": "NASA reports that Ice Flow Perturbation Analysis inferred 1,943 valleys beneath the Greenland Ice Sheet from subtle surface signatures measured by satellites. About one-third were newly identified, while many previously mapped coastal valleys appear to extend hundreds of kilometers farther inland. Branching angles suggest groundwater as well as surface water helped carve the pre-ice landscape. Because valleys channel and accelerate ice, the revised bedrock map may improve long-range projections of retreat and flow.",
+      "source_type": "Earth science research report",
+      "source_url": "https://science.nasa.gov/earth/earth-observatory/uncovering-the-valleys-hidden-below-greenlands-ice/",
+      "document_url": "https://science.nasa.gov/earth/earth-observatory/uncovering-the-valleys-hidden-below-greenlands-ice/",
+      "tags": [
+        "Greenland Ice Sheet",
+        "subglacial valleys",
+        "satellite mapping",
+        "ice flow"
+      ]
+    },
+    {
+      "id": "nasa-swift-boost-mission-2026",
+      "category": "science",
+      "title": "Swift servicing attempt ends without an orbital boost after control and communications problems",
+      "publisher": "National Aeronautics and Space Administration",
+      "published": "2026-09-28",
+      "geography": "Low Earth orbit / United States",
+      "summary": "NASA’s effort with Katalyst Space to raise the aging Swift Observatory’s orbit ended without a rendezvous or boost. The LINK servicing craft reached orbit but suffered intermittent communications losses and orientation-control problems, so the partners reduced the mission to technology demonstrations; LINK reentered on September 25. Flight controllers had meanwhile changed Swift’s pointing schedule to reduce atmospheric drag. NASA presents the failed rescue as operational evidence for future rapid spacecraft-servicing missions.",
+      "source_type": "Mission outcome report",
+      "source_url": "https://science.nasa.gov/missions/swift/nasa-highlights-lessons-learned-from-swift-boost-mission/",
+      "document_url": "https://science.nasa.gov/missions/swift/nasa-highlights-lessons-learned-from-swift-boost-mission/",
+      "tags": [
+        "Swift Observatory",
+        "spacecraft servicing",
+        "orbital decay",
+        "mission failure"
+      ]
+    },
+    {
+      "id": "nasa-starliner-development-plan-2026",
+      "category": "government",
+      "title": "NASA plans an uncrewed Starliner test before a possible crew return in 2028",
+      "publisher": "National Aeronautics and Space Administration",
+      "published": "2026-09-28",
+      "geography": "United States / low Earth orbit",
+      "summary": "NASA says it intends to fly Starliner-1 without crew as early as December 2026 or January 2027, then consider returning astronauts on Starliner-2 in 2028. The agency plans to exercise options for two additional station flights and certify United Launch Alliance’s Vulcan rocket after the final Atlas V mission. Boeing has modified service-module thermal systems and will change a thruster valve design after a NASA investigation produced 61 recommendations following the troubled 2024 crewed test.",
+      "source_type": "Program announcement",
+      "source_url": "https://www.nasa.gov/news-release/nasa-boeing-share-update-on-commercial-starliner-development-plans/",
+      "document_url": "https://www.nasa.gov/news-release/nasa-boeing-share-update-on-commercial-starliner-development-plans/",
+      "tags": [
+        "Starliner",
+        "commercial crew",
+        "Vulcan rocket",
+        "spaceflight safety"
+      ]
+    },
+    {
+      "id": "nasa-artemis-accords-76-signatories-2026",
+      "category": "government",
+      "title": "Four new signatories bring Artemis Accords participation to 76 countries",
+      "publisher": "National Aeronautics and Space Administration",
+      "published": "2026-09-28",
+      "geography": "Global",
+      "summary": "Albania, Croatia, Côte d’Ivoire, and San Marino joined the Artemis Accords, bringing the NASA-led space-cooperation framework to 76 participating countries. NASA says the group now meets through technical workshops and principals’ sessions and has developed recommendations on noninterference, interoperability, data sharing, and registration. The announcement reports that nearly two-thirds of parties to the 1967 Outer Space Treaty have also joined the accords, which remain a coordination framework rather than a replacement for that treaty.",
+      "source_type": "International-cooperation announcement",
+      "source_url": "https://www.nasa.gov/news-release/nasa-celebrates-as-artemis-accords-surpasses-75-signatories/",
+      "document_url": "https://www.nasa.gov/news-release/nasa-celebrates-as-artemis-accords-surpasses-75-signatories/",
+      "tags": [
+        "Artemis Accords",
+        "space governance",
+        "international cooperation",
+        "lunar exploration"
+      ]
+    }
+  ]
+}
