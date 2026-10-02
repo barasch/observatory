@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "salt": "Z86zv/3dHBWVqXjxffgkNg==",
+  "iterations": 600000,
+  "iv": "wL0ZFRA4YllOMofi",
+  "data": "dgHLodohgmzD9gXhkW+WBdcxo3d0FTUghwui6DiIpARWxfE6AohwTYNctYR8jk//fxHQdgKj3AoopryUh48yhLcju8p+gMQX4ufjX4TzS33pAOyVqjg0q94trWSt/FBunRvJhfsKYKSy6wg4oDG83PYTBl5q8sAhD84EflmEbua9dTMcp4nnfczR0MhkF4QxFz5pMYzvjoybIqwSVRGJZXb7v6oVAJkXuIiSu4sVPyH7fDWByyZyKy0bPPvuFCFVJfM0aVV9",
+  "feedback_repository": "barasch/observatory-private",
+  "feedback_branch": "main"
+}
