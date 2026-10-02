@@ -1,5 +1,6 @@
 import {PUBLIC_REPO,GitHub,encryptCredential,decryptCredential,newPassphrase,emptyFeedback,validateFeedback} from './feedback-core.js';
 const $ = selector => document.querySelector(selector);
+const PRIVATE_REPO = 'barasch/observatory-private';
 const tiles = [...document.querySelectorAll('[data-tile]')];
 const homes = new Map(tiles.map(tile=>[tile.dataset.tile,tile.parentNode]));
 let session = null, feedback=emptyFeedback(), busy=false;
@@ -90,6 +91,7 @@ for(const tile of tiles) {
 }
 function showView(name) {
   for(const view of dialog.querySelectorAll('[data-account-view]')) view.hidden=view.dataset.accountView!==name;
+  $('#account-title').textContent={unlock:'Unlock private feedback',setup:'Setup or replace access token',preferences:'Preferences'}[name];
   accountStatus('');
 }
 async function openAccount() {
@@ -98,7 +100,7 @@ async function openAccount() {
   try {
     const file=await new GitHub().read(PUBLIC_REPO,'feedback-auth.json',true);
     showView(file?'unlock':'setup');
-    if(!file) {$('#setup-passphrase').value=newPassphrase();$('#setup-repository').focus();}
+    if(!file) {$('#setup-passphrase').value=newPassphrase();$('#setup-token').focus();}
     else $('#unlock-passphrase').focus();
   } catch(error) {accountStatus(error.message);}
   finally {setBusy(false);}
@@ -128,7 +130,7 @@ $('#setup-form').addEventListener('submit',async event=>{
   event.preventDefault();if(busy)return;setBusy(true);accountStatus('Checking repository access…');
   try {
     const api=new GitHub($('#setup-token').value.trim());
-    const repo=$('#setup-repository').value.trim();
+    const repo=PRIVATE_REPO;
     const metadata=await api.assertPrivate(repo);
     if(metadata.default_branch!=='main')throw new Error('Initialize the private repository with a README on a main branch.');
     const publicMetadata=await api.request(PUBLIC_REPO);
