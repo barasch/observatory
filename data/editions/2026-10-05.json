@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-05",
+  "prepared_at": "2026-10-05T08:28:06-04:00",
+  "coverage_note": "Nine items are included. Several candidate primary documents could not be opened reliably, so the edition is shorter than usual.",
+  "items": [
+    {
+      "id": "ca5-frankfort-metropolis-25-11168",
+      "category": "law",
+      "title": "Fifth Circuit narrows a debt-collection exclusion in a camera-based parking-fee case",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "published": "2026-10-02",
+      "geography": "United States · Fifth Circuit",
+      "summary": "Drivers challenged collection notices sent after cameras recorded unpaid parking sessions. The Fifth Circuit held that the Fair Debt Collection Practices Act's exclusion for originators of debts applies only when a person is collecting a debt owed to another; the district court had treated origination alone as sufficient. The court nevertheless affirmed dismissal of the federal claim on alternative grounds. The opinion makes the statutory distinction concrete in a business that both operates parking facilities and pursues unpaid charges.",
+      "source_type": "Published appellate opinion",
+      "source_url": "https://www.ca5.uscourts.gov/opinions/",
+      "document_url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-11168-CV0.pdf",
+      "tags": [
+        "debt collection",
+        "parking",
+        "statutory interpretation"
+      ]
+    },
+    {
+      "id": "cafc-pioneer-inari-25-1287",
+      "category": "law",
+      "title": "Federal Circuit rejects an expansive herbicide-enzyme patent claim for lack of enablement",
+      "publisher": "U.S. Court of Appeals for the Federal Circuit",
+      "published": "2026-10-02",
+      "geography": "United States · Federal Circuit",
+      "summary": "The court affirmed cancellation of claims covering a vast genus of enzymes intended to protect crops against two herbicide classes. The patent gave two working examples, while only two of eight later-tested variants displayed the claimed dual function, and weakly. The court held that experiments performed after the patent's priority date could illuminate whether the original disclosure enabled its full claimed scope; this differs from using later-developed technology to impose an impossible disclosure duty on an inventor.",
+      "source_type": "Nonprecedential appellate opinion",
+      "source_url": "https://www.cafc.uscourts.gov/home/case-information/opinions-orders/",
+      "document_url": "https://www.cafc.uscourts.gov/opinions-orders/25-1287.OPINION.10-2-2026_2765310.pdf",
+      "tags": [
+        "patents",
+        "enablement",
+        "biotechnology"
+      ]
+    },
+    {
+      "id": "ca5-phillips-ethicon-25-50116",
+      "category": "law",
+      "title": "Failure to give presuit warranty notice ends surgical-stapler litigation",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit",
+      "published": "2026-10-02",
+      "geography": "United States · Fifth Circuit",
+      "summary": "A family alleged that a surgical stapler failed during an operation, contributing to a patient's death. The Fifth Circuit affirmed dismissal of two related product-liability suits without deciding whether the device was defective. Under the Texas implied-warranty claim pursued against the named seller, notice of breach had to precede litigation; the plaintiffs acknowledged they had not provided it. The earlier dismissal with prejudice also constrained the later suit, illustrating how a procedural prerequisite can determine a case with grave underlying allegations.",
+      "source_type": "Published appellate opinion",
+      "source_url": "https://www.ca5.uscourts.gov/opinions/",
+      "document_url": "https://www.ca5.uscourts.gov/opinions/pub/25/25-50308-CV0.pdf",
+      "tags": [
+        "product liability",
+        "warranty",
+        "civil procedure"
+      ]
+    },
+    {
+      "id": "fincen-a7-subagents-2026-20371",
+      "category": "economy",
+      "title": "Treasury proposes blocking fund transfers involving A7's foreign subagents",
+      "publisher": "Financial Crimes Enforcement Network",
+      "published": "2026-10-05",
+      "geography": "United States · international",
+      "summary": "The Financial Crimes Enforcement Network found that transactions involving foreign companies controlled by the A7 Network present a primary money-laundering concern linked to Russian illicit finance. It proposes barring certain fund transfers by covered U.S. financial institutions involving that class of transactions. The notice describes A7 as a sanctions-evasion service used by multiple actors, including sanctioned Russian and Iranian persons. This is a proposed measure and agency finding, not an adjudication that every transaction through a subagent is illicit.",
+      "source_type": "Proposed rule and agency finding",
+      "source_url": "https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-special-measure-prohibiting-the-transmittal-of-funds-regarding-transactions-involving",
+      "document_url": "https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-special-measure-prohibiting-the-transmittal-of-funds-regarding-transactions-involving",
+      "tags": [
+        "financial regulation",
+        "sanctions",
+        "money laundering"
+      ]
+    },
+    {
+      "id": "gao-fly-america-state-27-108631",
+      "category": "economy",
+      "title": "GAO estimates the Fly America Act adds $0.7–$1.5 million to State's annual travel costs",
+      "publisher": "U.S. Government Accountability Office",
+      "published": "2026-10-01",
+      "geography": "United States · international",
+      "summary": "GAO compared compliant and noncompliant international itineraries and estimates the U.S.-carrier requirement raises the State Department's annual travel costs by $0.7 million to $1.5 million, roughly one to two percent of its fiscal 2025 air-travel spending. It found a measurable cost increase in five percent of ticket pairs, no effect in twelve percent, and uncertainty for the remainder because airline pricing could respond. Officials also described difficulty booking compliant flights during urgent departures. The estimate is a modeled counterfactual, not recorded excess spending.",
+      "source_type": "GAO report",
+      "source_url": "https://www.gao.gov/products/gao-27-108631",
+      "document_url": "https://www.gao.gov/products/gao-27-108631",
+      "tags": [
+        "procurement",
+        "air travel",
+        "cost estimates"
+      ]
+    },
+    {
+      "id": "acf-child-welfare-reporting-2026-20329",
+      "category": "government",
+      "title": "Child-welfare agency proposes removing obsolete reporting rules while retaining four requirements",
+      "publisher": "Administration for Children and Families",
+      "published": "2026-10-05",
+      "geography": "United States · federal",
+      "summary": "The Administration for Children and Families proposes deleting title IV-B child-welfare regulations it describes as obsolete, duplicative, or burdensome, and moving four requirements into the rules governing federal plan approval. States and tribes still submit five-year Child and Family Services Plans and annual progress reports under federal law. The proposal also removes unenforceable review principles and redundant cross-references; the agency says it would add no new requirements. Comments are due November 4, making this a live choice about oversight detail and administrative burden.",
+      "source_type": "Proposed rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/10/05/2026-20329/reforming-federal-reporting-and-assessments-in-child-welfare",
+      "document_url": "https://www.federalregister.gov/documents/2026/10/05/2026-20329/reforming-federal-reporting-and-assessments-in-child-welfare",
+      "tags": [
+        "child welfare",
+        "federalism",
+        "reporting"
+      ]
+    },
+    {
+      "id": "gao-usich-staff-27-108779",
+      "category": "government",
+      "title": "GAO finds returned homelessness-agency staff await direction on statutory duties",
+      "publisher": "U.S. Government Accountability Office",
+      "published": "2026-10-02",
+      "geography": "United States · federal",
+      "summary": "After eleven of thirteen U.S. Interagency Council on Homelessness employees were placed on paid leave in 2025, a district court set aside the agency's implementation of a downsizing order; the government appealed. GAO reports that eight returned in February 2026. As of May, staff said they lacked direction from the Council or executive director about policy priorities needed to carry out statutory duties. The report distinguishes employees' formal return from the agency's practical capacity to coordinate federal homelessness policy.",
+      "source_type": "GAO report",
+      "source_url": "https://files.gao.gov/reports/GAO-27-108779/index.html",
+      "document_url": "https://files.gao.gov/reports/GAO-27-108779/index.html",
+      "tags": [
+        "homelessness",
+        "administrative law",
+        "federal workforce"
+      ]
+    },
+    {
+      "id": "gsa-utilities-gsar-2026-20317",
+      "category": "government",
+      "title": "GSA proposes centralizing federal utility purchasing guidance",
+      "publisher": "General Services Administration",
+      "published": "2026-10-05",
+      "geography": "United States · federal",
+      "summary": "The General Services Administration proposes moving utility-purchasing procedures from the Federal Acquisition Regulation into its own acquisition supplement as part of a wider rewrite. Agencies would contact GSA before purchasing utility services, allowing it to guide procurement and encourage use of governmentwide areawide contracts; agencies with specified special authorities remain outside this guidance. GSA predicts lower administrative costs but supplies qualitative rather than quantified savings. The rule shows how shifting the location of procurement rules can also shift practical control of purchasing decisions.",
+      "source_type": "Proposed rule",
+      "source_url": "https://www.federalregister.gov/documents/2026/10/05/2026-20317/general-services-administration-acquisition-regulation-gsar-implementation-of-executive-order-14275",
+      "document_url": "https://www.federalregister.gov/documents/2026/10/05/2026-20317/general-services-administration-acquisition-regulation-gsar-implementation-of-executive-order-14275",
+      "tags": [
+        "procurement",
+        "utilities",
+        "administrative regulation"
+      ]
+    },
+    {
+      "id": "arxiv-stanceeval-2610-03215",
+      "category": "science",
+      "title": "Arabic stance-detection benchmark yields higher scores on ostensibly harder unseen targets",
+      "publisher": "Albalawi et al. · arXiv",
+      "published": "2026-10-02",
+      "geography": "International",
+      "summary": "The StanceEval 2026 preprint reports an Arabic social-media challenge asking systems to classify a post's position toward a target as favorable, opposed, or neither. Top submissions substantially exceeded the stated baselines in two transfer tracks. Strikingly, reported scores were higher on unseen targets than on a thematically related target, although the authors caution that polarization, class imbalance, dialect, and sarcasm may help explain the result. It is an evaluation report, not proof that cross-domain generalization is inherently easier.",
+      "source_type": "Preprint and benchmark report",
+      "source_url": "https://arxiv.org/abs/2610.03215",
+      "document_url": "https://arxiv.org/abs/2610.03215",
+      "tags": [
+        "machine learning",
+        "language",
+        "evaluation"
+      ]
+    }
+  ]
+}
