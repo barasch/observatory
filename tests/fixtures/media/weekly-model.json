@@ -1,0 +1,210 @@
+{
+  "document_type": "media-weekly-model",
+  "schema_version": 1,
+  "week": "2026-W42",
+  "previous_model_week": null,
+  "generated_at": "2026-10-12T08:05:00Z",
+  "effective_at": "2026-10-12T08:00:00Z",
+  "timezone": "America/New_York",
+  "inference_window": {
+    "start_at": "2026-07-20T04:00:00Z",
+    "end_at": "2026-10-12T04:00:00Z",
+    "completed_weeks": 12,
+    "half_life_weeks": 4
+  },
+  "model": {
+    "algorithm": "non-negative-matrix-factorization",
+    "implementation_version": "synthetic-fixture-v1",
+    "code_version": "0000000",
+    "factor_count": 2,
+    "random_seed": 42,
+    "continuity_threshold": 0.65
+  },
+  "counts": {
+    "observer_count": 6,
+    "story_count": 3,
+    "observation_count": 11
+  },
+  "coverage": {
+    "included_media": [
+      "website",
+      "youtube"
+    ],
+    "excluded_media": [
+      "x",
+      "tiktok",
+      "instagram"
+    ],
+    "attempted_observer_count": 6,
+    "successful_observer_count": 6,
+    "material_limitations": [
+      "Synthetic fixture only; no empirical model."
+    ]
+  },
+  "previous_week_active_observer_ids": [
+    "observer-atlas",
+    "observer-beacon",
+    "observer-cedar",
+    "observer-delta",
+    "observer-echo"
+  ],
+  "memberships": [
+    {
+      "observer_id": "observer-atlas",
+      "weights": {
+        "lineage-0001": 0.9,
+        "lineage-0002": 0.09999999999999998
+      }
+    },
+    {
+      "observer_id": "observer-beacon",
+      "weights": {
+        "lineage-0001": 0.8,
+        "lineage-0002": 0.19999999999999996
+      }
+    },
+    {
+      "observer_id": "observer-cedar",
+      "weights": {
+        "lineage-0001": 0.7,
+        "lineage-0002": 0.30000000000000004
+      }
+    },
+    {
+      "observer_id": "observer-delta",
+      "weights": {
+        "lineage-0001": 0.3,
+        "lineage-0002": 0.7
+      }
+    },
+    {
+      "observer_id": "observer-echo",
+      "weights": {
+        "lineage-0001": 0.2,
+        "lineage-0002": 0.8
+      }
+    },
+    {
+      "observer_id": "observer-foxtrot",
+      "weights": {
+        "lineage-0001": 0.1,
+        "lineage-0002": 0.9
+      }
+    }
+  ],
+  "networks": [
+    {
+      "lineage_id": "lineage-0001",
+      "version_id": "lineage-0001@2026-W42",
+      "label": "Network A",
+      "factor_index": 0,
+      "effective_membership": 4.326923076923078,
+      "continuity": {
+        "relationship": "birth",
+        "primary_predecessor_version_id": null,
+        "cosine_similarity": null
+      },
+      "participants": [
+        {
+          "observer_id": "observer-atlas",
+          "network_share": 0.31034482758620685,
+          "observer_affinity": 0.9
+        },
+        {
+          "observer_id": "observer-beacon",
+          "network_share": 0.27586206896551724,
+          "observer_affinity": 0.8
+        },
+        {
+          "observer_id": "observer-cedar",
+          "network_share": 0.24137931034482754,
+          "observer_affinity": 0.7
+        },
+        {
+          "observer_id": "observer-delta",
+          "network_share": 0.10344827586206895,
+          "observer_affinity": 0.3
+        },
+        {
+          "observer_id": "observer-echo",
+          "network_share": 0.06896551724137931,
+          "observer_affinity": 0.2
+        }
+      ]
+    },
+    {
+      "lineage_id": "lineage-0002",
+      "version_id": "lineage-0002@2026-W42",
+      "label": "Network B",
+      "factor_index": 1,
+      "effective_membership": 4.326923076923076,
+      "continuity": {
+        "relationship": "birth",
+        "primary_predecessor_version_id": null,
+        "cosine_similarity": null
+      },
+      "participants": [
+        {
+          "observer_id": "observer-echo",
+          "network_share": 0.38095238095238104,
+          "observer_affinity": 0.8
+        },
+        {
+          "observer_id": "observer-delta",
+          "network_share": 0.33333333333333337,
+          "observer_affinity": 0.7
+        },
+        {
+          "observer_id": "observer-cedar",
+          "network_share": 0.1428571428571429,
+          "observer_affinity": 0.30000000000000004
+        },
+        {
+          "observer_id": "observer-beacon",
+          "network_share": 0.09523809523809523,
+          "observer_affinity": 0.19999999999999996
+        },
+        {
+          "observer_id": "observer-atlas",
+          "network_share": 0.047619047619047616,
+          "observer_affinity": 0.09999999999999998
+        }
+      ]
+    }
+  ],
+  "lineage_events": [
+    {
+      "id": "event-birth-1",
+      "type": "birth",
+      "from_version_ids": [],
+      "to_version_ids": [
+        "lineage-0001@2026-W42"
+      ],
+      "links": []
+    },
+    {
+      "id": "event-birth-2",
+      "type": "birth",
+      "from_version_ids": [],
+      "to_version_ids": [
+        "lineage-0002@2026-W42"
+      ],
+      "links": []
+    }
+  ],
+  "diagnostics": {
+    "held_out_reconstruction_error": 0.4,
+    "held_out_fraction": 0.2,
+    "bootstrap_stability": 0.8,
+    "bootstrap_runs": 20,
+    "observer_sensitivity": 0.1,
+    "brand_family_sensitivity": 0.15,
+    "network_story_overlap": [
+      {
+        "left_lineage_id": "lineage-0001",
+        "right_lineage_id": "lineage-0002",
+        "similarity": 0.3
+      }
+    ]
+  }
+}

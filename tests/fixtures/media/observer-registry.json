@@ -1,0 +1,145 @@
+{
+  "document_type": "media-observer-registry",
+  "schema_version": 1,
+  "updated_at": "2026-10-12T08:05:00Z",
+  "brand_families": [
+    {
+      "id": "brand-atlas",
+      "display_name": "Synthetic atlas family"
+    },
+    {
+      "id": "brand-cedar",
+      "display_name": "Synthetic cedar family"
+    },
+    {
+      "id": "brand-delta",
+      "display_name": "Synthetic delta family"
+    },
+    {
+      "id": "brand-echo",
+      "display_name": "Synthetic echo family"
+    },
+    {
+      "id": "brand-foxtrot",
+      "display_name": "Synthetic foxtrot family"
+    }
+  ],
+  "observers": [
+    {
+      "id": "observer-atlas",
+      "display_name": "Synthetic atlas",
+      "brand_family_id": "brand-atlas",
+      "panel_status": "active",
+      "status_since": "2026-07-20",
+      "independence_basis": "Synthetic independent editorial product, not a real source.",
+      "channels": [
+        {
+          "id": "channel-atlas",
+          "medium": "website",
+          "collection_method": "rss",
+          "endpoint_url": "https://atlas.example/feed",
+          "public_url": "https://atlas.example/",
+          "enabled": true
+        },
+        {
+          "id": "channel-atlas-video",
+          "medium": "youtube",
+          "collection_method": "atom",
+          "endpoint_url": "https://atlas.example/video-feed",
+          "public_url": "https://atlas.example/videos",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-beacon",
+      "display_name": "Synthetic beacon",
+      "brand_family_id": "brand-atlas",
+      "panel_status": "active",
+      "status_since": "2026-07-20",
+      "independence_basis": "Separate editorial desk; shares ownership with Atlas. Counts as the same family for breadth.",
+      "channels": [
+        {
+          "id": "channel-beacon",
+          "medium": "website",
+          "collection_method": "rss",
+          "endpoint_url": "https://beacon.example/feed",
+          "public_url": "https://beacon.example/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-cedar",
+      "display_name": "Synthetic cedar",
+      "brand_family_id": "brand-cedar",
+      "panel_status": "active",
+      "status_since": "2026-07-20",
+      "independence_basis": "Synthetic independent editorial product, not a real source.",
+      "channels": [
+        {
+          "id": "channel-cedar",
+          "medium": "website",
+          "collection_method": "rss",
+          "endpoint_url": "https://cedar.example/feed",
+          "public_url": "https://cedar.example/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-delta",
+      "display_name": "Synthetic delta",
+      "brand_family_id": "brand-delta",
+      "panel_status": "active",
+      "status_since": "2026-07-20",
+      "independence_basis": "Synthetic independent editorial product, not a real source.",
+      "channels": [
+        {
+          "id": "channel-delta",
+          "medium": "website",
+          "collection_method": "rss",
+          "endpoint_url": "https://delta.example/feed",
+          "public_url": "https://delta.example/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-echo",
+      "display_name": "Synthetic echo",
+      "brand_family_id": "brand-echo",
+      "panel_status": "active",
+      "status_since": "2026-07-20",
+      "independence_basis": "Synthetic independent editorial product, not a real source.",
+      "channels": [
+        {
+          "id": "channel-echo",
+          "medium": "website",
+          "collection_method": "rss",
+          "endpoint_url": "https://echo.example/feed",
+          "public_url": "https://echo.example/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-foxtrot",
+      "display_name": "Synthetic foxtrot",
+      "brand_family_id": "brand-foxtrot",
+      "panel_status": "active",
+      "status_since": "2026-07-20",
+      "independence_basis": "Synthetic independent editorial product, not a real source.",
+      "channels": [
+        {
+          "id": "channel-foxtrot",
+          "medium": "website",
+          "collection_method": "rss",
+          "endpoint_url": "https://foxtrot.example/feed",
+          "public_url": "https://foxtrot.example/",
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}

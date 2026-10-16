@@ -1,0 +1,264 @@
+{
+  "document_type": "media-current-snapshot",
+  "schema_version": 1,
+  "scheduled_for": "2026-10-14T16:00:00Z",
+  "generated_at": "2026-10-14T16:05:00Z",
+  "timezone": "America/New_York",
+  "window": {
+    "start_at": "2026-10-13T16:00:00Z",
+    "end_at": "2026-10-14T16:00:00Z"
+  },
+  "weekly_model_week": "2026-W42",
+  "coverage": {
+    "included_media": [
+      "website",
+      "youtube"
+    ],
+    "material_limitations": [
+      "Synthetic fixture. Foxtrot retrieval failed; exclude it from the scoring denominator."
+    ],
+    "attempted_observer_ids": [
+      "observer-atlas",
+      "observer-beacon",
+      "observer-cedar",
+      "observer-delta",
+      "observer-echo",
+      "observer-foxtrot"
+    ],
+    "successful_observer_ids": [
+      "observer-atlas",
+      "observer-beacon",
+      "observer-cedar",
+      "observer-delta",
+      "observer-echo"
+    ]
+  },
+  "networks": [
+    {
+      "lineage_id": "lineage-0001",
+      "version_id": "lineage-0001@2026-W42",
+      "label": "Network A",
+      "effective_membership": 4.326923076923078,
+      "continuity_similarity": null,
+      "participants": [
+        {
+          "observer_id": "observer-atlas",
+          "network_share": 0.31034482758620685,
+          "observer_affinity": 0.9
+        },
+        {
+          "observer_id": "observer-beacon",
+          "network_share": 0.27586206896551724,
+          "observer_affinity": 0.8
+        },
+        {
+          "observer_id": "observer-cedar",
+          "network_share": 0.24137931034482754,
+          "observer_affinity": 0.7
+        }
+      ],
+      "stories": [
+        {
+          "story_id": "story-universal",
+          "title": "Synthetic universal event",
+          "canonical_url": "https://evidence.example/universal",
+          "weighted_attention": 0.9073394198945528,
+          "panel_attention": 0.9014938370486101,
+          "over_index": 1.0064843292385453,
+          "independent_observer_count": 5,
+          "independent_brand_family_count": 4,
+          "latest_observed_at": "2026-10-14T15:00:00Z",
+          "evidence_observation_ids": [
+            "observation-universal-atlas",
+            "observation-universal-beacon",
+            "observation-universal-cedar",
+            "observation-universal-delta",
+            "observation-universal-echo",
+            "observation-universal-atlas-mirror"
+          ],
+          "representative_links": [
+            {
+              "observation_id": "observation-universal-cedar",
+              "observer_id": "observer-cedar",
+              "label": "Synthetic cedar",
+              "url": "https://cedar.example/universal",
+              "medium": "website",
+              "attention_at": "2026-10-14T14:00:00Z"
+            },
+            {
+              "observation_id": "observation-universal-delta",
+              "observer_id": "observer-delta",
+              "label": "Synthetic delta",
+              "url": "https://delta.example/universal",
+              "medium": "website",
+              "attention_at": "2026-10-14T14:00:00Z"
+            },
+            {
+              "observation_id": "observation-universal-echo",
+              "observer_id": "observer-echo",
+              "label": "Synthetic echo",
+              "url": "https://echo.example/universal",
+              "medium": "website",
+              "attention_at": "2026-10-14T14:00:00Z"
+            }
+          ]
+        },
+        {
+          "story_id": "story-secondary",
+          "title": "Synthetic secondary event",
+          "canonical_url": "https://evidence.example/secondary",
+          "weighted_attention": 0.32842780385548953,
+          "panel_attention": 0.4762203155904599,
+          "over_index": 0.6896551724137929,
+          "independent_observer_count": 3,
+          "independent_brand_family_count": 3,
+          "latest_observed_at": "2026-10-14T12:00:00Z",
+          "evidence_observation_ids": [
+            "observation-secondary-cedar",
+            "observation-secondary-delta",
+            "observation-secondary-echo"
+          ],
+          "representative_links": [
+            {
+              "observation_id": "observation-secondary-cedar",
+              "observer_id": "observer-cedar",
+              "label": "Synthetic cedar",
+              "url": "https://cedar.example/secondary",
+              "medium": "website",
+              "attention_at": "2026-10-14T12:00:00Z"
+            },
+            {
+              "observation_id": "observation-secondary-delta",
+              "observer_id": "observer-delta",
+              "label": "Synthetic delta",
+              "url": "https://delta.example/secondary",
+              "medium": "website",
+              "attention_at": "2026-10-14T12:00:00Z"
+            },
+            {
+              "observation_id": "observation-secondary-echo",
+              "observer_id": "observer-echo",
+              "label": "Synthetic echo",
+              "url": "https://echo.example/secondary",
+              "medium": "website",
+              "attention_at": "2026-10-14T12:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lineage_id": "lineage-0002",
+      "version_id": "lineage-0002@2026-W42",
+      "label": "Network B",
+      "effective_membership": 4.326923076923076,
+      "continuity_similarity": null,
+      "participants": [
+        {
+          "observer_id": "observer-echo",
+          "network_share": 0.38095238095238104,
+          "observer_affinity": 0.8
+        },
+        {
+          "observer_id": "observer-delta",
+          "network_share": 0.33333333333333337,
+          "observer_affinity": 0.7
+        },
+        {
+          "observer_id": "observer-cedar",
+          "network_share": 0.1428571428571429,
+          "observer_affinity": 0.30000000000000004
+        }
+      ],
+      "stories": [
+        {
+          "story_id": "story-universal",
+          "title": "Synthetic universal event",
+          "canonical_url": "https://evidence.example/universal",
+          "weighted_attention": 0.8934213654994515,
+          "panel_attention": 0.9014938370486101,
+          "over_index": 0.9910454500991521,
+          "independent_observer_count": 5,
+          "independent_brand_family_count": 4,
+          "latest_observed_at": "2026-10-14T15:00:00Z",
+          "evidence_observation_ids": [
+            "observation-universal-atlas",
+            "observation-universal-beacon",
+            "observation-universal-cedar",
+            "observation-universal-delta",
+            "observation-universal-echo",
+            "observation-universal-atlas-mirror"
+          ],
+          "representative_links": [
+            {
+              "observation_id": "observation-universal-cedar",
+              "observer_id": "observer-cedar",
+              "label": "Synthetic cedar",
+              "url": "https://cedar.example/universal",
+              "medium": "website",
+              "attention_at": "2026-10-14T14:00:00Z"
+            },
+            {
+              "observation_id": "observation-universal-delta",
+              "observer_id": "observer-delta",
+              "label": "Synthetic delta",
+              "url": "https://delta.example/universal",
+              "medium": "website",
+              "attention_at": "2026-10-14T14:00:00Z"
+            },
+            {
+              "observation_id": "observation-universal-echo",
+              "observer_id": "observer-echo",
+              "label": "Synthetic echo",
+              "url": "https://echo.example/universal",
+              "medium": "website",
+              "attention_at": "2026-10-14T14:00:00Z"
+            }
+          ]
+        },
+        {
+          "story_id": "story-secondary",
+          "title": "Synthetic secondary event",
+          "canonical_url": "https://evidence.example/secondary",
+          "weighted_attention": 0.6803147365578001,
+          "panel_attention": 0.4762203155904599,
+          "over_index": 1.428571428571429,
+          "independent_observer_count": 3,
+          "independent_brand_family_count": 3,
+          "latest_observed_at": "2026-10-14T12:00:00Z",
+          "evidence_observation_ids": [
+            "observation-secondary-cedar",
+            "observation-secondary-delta",
+            "observation-secondary-echo"
+          ],
+          "representative_links": [
+            {
+              "observation_id": "observation-secondary-cedar",
+              "observer_id": "observer-cedar",
+              "label": "Synthetic cedar",
+              "url": "https://cedar.example/secondary",
+              "medium": "website",
+              "attention_at": "2026-10-14T12:00:00Z"
+            },
+            {
+              "observation_id": "observation-secondary-delta",
+              "observer_id": "observer-delta",
+              "label": "Synthetic delta",
+              "url": "https://delta.example/secondary",
+              "medium": "website",
+              "attention_at": "2026-10-14T12:00:00Z"
+            },
+            {
+              "observation_id": "observation-secondary-echo",
+              "observer_id": "observer-echo",
+              "label": "Synthetic echo",
+              "url": "https://echo.example/secondary",
+              "medium": "website",
+              "attention_at": "2026-10-14T12:00:00Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

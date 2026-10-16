@@ -7,6 +7,8 @@ A public daily selection of primary sources, with private feedback for its owner
 - [One-time setup and exact scheduled-task instructions](docs/SCHEDULED_TASK.md)
 - [Daily editorial procedure](docs/DAILY_EDITOR.md)
 - [Public edition schema](docs/EDITION_FORMAT.md)
+- [Media-attention method contract](docs/MEDIA_NETWORKS.md)
+- [Media-attention data contract](docs/NETWORK_FORMAT.md)
 
 ## Build and verify
 

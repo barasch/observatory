@@ -1,0 +1,180 @@
+{
+  "document_type": "media-observation-manifest",
+  "schema_version": 1,
+  "week": "2026-W42",
+  "generated_at": "2026-10-14T16:05:00Z",
+  "observations": [
+    {
+      "id": "observation-universal-atlas",
+      "observer_id": "observer-atlas",
+      "channel_id": "channel-atlas",
+      "medium": "website",
+      "normalized_title": "synthetic universal event discussion",
+      "url": "https://atlas.example/universal",
+      "attention_at": "2026-10-14T14:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-universal",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-universal-beacon",
+      "observer_id": "observer-beacon",
+      "channel_id": "channel-beacon",
+      "medium": "website",
+      "normalized_title": "synthetic universal event discussion",
+      "url": "https://beacon.example/universal",
+      "attention_at": "2026-10-14T14:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-universal",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-universal-cedar",
+      "observer_id": "observer-cedar",
+      "channel_id": "channel-cedar",
+      "medium": "website",
+      "normalized_title": "synthetic universal event discussion",
+      "url": "https://cedar.example/universal",
+      "attention_at": "2026-10-14T14:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-universal",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-universal-delta",
+      "observer_id": "observer-delta",
+      "channel_id": "channel-delta",
+      "medium": "website",
+      "normalized_title": "synthetic universal event discussion",
+      "url": "https://delta.example/universal",
+      "attention_at": "2026-10-14T14:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-universal",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-universal-echo",
+      "observer_id": "observer-echo",
+      "channel_id": "channel-echo",
+      "medium": "website",
+      "normalized_title": "synthetic universal event discussion",
+      "url": "https://echo.example/universal",
+      "attention_at": "2026-10-14T14:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-universal",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-universal-atlas-mirror",
+      "observer_id": "observer-atlas",
+      "channel_id": "channel-atlas-video",
+      "medium": "youtube",
+      "normalized_title": "synthetic universal event discussion",
+      "url": "https://atlas.example/universal-mirror",
+      "attention_at": "2026-10-14T15:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-universal",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-secondary-cedar",
+      "observer_id": "observer-cedar",
+      "channel_id": "channel-cedar",
+      "medium": "website",
+      "normalized_title": "synthetic secondary event discussion",
+      "url": "https://cedar.example/secondary",
+      "attention_at": "2026-10-14T12:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-secondary",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-secondary-delta",
+      "observer_id": "observer-delta",
+      "channel_id": "channel-delta",
+      "medium": "website",
+      "normalized_title": "synthetic secondary event discussion",
+      "url": "https://delta.example/secondary",
+      "attention_at": "2026-10-14T12:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-secondary",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-secondary-echo",
+      "observer_id": "observer-echo",
+      "channel_id": "channel-echo",
+      "medium": "website",
+      "normalized_title": "synthetic secondary event discussion",
+      "url": "https://echo.example/secondary",
+      "attention_at": "2026-10-14T12:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-secondary",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-family-only-atlas",
+      "observer_id": "observer-atlas",
+      "channel_id": "channel-atlas",
+      "medium": "website",
+      "normalized_title": "synthetic family-only event discussion",
+      "url": "https://atlas.example/family-only",
+      "attention_at": "2026-10-14T13:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-family-only",
+      "cluster_confidence": 0.99
+    },
+    {
+      "id": "observation-family-only-beacon",
+      "observer_id": "observer-beacon",
+      "channel_id": "channel-beacon",
+      "medium": "website",
+      "normalized_title": "synthetic family-only event discussion",
+      "url": "https://beacon.example/family-only",
+      "attention_at": "2026-10-14T13:00:00Z",
+      "timestamp_basis": "published",
+      "story_id": "story-family-only",
+      "cluster_confidence": 0.99
+    }
+  ],
+  "stories": [
+    {
+      "id": "story-universal",
+      "canonical_title": "Synthetic universal event",
+      "canonical_url": "https://evidence.example/universal",
+      "first_attention_at": "2026-10-14T14:00:00Z",
+      "last_attention_at": "2026-10-14T15:00:00Z",
+      "observation_ids": [
+        "observation-universal-atlas",
+        "observation-universal-beacon",
+        "observation-universal-cedar",
+        "observation-universal-delta",
+        "observation-universal-echo",
+        "observation-universal-atlas-mirror"
+      ]
+    },
+    {
+      "id": "story-secondary",
+      "canonical_title": "Synthetic secondary event",
+      "canonical_url": "https://evidence.example/secondary",
+      "first_attention_at": "2026-10-14T12:00:00Z",
+      "last_attention_at": "2026-10-14T12:00:00Z",
+      "observation_ids": [
+        "observation-secondary-cedar",
+        "observation-secondary-delta",
+        "observation-secondary-echo"
+      ]
+    },
+    {
+      "id": "story-family-only",
+      "canonical_title": "Synthetic family-only event",
+      "canonical_url": "https://evidence.example/family-only",
+      "first_attention_at": "2026-10-14T13:00:00Z",
+      "last_attention_at": "2026-10-14T13:00:00Z",
+      "observation_ids": [
+        "observation-family-only-atlas",
+        "observation-family-only-beacon"
+      ]
+    }
+  ]
+}
