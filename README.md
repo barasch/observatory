@@ -1,11 +1,12 @@
 # Observatory
 
-A public daily selection of primary sources, with private feedback for its owner.
+A public weekly selection of primary sources, with private feedback for its owner.
 
 - Site: https://barasch.github.io/observatory/
 - [Method](METHOD.md)
-- [One-time setup and exact scheduled-task instructions](docs/SCHEDULED_TASK.md)
-- [Daily editorial procedure](docs/DAILY_EDITOR.md)
+- [Scheduled-task instructions](docs/SCHEDULED_TASK.md)
+- [Weekly editorial procedure](docs/WEEKLY_EDITOR.md)
+- [Weekly operations and helper contracts](docs/WEEKLY_OPERATIONS.md)
 - [Public edition schema](docs/EDITION_FORMAT.md)
 - [Media-attention method contract](docs/MEDIA_NETWORKS.md)
 - [Media-attention data contract](docs/NETWORK_FORMAT.md)
@@ -23,7 +24,7 @@ npm test
 
 `site/` is generated and ignored. GitHub Actions builds and deploys commits to main. A scheduled ChatGPT task supplies validated `data/editions/YYYY-MM-DD.json` files; GitHub Actions no longer runs a competing feed collector. `scripts/collect.py` and the historical data remain available for reference, but do not author current editions.
 
-The scheduled task has a countable daily work ceiling rather than a fictional time-to-token conversion: one agent, at most 10 search queries and 60 total retrieval actions, no more than 22 primary documents or 30,000 retrieved source words, at most 15 published tiles, and one validation repair. The final report states the counts. ChatGPT Scheduled does not offer a mechanically enforced all-in token quota; that would require an API runner with usage metering.
+The weekly task uses four separately metered stages. It can collect up to 1,000 compact records, screen metadata for all of them, assess at most 50 works through bounded passages, verify at most 25, and publish 15–20 tiles. Retrieval allowances total 268 actions across registry, search, metadata, assessment, verification, and publication checks; failures and redirects count. Source text is capped separately for assessment and verification. The final report states the actual counts and coverage failures. These controls do not claim to meter hidden model tokens, which ChatGPT Scheduled does not expose.
 
 Private feedback requires a separate private repository. Never commit `feedback.json`, `preferences.json`, or `profile.json` here. `feedback-auth.json`, created by the site setup form, contains only an encrypted credential and the private repository reference. A build allowlist validates this envelope before it can be served.
 

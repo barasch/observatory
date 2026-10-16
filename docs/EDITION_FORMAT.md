@@ -1,37 +1,37 @@
-# Public edition contract, version 1
+# Edition data format
 
-Commit a UTF-8 JSON file to `data/editions/YYYY-MM-DD.json`. The filename date, `date`, and preparation date in America/New_York must match. The daily research starts at 02:00; `prepared_at` records actual completion, not the intended start time. One edition per day. Existing editions are not automatically overwritten.
+Public edition files are UTF-8 JSON at `data/editions/YYYY-MM-DD.json`. Historical schema-1 daily files remain valid. New weekly files use schema 2 and the preparation date in New York as filename and `date`.
 
-Top-level allowed fields: `schema_version`, `date`, `prepared_at`, `items`, optional `coverage_note`. `items` contains 1–15 entries, normally fifteen. The strict allowlist rejects additional fields. `coverage_note` is limited to 100 words.
-
-Each entry requires:
-
-| Field | Meaning |
-| --- | --- |
-| `id` | Stable lowercase letters/digits/hyphens, 3–101 characters. Identify the primary document, not its appearance date; preserve the id if it reappears. |
-| `category` | `law`, `economy`, `government`, or `science`. |
-| `title` | Descriptive plain-text headline. |
-| `publisher` | Issuing institution or authors/institution where appropriate. |
-| `published` | Verified publication date, YYYY-MM-DD. No invented dates. |
-| `geography` | Short geographic label. |
-| `summary` | Plain text, target 60–90 words; validator accepts 30–120. |
-| `source_type` | E.g. Court opinion, Statistical release, Working paper, Corporate filing. |
-| `source_url` | HTTPS publisher page that describes or links to the original. |
-| `document_url` | HTTPS primary document or original HTML/data page. Can equal source_url. |
-| `tags` | 1–8 short factual subject labels. Never preference labels. |
-| `detail` | Optional plain text visible when expanded; no more than 120 words. |
-| `preview_url` | Optional HTTPS image of an actual document page or source figure. |
-
-`coverage_note` is optional, public, factual text about a material gap or limited edition. No private personalization rationale, ranks, feedback counts, inferred interests, profile data, or credentials belong anywhere in an edition.
-
-Validate before committing:
-
-```sh
-python scripts/editions.py data/editions/YYYY-MM-DD.json
-python scripts/build.py --check
-python -m unittest discover -s tests -v
-npm ci
-npm test
+```json
+{
+  "schema_version": 2,
+  "date": "2026-10-18",
+  "prepared_at": "2026-10-18T06:12:00Z",
+  "window": {"start": "2026-10-05", "end": "2026-10-18"},
+  "coverage_note": "Optional public note under 100 words.",
+  "items": []
+}
 ```
 
-For connected-tool publication, read the current file first to guard against duplicate creation; create it via GitHub Contents or make an ordinary fast-forward commit. Do not force-push. Do not modify any other public file during a scheduled editorial run. The build starts when the commit reaches main. Verify its result.
+`window.start` is inclusive and `window.end` exclusive. Both are complete New York calendar dates; end cannot follow the edition date. Weekly windows cannot overlap. An edition contains 1–20 items; the editorial target is 15–20. Fewer than 15 requires a completed search and an editorial shortage under the private publication gate.
+
+Each item contains exactly:
+
+- required: `id`, `category`, `title`, `publisher`, `published`, `geography`, `summary`, `source_url`, `document_url`, `source_type`, `tags`;
+- optional: `detail`, `preview_url`, `revision_of`.
+
+`category` is `law`, `economy`, `government`, or `science`. `published` must be the first public release date within the window, except for a substantive revision. Summaries are 30–120 words with a 60–90 target; detail is at most 120 words; tags contain 1–8 factual labels. URLs must be credential-free HTTPS. Document URLs cannot duplicate another item. Unknown fields are rejected because public data must never carry private selection material.
+
+A substantive revision of a currently upvoted original adds:
+
+```json
+"revision_of": {
+  "item_id": "stable-original-item-id",
+  "edition_date": "2026-09-30",
+  "changes": "A concise public account of what materially changed."
+}
+```
+
+The original item must exist in the named earlier edition. Changes contain 1–60 words. The new item's `published` is the revision release date. Cosmetic corrections are ineligible. The private publication gate verifies the current original upvote, the first-release exception, source inspection, and the exact weekly window.
+
+Run `python scripts/editions.py data/editions/YYYY-MM-DD.json` for structural validation. Editorial runs must additionally use `scripts/weekly.py` and its private verification records before any write. A structurally valid file is not proof that the primary material was inspected or that publication succeeded.
