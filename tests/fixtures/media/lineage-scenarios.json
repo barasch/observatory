@@ -1,0 +1,418 @@
+{
+  "document_type": "media-lineage-scenarios",
+  "schema_version": 1,
+  "observer_ids": [
+    "observer-atlas",
+    "observer-beacon",
+    "observer-cedar",
+    "observer-delta"
+  ],
+  "scenarios": [
+    {
+      "name": "factor-permutation",
+      "threshold": 0.65,
+      "previous": [
+        {
+          "version_id": "lineage-0001@2026-W41",
+          "lineage_id": "lineage-0001",
+          "label": "Network A",
+          "weights": {
+            "observer-atlas": 0.5,
+            "observer-beacon": 0.5,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        },
+        {
+          "version_id": "lineage-0002@2026-W41",
+          "lineage_id": "lineage-0002",
+          "label": "Network B",
+          "weights": {
+            "observer-atlas": 0,
+            "observer-beacon": 0,
+            "observer-cedar": 0.5,
+            "observer-delta": 0.5
+          }
+        }
+      ],
+      "current": [
+        {
+          "factor_id": "factor-first",
+          "weights": {
+            "observer-atlas": 0,
+            "observer-beacon": 0,
+            "observer-cedar": 0.5,
+            "observer-delta": 0.5
+          }
+        },
+        {
+          "factor_id": "factor-second",
+          "weights": {
+            "observer-atlas": 0.5,
+            "observer-beacon": 0.5,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        }
+      ],
+      "expected": {
+        "assignments": [
+          {
+            "factor_id": "factor-first",
+            "lineage_id": "lineage-0002",
+            "label": "Network B",
+            "relationship": "continuation",
+            "primary_predecessor_version_id": "lineage-0002@2026-W41"
+          },
+          {
+            "factor_id": "factor-second",
+            "lineage_id": "lineage-0001",
+            "label": "Network A",
+            "relationship": "continuation",
+            "primary_predecessor_version_id": "lineage-0001@2026-W41"
+          }
+        ],
+        "events": [
+          {
+            "type": "continuation",
+            "from_version_ids": [
+              "lineage-0002@2026-W41"
+            ],
+            "to_factor_ids": [
+              "factor-first"
+            ]
+          },
+          {
+            "type": "continuation",
+            "from_version_ids": [
+              "lineage-0001@2026-W41"
+            ],
+            "to_factor_ids": [
+              "factor-second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "gradual-drift",
+      "threshold": 0.65,
+      "previous": [
+        {
+          "version_id": "lineage-0001@2026-W41",
+          "lineage_id": "lineage-0001",
+          "label": "Network A",
+          "weights": {
+            "observer-atlas": 0.5,
+            "observer-beacon": 0.5,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        },
+        {
+          "version_id": "lineage-0002@2026-W41",
+          "lineage_id": "lineage-0002",
+          "label": "Network B",
+          "weights": {
+            "observer-atlas": 0,
+            "observer-beacon": 0,
+            "observer-cedar": 0.5,
+            "observer-delta": 0.5
+          }
+        }
+      ],
+      "current": [
+        {
+          "factor_id": "factor-first",
+          "weights": {
+            "observer-atlas": 0.45,
+            "observer-beacon": 0.45,
+            "observer-cedar": 0.05,
+            "observer-delta": 0.05
+          }
+        },
+        {
+          "factor_id": "factor-second",
+          "weights": {
+            "observer-atlas": 0.05,
+            "observer-beacon": 0.05,
+            "observer-cedar": 0.45,
+            "observer-delta": 0.45
+          }
+        }
+      ],
+      "expected": {
+        "assignments": [
+          {
+            "factor_id": "factor-first",
+            "lineage_id": "lineage-0001",
+            "label": "Network A",
+            "relationship": "continuation",
+            "primary_predecessor_version_id": "lineage-0001@2026-W41"
+          },
+          {
+            "factor_id": "factor-second",
+            "lineage_id": "lineage-0002",
+            "label": "Network B",
+            "relationship": "continuation",
+            "primary_predecessor_version_id": "lineage-0002@2026-W41"
+          }
+        ],
+        "events": [
+          {
+            "type": "continuation",
+            "from_version_ids": [
+              "lineage-0001@2026-W41"
+            ],
+            "to_factor_ids": [
+              "factor-first"
+            ]
+          },
+          {
+            "type": "continuation",
+            "from_version_ids": [
+              "lineage-0002@2026-W41"
+            ],
+            "to_factor_ids": [
+              "factor-second"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "birth-and-retirement",
+      "threshold": 0.65,
+      "previous": [
+        {
+          "version_id": "lineage-0001@2026-W41",
+          "lineage_id": "lineage-0001",
+          "label": "Network A",
+          "weights": {
+            "observer-atlas": 0.5,
+            "observer-beacon": 0.5,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        }
+      ],
+      "current": [
+        {
+          "factor_id": "factor-new",
+          "weights": {
+            "observer-atlas": 0,
+            "observer-beacon": 0,
+            "observer-cedar": 0.5,
+            "observer-delta": 0.5
+          }
+        }
+      ],
+      "expected": {
+        "assignments": [
+          {
+            "factor_id": "factor-new",
+            "lineage_id": "lineage-0002",
+            "label": "Network B",
+            "relationship": "birth",
+            "primary_predecessor_version_id": null
+          }
+        ],
+        "events": [
+          {
+            "type": "retirement",
+            "from_version_ids": [
+              "lineage-0001@2026-W41"
+            ],
+            "to_factor_ids": []
+          },
+          {
+            "type": "birth",
+            "from_version_ids": [],
+            "to_factor_ids": [
+              "factor-new"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "one-parent-two-children",
+      "threshold": 0.65,
+      "previous": [
+        {
+          "version_id": "lineage-0001@2026-W41",
+          "lineage_id": "lineage-0001",
+          "label": "Network A",
+          "weights": {
+            "observer-atlas": 0.5,
+            "observer-beacon": 0.5,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        }
+      ],
+      "current": [
+        {
+          "factor_id": "factor-main",
+          "weights": {
+            "observer-atlas": 0.4,
+            "observer-beacon": 0.6,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        },
+        {
+          "factor_id": "factor-child",
+          "weights": {
+            "observer-atlas": 0.9,
+            "observer-beacon": 0.1,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        }
+      ],
+      "expected": {
+        "assignments": [
+          {
+            "factor_id": "factor-main",
+            "lineage_id": "lineage-0001",
+            "label": "Network A",
+            "relationship": "split",
+            "primary_predecessor_version_id": "lineage-0001@2026-W41"
+          },
+          {
+            "factor_id": "factor-child",
+            "lineage_id": "lineage-0002",
+            "label": "Network B",
+            "relationship": "split",
+            "primary_predecessor_version_id": "lineage-0001@2026-W41"
+          }
+        ],
+        "events": [
+          {
+            "type": "split",
+            "from_version_ids": [
+              "lineage-0001@2026-W41"
+            ],
+            "to_factor_ids": [
+              "factor-main",
+              "factor-child"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "two-parents-one-child",
+      "threshold": 0.65,
+      "previous": [
+        {
+          "version_id": "lineage-0001@2026-W41",
+          "lineage_id": "lineage-0001",
+          "label": "Network A",
+          "weights": {
+            "observer-atlas": 0.5,
+            "observer-beacon": 0.5,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        },
+        {
+          "version_id": "lineage-0002@2026-W41",
+          "lineage_id": "lineage-0002",
+          "label": "Network B",
+          "weights": {
+            "observer-atlas": 0,
+            "observer-beacon": 0,
+            "observer-cedar": 0.5,
+            "observer-delta": 0.5
+          }
+        }
+      ],
+      "current": [
+        {
+          "factor_id": "factor-merged",
+          "weights": {
+            "observer-atlas": 0.26,
+            "observer-beacon": 0.26,
+            "observer-cedar": 0.24,
+            "observer-delta": 0.24
+          }
+        }
+      ],
+      "expected": {
+        "assignments": [
+          {
+            "factor_id": "factor-merged",
+            "lineage_id": "lineage-0001",
+            "label": "Network A",
+            "relationship": "merger",
+            "primary_predecessor_version_id": "lineage-0001@2026-W41"
+          }
+        ],
+        "events": [
+          {
+            "type": "merger",
+            "from_version_ids": [
+              "lineage-0001@2026-W41",
+              "lineage-0002@2026-W41"
+            ],
+            "to_factor_ids": [
+              "factor-merged"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "uncertain-continuity",
+      "threshold": 0.65,
+      "previous": [
+        {
+          "version_id": "lineage-0001@2026-W41",
+          "lineage_id": "lineage-0001",
+          "label": "Network A",
+          "weights": {
+            "observer-atlas": 0.5,
+            "observer-beacon": 0.5,
+            "observer-cedar": 0,
+            "observer-delta": 0
+          }
+        }
+      ],
+      "current": [
+        {
+          "factor_id": "factor-weak",
+          "weights": {
+            "observer-atlas": 0.1,
+            "observer-beacon": 0.1,
+            "observer-cedar": 0.4,
+            "observer-delta": 0.4
+          }
+        }
+      ],
+      "expected": {
+        "assignments": [
+          {
+            "factor_id": "factor-weak",
+            "lineage_id": "lineage-0002",
+            "label": "Network B",
+            "relationship": "uncertain",
+            "primary_predecessor_version_id": "lineage-0001@2026-W41"
+          }
+        ],
+        "events": [
+          {
+            "type": "uncertain",
+            "from_version_ids": [
+              "lineage-0001@2026-W41"
+            ],
+            "to_factor_ids": [
+              "factor-weak"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
