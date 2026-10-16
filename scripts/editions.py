@@ -12,10 +12,10 @@ from zoneinfo import ZoneInfo
 
 CATEGORIES = {'law': 'Courts & Law', 'economy': 'Economy & Finance',
               'government': 'Government & Public Services', 'science': 'Science & Research'}
-EDITION_KEYS = {'schema_version', 'date', 'prepared_at', 'items', 'coverage_note'}
+EDITION_KEYS = {'schema_version', 'date', 'prepared_at', 'items', 'coverage_note', 'window'}
 ITEM_KEYS = {'id', 'category', 'title', 'publisher', 'published', 'geography', 'summary',
-             'detail', 'source_url', 'document_url', 'source_type', 'tags', 'preview_url'}
-REQUIRED = ITEM_KEYS - {'detail', 'preview_url'}
+             'detail', 'source_url', 'document_url', 'source_type', 'tags', 'preview_url', 'revision_of'}
+REQUIRED = ITEM_KEYS - {'detail', 'preview_url', 'revision_of'}
 ROOT = Path(__file__).resolve().parents[1]
 
 def esc(value):
@@ -28,8 +28,9 @@ def https_url(value):
 def validate_edition(edition):
     if not isinstance(edition, dict) or set(edition) - EDITION_KEYS:
         raise ValueError('Edition has unknown fields. Private selection notes must never be published.')
-    if edition.get('schema_version') != 1:
-        raise ValueError('schema_version must be 1')
+    if edition.get('schema_version') not in (1, 2):
+        raise ValueError('schema_version must be 1 or 2')
+    weekly = edition['schema_version'] == 2
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', edition.get('date', '')):
         raise ValueError('date must be YYYY-MM-DD')
     date.fromisoformat(edition['date'])
@@ -38,8 +39,17 @@ def validate_edition(edition):
         raise ValueError('prepared_at must include a timezone')
     if prepared.astimezone(ZoneInfo('America/New_York')).date().isoformat() != edition['date']:
         raise ValueError('Edition date must be its preparation date in New York')
-    if not isinstance(edition.get('items'), list) or not 1 <= len(edition['items']) <= 15:
-        raise ValueError('An edition needs 1–15 verified items; aim for 15 without padding')
+    if weekly:
+        window = edition.get('window')
+        if not isinstance(window, dict) or set(window) != {'start', 'end'}:
+            raise ValueError('Weekly edition requires window start/end dates')
+        start, end = date.fromisoformat(window['start']), date.fromisoformat(window['end'])
+        if not start < end <= date.fromisoformat(edition['date']):
+            raise ValueError('Window must precede preparation, start inclusive/end exclusive')
+    elif 'window' in edition:
+        raise ValueError('Historical daily editions cannot specify a weekly window')
+    if not isinstance(edition.get('items'), list) or not 1 <= len(edition['items']) <= (20 if weekly else 15):
+        raise ValueError('Edition exceeds its item limit')
     seen_ids, seen_urls = set(), set()
     for item in edition['items']:
         if not isinstance(item, dict) or set(item) - ITEM_KEYS or not REQUIRED <= set(item):
@@ -59,6 +69,18 @@ def validate_edition(edition):
         if not 30 <= len(item['summary'].split()) <= 120:
             raise ValueError('Summary must be 30–120 words (target 60–90)')
         published = date.fromisoformat(item['published'])
+        if weekly and not start <= published < end:
+            raise ValueError('Release date is outside the weekly window')
+        if 'revision_of' in item:
+            rev = item['revision_of']
+            if not weekly or not isinstance(rev, dict) or set(rev) != {'item_id', 'edition_date', 'changes'}:
+                raise ValueError('Revision requires item_id, edition_date and changes')
+            if not re.fullmatch(r'[a-z0-9][a-z0-9-]{2,100}', rev['item_id']) or rev['item_id'] == item['id']:
+                raise ValueError('Revision needs a distinct original item id')
+            if date.fromisoformat(rev['edition_date']) >= date.fromisoformat(edition['date']):
+                raise ValueError('Original edition must precede this edition')
+            if not isinstance(rev['changes'], str) or not 1 <= len(rev['changes'].split()) <= 60:
+                raise ValueError('State substantive revision changes in 1–60 words')
         if published > date.fromisoformat(edition['date']):
             raise ValueError('Publication date cannot be after the edition date')
         for field in ('source_url', 'document_url'):
@@ -88,6 +110,18 @@ def load_editions():
         if path.stem != edition['date']:
             raise ValueError(f'{path.name}: filename must match edition date')
         editions.append(edition)
+    known = {e['date']: {i['id'] for i in e['items']} for e in editions}
+    windows = []
+    for e in editions:
+        if e.get('window'):
+            w = e['window']
+            if any(w['start'] < end and start < w['end'] for start, end in windows):
+                raise ValueError('Weekly publication windows overlap')
+            windows.append((w['start'], w['end']))
+        for item in e['items']:
+            rev = item.get('revision_of')
+            if rev and rev['item_id'] not in known.get(rev['edition_date'], set()):
+                raise ValueError('Revision refers to an unknown original item')
     return editions
 
 
@@ -123,7 +157,10 @@ def tile(item):
     # Static text is escaped. Feedback metadata uses a JSON text node, never HTML.
     meta = json.dumps({k: item[k] for k in ('id','category','title','publisher','document_url','source_type','tags')}, ensure_ascii=True).replace('<', '\\u003c')
     detail = f'<p>{esc(item["detail"])}</p>' if item.get('detail') else ''
-    return f'''<article class="source-tile" data-tile="{ident}" data-category="{esc(item['category'])}">
+    if item.get('revision_of'):
+        rev = item['revision_of']
+        detail += f'<p>Revision of <a href="https://barasch.github.io/observatory/editions/{esc(rev["edition_date"])}/#item-{esc(rev["item_id"])}">earlier publication</a>: {esc(rev["changes"])}</p>'
+    return f'''<article class="source-tile" id="item-{ident}" data-tile="{ident}" data-category="{esc(item['category'])}">
       <script type="application/json" class="item-metadata">{meta}</script>
       {preview}
       <div class="tile-body">
@@ -149,10 +186,14 @@ def render(edition):
         heading = date.fromisoformat(edition['date']).strftime('%A, %B %-d, %Y')
         stamp = datetime.fromisoformat(edition['prepared_at'].replace('Z', '+00:00')).astimezone(ZoneInfo('America/New_York')).strftime('%-I:%M %p %Z')
         intro = f'<time datetime="{esc(edition["date"])}">{esc(heading)}</time><p class="edition-caption">{len(edition["items"])} primary sources · Prepared {esc(stamp)}</p>'
+        if edition.get('window'):
+            window = edition['window']
+            last = date.fromisoformat(window['end']) - timedelta(days=1)
+            intro += f'<p class="edition-window">Coverage: {esc(window["start"])} – {esc(last.isoformat())} · New York dates</p>'
         if edition.get('coverage_note'):
             intro += f'<p class="coverage-note">{esc(edition["coverage_note"])}</p>'
     else:
-        intro = '<p class="edition-caption">The first curated edition has not been published yet.</p><p class="coverage-note">Daily editions will appear here after the scheduled task is connected. <a href="archive/collected.html">Browse earlier collected records</a>.</p>'
+        intro = '<p class="edition-caption">The first curated edition has not been published yet.</p><p class="coverage-note">Weekly editions will appear here after the pilot is approved. <a href="archive/collected.html">Browse earlier collected records</a>.</p>'
     sections = []
     for key, label in CATEGORIES.items():
         items = [item for item in (edition or {}).get('items', []) if item['category'] == key]
@@ -173,11 +214,13 @@ def overwrite_site(site, page):
     latest = editions[0] if editions else None
     if (site / 'archive/index.html').exists():
         shutil.copy2(site / 'archive/index.html', site / 'archive/collected.html')
-    page('index.html', 'Observatory', 'A daily selection of primary sources.', render(latest), 'home')
+    page('index.html', 'Observatory', 'A weekly selection of primary sources.', render(latest), 'home')
     archive_links = ''.join(f'<li><a href="../editions/{e["date"]}/">{esc(e["date"])}</a><span>{len(e["items"])} sources</span></li>' for e in retained)
-    page('archive/index.html', 'Archive', 'Daily editions from the past 30 days.', f'<article class="edition-heading"><h1>Archive</h1><p>Daily editions from the past 30 days.</p><ul class="edition-archive">{archive_links}</ul><p><a href="collected.html">Earlier collected records</a></p></article>', 'archive')
-    for edition in retained:
-        page(f'editions/{edition["date"]}/index.html', edition['date'], 'A daily selection of primary sources.', render(edition), 'archive')
+    page('archive/index.html', 'Archive', 'Editions from the past 30 days.', f'<article class="edition-heading"><h1>Archive</h1><p>Editions from the past 30 days.</p><ul class="edition-archive">{archive_links}</ul><p><a href="collected.html">Earlier collected records</a></p></article>', 'archive')
+    linked = {i['revision_of']['edition_date'] for e in retained for i in e['items'] if i.get('revision_of')}
+    pages = [e for e in editions if e in retained or e is latest or e['date'] in linked]
+    for edition in pages:
+        page(f'editions/{edition["date"]}/index.html', edition['date'], 'A weekly selection of primary sources.', render(edition), 'archive')
     for filename in ('feedback-core.js', 'edition.js', 'edition.css'):
         shutil.copy2(ROOT / 'site_src' / filename, site / 'assets' / filename)
     # Explicit allowlist: never copy configuration directories or feedback files.
@@ -195,7 +238,7 @@ def overwrite_site(site, page):
     for edition in retained:
         for item in edition['items']:
             entries.append(f'<item><guid isPermaLink="false">{esc(item["id"])}</guid><title>{esc(item["title"])}</title><link>{esc(item["document_url"])}</link><description>{esc(item["summary"])}</description></item>')
-    (site / 'feed.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Observatory</title><link>https://barasch.github.io/observatory/</link><description>Daily primary sources</description>'+''.join(entries)+'</channel></rss>')
+    (site / 'feed.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Observatory</title><link>https://barasch.github.io/observatory/</link><description>Weekly primary sources</description>'+''.join(entries)+'</channel></rss>')
     return sum(len(e['items']) for e in retained)
 
 if __name__ == '__main__':

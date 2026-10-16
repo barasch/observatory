@@ -1,48 +1,21 @@
-# Observatory scheduled task
+# Weekly scheduled task
 
-Run daily at **02:00 America/New_York**. This is the start of research; publication follows completion. Use the named timezone, not a fixed UTC offset. If the scheduler skips the nonexistent 02:00 at the spring daylight-saving transition, run that day's edition manually at 03:00. Do not add a second daily job that could produce duplicate editions.
+Keep the existing task paused until pilot review and explicit activation. Target schedule: Sundays at 02:00 America/New_York. The spring-transition 03:00 fallback requires verified scheduler support before activation. Model and reasoning selection remain user-interface settings; no exact total-token limit is asserted.
 
-The site is a static publication. The scheduled ChatGPT task performs the research, selection, and writing. GitHub Actions validates and publishes its committed edition. No OpenAI API key or custom skill is required for this design. The old 05:17 feed-collection schedule is retired. Select **GPT-5.6 Sol** with **low reasoning effort** if the Scheduled interface offers those controls.
-
-Scheduled does not expose a hard token quota. A number such as “30,000 tokens” in the prompt would be an unverifiable request, not an enforcement mechanism. The task therefore uses the auditable ceiling in `docs/DAILY_EDITOR.md`: one agent, 10 search queries, 60 total retrieval actions, no more than 22 primary documents and 20 discovery pages, no more than 30,000 source words, at most 15 tiles, and one repair attempt. Reaching any ceiling ends research. A genuinely hard all-in token ceiling would require an API runner that meters usage, not a ChatGPT Scheduled task.
-
-## Prerequisites
-
-1. Create **barasch/observatory-private**, set visibility to **Private**, initialize with a README, and use the `main` branch.
-2. Give ChatGPT's connected GitHub app access to both `barasch/observatory` and `barasch/observatory-private`.
-3. At the Observatory, select **Unlock → Setup**. Supply a fine-grained GitHub token scoped to those two repositories with **Contents: Read and write**. Save the generated passphrase and finish setup. Never paste this token or passphrase into a task prompt.
-4. Verify the connected GitHub tool can read `barasch/observatory-private/feedback.json` before activating the schedule. A public repository or an inaccessible private repository is not a valid substitute.
-
-The task uses ChatGPT's GitHub connection, not the browser's encrypted credential. The passphrase unlocks voting in the browser and is not needed by the task. The public `feedback-auth.json` contains encrypted credential material plus the private repository's name. Votes, explanations, preferences, and inferred interests are never committed to the public repository.
-
-## Text to enter in Scheduled
-
-**Title:** Publish Observatory edition
-
-**Schedule:** Every day at 2:00 a.m., timezone America/New_York.
-
-**Instructions:**
+## Instructions
 
 ```text
-Research, compose, and publish the next daily edition of my Observatory at https://barasch.github.io/observatory/.
+Prepare and, only when activation is recorded in private editorial/state.json, publish the next weekly Observatory edition at https://barasch.github.io/observatory/.
 
-Use the connected GitHub app. First read docs/DAILY_EDITOR.md and docs/EDITION_FORMAT.md from the main branch of barasch/observatory, and follow their current instructions. Read the public feedback-auth.json only to resolve feedback_repository and feedback_branch; never try to decrypt it. Verify the referenced feedback repository is private. Read its feedback.json and, if present, preferences.json and profile.json. If private storage is not configured, is public, or cannot be read, stop and report the setup problem; never silently proceed without available feedback or copy private state into a public location.
+Use the connected GitHub app. Read docs/WEEKLY_EDITOR.md, docs/WEEKLY_OPERATIONS.md and docs/EDITION_FORMAT.md on barasch/observatory main. They define the canonical procedure. Verify barasch/observatory-private is private before reading feedback.json, preferences.json, optional profile.json, discovery/registry.json and editorial/state.json. Stop if privacy or access fails. Check public feedback-auth.json matches the private repository and main branch without decrypting it. Never publish private state or personalized rationales.
 
-The Hard work budget in docs/DAILY_EDITOR.md is mandatory. Use one agent. Maintain its action counts as you work, stop discovery when any ceiling is reached, and report the final counts. Do not replace those ceilings with a time estimate or an asserted token estimate.
+Acquire the private conditional per-window lease, reconcile any interrupted run, and use the previous successfully published coverage end through the current Sunday midnight in New York. Preserve the window and cumulative counters across retries. Detect existing editions and commits before writing. Keep the first-release rule and substantive revisions of upvoted originals.
 
-Search newly published government/public data, reports, court opinions and filings, original academic research, corporate filings, and original reports from nongovernmental organizations. Use news to discover primary documents, and select only entries with an accessible underlying source you actually inspected. Target 15 worthwhile items without padding. Give equal editorial weight to consequential developments, usefulness to my research and writing, and surprising findings. Keep the four stable categories roughly balanced over 30 days. US federal and New York are the geographic emphasis, with selected international material.
+Use one editorial agent, no subagents or deep research. Collect compact metadata through the registry and independent searches, at most 1,000 records and 50 screening words each. Screen without opening documents; assess at most 50 works through bounded passages; verify at most 25 finalists or reserves and select 15–20 tiles. Do not penalize unsurprising results. Give innovation a slight advantage and evaluate evidence and consequence concretely, without publisher quotas or authority proxies.
 
-Use my chat interests lightly for an initial seed when relevant personal context is available. Keep any seed or inferred preference profile exclusively in the private repository. Explicit votes and explanations increasingly outweigh the seed. Use current, reversible votes, not a cumulative count of superseded votes. Ignore dismissals, restores, clicks, and non-engagement when learning preferences. Always include some exploration when worthwhile material is available; repeated negative feedback never becomes an absolute ban. Interest is not agreement with a source's conclusion. Do not personalize toward a presumed ideology.
+Mandatory retrieval ceilings: 40 registry; 32 search queries; 16 extra metadata; 100 assessment; 60 final verification; 20 reserved checks, total 268. Charge failed actions, each query in a batch, helper subrequests and visible redirects. Reserve actions before execution using scripts/weekly.py. Assessment text at most 600 words per work and 30,000 total; final reading at most 1,500 additional words per work and 30,000 total. Never shift budgets between stages. Actual source text exposed counts. Save private checkpoints after each stage. No time-to-token estimates and no asserted hard total-token guarantee.
 
-Read the compact public editorial index once to avoid repetition and assess thirty-day category balance; do not reread all full editions. Write descriptive titles and approximately 60–90 words per item explaining the substantive finding and its potential interest. Distinguish allegations, estimates, findings, and legal holdings. Include publication dates, institution, geography, primary-document and publisher-page URLs. Public summaries must stand alone and must not mention my chats, votes, personal history, or private preferences. Use genuine document previews only if available; otherwise omit previews.
+Use current reversible feedback only, ignoring dismissals, restores, clicks and silence. Add narrow originating streams after upvotes with private provenance and validated routes; independent discovery may add provisional streams. Keep exploration possible. Preserve feedback.json and preferences.json unchanged.
 
-Produce a public edition conforming to docs/EDITION_FORMAT.md, using the current date in America/New_York. Validate it with scripts/editions.py and the site build/tests where execution is available. Commit only the validated edition to data/editions/YYYY-MM-DD.json on barasch/observatory main, using an ordinary fast-forward update or the GitHub contents API. This recurring publication is authorized. Do not modify site code, workflows, authentication files, or existing feedback as part of an editorial run. Do not create a duplicate edition if one already exists for that local date.
-
-Update profile.json only in the private repository if useful, keeping inferences narrow, tentative, and traceable to current explicit feedback; never overwrite preferences.json or feedback.json. Verify the publication workflow and the live edition where tools permit. Report the edition URL and any material retrieval or publishing failure accurately. If a source fails, continue with other sources; if publishing fails, leave the last successful public edition intact. Never claim publication from a commit alone.
+Produce schema-2 edition data, validate once with at most one repair, semantically check privacy, and commit only the new validated data/editions/YYYY-MM-DD.json. Pilot or activation=false means save privately and never publish. Technical shortfalls hold the draft. For live publication, verify exact-commit deployment and the live window and item identifiers, reporting committed, deployed and live-verified states accurately. Retain the previous edition on failure. Finish with counts and material failures, without private selection explanations.
 ```
-
-## Operational checks
-
-A normal run should (1) read private feedback, (2) inspect the compact public editorial index, (3) search and inspect primary documents within the hard budget, (4) compose and validate one edition, (5) commit only that edition, and (6) check deployment. Inspect the first few runs in Scheduled. Successful scheduling alone does not prove these later steps work.
-
-If authoring a task through a tool, use an exact daily schedule with `DTSTART;TZID=America/New_York` and `RRULE:FREQ=DAILY;BYHOUR=2;BYMINUTE=0;BYSECOND=0`. Verify both repositories through the connector first. Keep the scheduled prompt durable; never depend on this checkout or a transient local directory surviving.
