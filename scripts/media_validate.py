@@ -2,9 +2,9 @@
 """Strict contracts for the Observatory media-attention data product.
 
 This module deliberately contains no collection, clustering, inference, scoring,
-or rendering logic.  It is the boundary between those later stages and public
-data.  Unknown fields are rejected so private notes, credentials, and accidental
-collector payloads cannot drift into published files.
+or rendering logic. It validates both private intermediate records and planned
+public data. Unknown fields are rejected so notes, credentials, and accidental
+collector payloads cannot drift across either boundary.
 """
 from __future__ import annotations
 
@@ -26,6 +26,9 @@ TOLERANCE = 1e-6
 
 DOCUMENT_TYPES = {
     "media-observer-registry",
+    "media-panel-candidate-reservoir",
+    "media-collection-batch",
+    "media-collection-health",
     "media-observation-manifest",
     "media-weekly-model",
     "media-current-snapshot",
@@ -43,7 +46,18 @@ MEDIA = {
     "instagram",
 }
 PANEL_STATUSES = {"candidate", "shadow", "active", "retired"}
+CANDIDATE_ROUTE_STATUSES = {"enabled-shadow", "disabled-candidate", "unverified"}
 TIMESTAMP_BASES = {"published", "first-seen"}
+COLLECTION_STATUSES = {
+    "ok",
+    "empty",
+    "disabled",
+    "http-error",
+    "network-error",
+    "parse-error",
+    "unsafe-redirect",
+    "unsupported-method",
+}
 LINEAGE_RELATIONSHIPS = {
     "birth",
     "continuation",
@@ -329,6 +343,98 @@ def validate_observer_registry(document: Any) -> dict[str, Any]:
     return document
 
 
+def validate_candidate_reservoir(
+    document: Any,
+    registry: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Validate the auditable, non-ideological source-research reservoir."""
+    document = _object(
+        document,
+        {
+            "document_type",
+            "schema_version",
+            "updated_at",
+            "target_range",
+            "selection_basis",
+            "inventory_sources",
+            "candidates",
+        },
+    )
+    _header(document, "media-panel-candidate-reservoir")
+    _timestamp(document["updated_at"], "document.updated_at")
+    target = _object(document["target_range"], {"minimum", "maximum"}, path="document.target_range")
+    minimum = _integer(target["minimum"], "document.target_range.minimum", minimum=1)
+    maximum = _integer(target["maximum"], "document.target_range.maximum", minimum=minimum)
+    if maximum < minimum:
+        _fail("document.target_range.maximum", "cannot be smaller than minimum")
+    basis = _array(document["selection_basis"], "document.selection_basis", minimum=1)
+    for index, value in enumerate(basis):
+        _text(value, f"document.selection_basis[{index}]", maximum=500)
+    _unique(basis, "document.selection_basis")
+
+    source_ids: set[str] = set()
+    for index, source in enumerate(_array(document["inventory_sources"], "document.inventory_sources", minimum=1)):
+        path = f"document.inventory_sources[{index}]"
+        source = _object(source, {"id", "display_name", "url", "retrieved_at"}, path=path)
+        source_id = _slug(source["id"], f"{path}.id")
+        if source_id in source_ids:
+            _fail(f"{path}.id", "duplicates another inventory source")
+        source_ids.add(source_id)
+        _text(source["display_name"], f"{path}.display_name", maximum=180)
+        _url(source["url"], f"{path}.url")
+        _date(source["retrieved_at"], f"{path}.retrieved_at")
+
+    registry_observers: dict[str, dict[str, Any]] = {}
+    if registry is not None:
+        validate_observer_registry(registry)
+        registry_observers = {observer["id"]: observer for observer in registry["observers"]}
+    candidate_ids: set[str] = set()
+    referenced_observers: set[str] = set()
+    candidates = _array(document["candidates"], "document.candidates", minimum=minimum, maximum=maximum)
+    for index, candidate in enumerate(candidates):
+        path = f"document.candidates[{index}]"
+        candidate = _object(
+            candidate,
+            {"id", "display_name", "primary_medium", "route_status", "inventory_source_ids"},
+            {"registry_observer_id"},
+            path,
+        )
+        candidate_id = _slug(candidate["id"], f"{path}.id")
+        if candidate_id in candidate_ids:
+            _fail(f"{path}.id", "duplicates another candidate")
+        candidate_ids.add(candidate_id)
+        _text(candidate["display_name"], f"{path}.display_name", maximum=180)
+        _enum(candidate["primary_medium"], MEDIA, f"{path}.primary_medium")
+        route_status = _enum(candidate["route_status"], CANDIDATE_ROUTE_STATUSES, f"{path}.route_status")
+        candidate_sources = _array(candidate["inventory_source_ids"], f"{path}.inventory_source_ids", minimum=1)
+        for source_index, source_id in enumerate(candidate_sources):
+            _slug(source_id, f"{path}.inventory_source_ids[{source_index}]")
+        _unique(candidate_sources, f"{path}.inventory_source_ids")
+        if not set(candidate_sources) <= source_ids:
+            _fail(f"{path}.inventory_source_ids", "contains an undeclared inventory source")
+        if route_status == "unverified":
+            if "registry_observer_id" in candidate:
+                _fail(f"{path}.registry_observer_id", "is not allowed for an unverified route")
+            continue
+        if "registry_observer_id" not in candidate:
+            _fail(path, "registered route status requires registry_observer_id")
+        observer_id = _slug(candidate["registry_observer_id"], f"{path}.registry_observer_id")
+        if observer_id in referenced_observers:
+            _fail(f"{path}.registry_observer_id", "duplicates another candidate's observer")
+        referenced_observers.add(observer_id)
+        if registry is not None:
+            if observer_id not in registry_observers:
+                _fail(f"{path}.registry_observer_id", "does not name a registered observer")
+            observer = registry_observers[observer_id]
+            enabled = any(channel["enabled"] for channel in observer["channels"])
+            expected = "enabled-shadow" if observer["panel_status"] == "shadow" and enabled else "disabled-candidate"
+            if route_status != expected:
+                _fail(f"{path}.route_status", f"must be {expected!r} for the registered observer")
+    if registry is not None and referenced_observers != set(registry_observers):
+        _fail("document.candidates", "must reference every and only registered observer exactly once")
+    return document
+
+
 def _registry_indexes(registry: dict[str, Any]) -> tuple[dict[str, dict[str, Any]], dict[str, tuple[str, dict[str, Any]]]]:
     observers = {observer["id"]: observer for observer in registry["observers"]}
     channels: dict[str, tuple[str, dict[str, Any]]] = {}
@@ -336,6 +442,384 @@ def _registry_indexes(registry: dict[str, Any]) -> tuple[dict[str, dict[str, Any
         for channel in observer["channels"]:
             channels[channel["id"]] = (observer["id"], channel)
     return observers, channels
+
+
+def validate_collection_batch(
+    document: Any,
+    registry: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Validate normalized pre-clustering metadata from one collection run."""
+    document = _object(
+        document,
+        {
+            "document_type",
+            "schema_version",
+            "run_id",
+            "registry_updated_at",
+            "started_at",
+            "completed_at",
+            "timezone",
+            "lookback_started_at",
+            "items",
+            "mirror_groups",
+        },
+    )
+    _header(document, "media-collection-batch")
+    _slug(document["run_id"], "document.run_id")
+    registry_updated_at = _timestamp(document["registry_updated_at"], "document.registry_updated_at")
+    started_at = _timestamp(document["started_at"], "document.started_at")
+    completed_at = _timestamp(document["completed_at"], "document.completed_at")
+    lookback_started_at = _timestamp(document["lookback_started_at"], "document.lookback_started_at")
+    if document["timezone"] != "America/New_York":
+        _fail("document.timezone", "must be America/New_York")
+    if not lookback_started_at <= started_at <= completed_at:
+        _fail("document", "lookback_started_at, started_at, and completed_at must be ordered")
+    if registry_updated_at > completed_at:
+        _fail("document.registry_updated_at", "cannot be later than collection completion")
+
+    observer_index: dict[str, dict[str, Any]] = {}
+    channel_index: dict[str, tuple[str, dict[str, Any]]] = {}
+    if registry is not None:
+        validate_observer_registry(registry)
+        observer_index, channel_index = _registry_indexes(registry)
+        if registry["updated_at"] != document["registry_updated_at"]:
+            _fail("document.registry_updated_at", "does not match the supplied registry")
+
+    item_ids: set[str] = set()
+    items: dict[str, dict[str, Any]] = {}
+    channel_external_ids: set[tuple[str, str]] = set()
+    item_times: dict[str, datetime] = {}
+    for index, item in enumerate(_array(document["items"], "document.items")):
+        path = f"document.items[{index}]"
+        item = _object(
+            item,
+            {
+                "id",
+                "observer_id",
+                "channel_id",
+                "medium",
+                "normalized_title",
+                "url",
+                "external_id",
+                "attention_at",
+                "timestamp_basis",
+                "collected_at",
+                "mirror_group_id",
+            },
+            path=path,
+        )
+        item_id = _slug(item["id"], f"{path}.id")
+        if item_id in item_ids:
+            _fail(f"{path}.id", "duplicates another collected item")
+        item_ids.add(item_id)
+        observer_id = _slug(item["observer_id"], f"{path}.observer_id")
+        channel_id = _slug(item["channel_id"], f"{path}.channel_id")
+        medium = _enum(item["medium"], MEDIA, f"{path}.medium")
+        _text(item["normalized_title"], f"{path}.normalized_title", maximum=300)
+        _url(item["url"], f"{path}.url")
+        external_id = _text(item["external_id"], f"{path}.external_id", maximum=2048)
+        attention_at = _timestamp(item["attention_at"], f"{path}.attention_at")
+        collected_at = _timestamp(item["collected_at"], f"{path}.collected_at")
+        _enum(item["timestamp_basis"], TIMESTAMP_BASES, f"{path}.timestamp_basis")
+        _slug(item["mirror_group_id"], f"{path}.mirror_group_id")
+        if not lookback_started_at <= attention_at <= completed_at + timedelta(days=1):
+            _fail(f"{path}.attention_at", "falls outside the run's retained time range")
+        if not started_at <= collected_at <= completed_at:
+            _fail(f"{path}.collected_at", "falls outside the collection run")
+        external_key = (channel_id, external_id)
+        if external_key in channel_external_ids:
+            _fail(path, "duplicates another channel/external_id pair")
+        channel_external_ids.add(external_key)
+        if registry is not None:
+            if observer_id not in observer_index:
+                _fail(f"{path}.observer_id", "does not name a registered observer")
+            if channel_id not in channel_index:
+                _fail(f"{path}.channel_id", "does not name a registered channel")
+            registered_observer, channel = channel_index[channel_id]
+            if registered_observer != observer_id:
+                _fail(f"{path}.channel_id", "belongs to a different observer")
+            if channel["medium"] != medium:
+                _fail(f"{path}.medium", "does not match the registered channel")
+            if not channel["enabled"]:
+                _fail(f"{path}.channel_id", "cannot collect from a disabled channel")
+        items[item_id] = item
+        item_times[item_id] = attention_at
+
+    group_ids: set[str] = set()
+    grouped_item_ids: set[str] = set()
+    for index, group in enumerate(_array(document["mirror_groups"], "document.mirror_groups")):
+        path = f"document.mirror_groups[{index}]"
+        group = _object(
+            group,
+            {"id", "observer_id", "canonical_item_id", "item_ids", "match_basis"},
+            path=path,
+        )
+        group_id = _slug(group["id"], f"{path}.id")
+        if group_id in group_ids:
+            _fail(f"{path}.id", "duplicates another mirror group")
+        group_ids.add(group_id)
+        observer_id = _slug(group["observer_id"], f"{path}.observer_id")
+        canonical_item_id = _slug(group["canonical_item_id"], f"{path}.canonical_item_id")
+        group_item_ids = _array(group["item_ids"], f"{path}.item_ids", minimum=1)
+        for item_index, item_id in enumerate(group_item_ids):
+            _slug(item_id, f"{path}.item_ids[{item_index}]")
+        _unique(group_item_ids, f"{path}.item_ids")
+        if canonical_item_id not in group_item_ids:
+            _fail(f"{path}.canonical_item_id", "must appear in item_ids")
+        if not set(group_item_ids) <= item_ids:
+            _fail(f"{path}.item_ids", "contains an unknown collected item")
+        if grouped_item_ids & set(group_item_ids):
+            _fail(f"{path}.item_ids", "an item may belong to only one mirror group")
+        grouped_item_ids.update(group_item_ids)
+        if any(items[item_id]["observer_id"] != observer_id for item_id in group_item_ids):
+            _fail(f"{path}.observer_id", "does not match every grouped item")
+        if any(items[item_id]["mirror_group_id"] != group_id for item_id in group_item_ids):
+            _fail(f"{path}.id", "does not match every item's mirror_group_id")
+        match_basis = _enum(group["match_basis"], {"singleton", "canonical-url", "exact-title"}, f"{path}.match_basis")
+        if len(group_item_ids) == 1 and match_basis != "singleton":
+            _fail(f"{path}.match_basis", "must be singleton for a one-item group")
+        if len(group_item_ids) > 1 and match_basis == "singleton":
+            _fail(f"{path}.match_basis", "cannot be singleton for a multi-item group")
+        canonical = items[canonical_item_id]
+        expected_canonical = min(
+            group_item_ids,
+            key=lambda item_id: (
+                item_times[item_id],
+                0 if items[item_id]["timestamp_basis"] == "published" else 1,
+                item_id,
+            ),
+        )
+        if canonical_item_id != expected_canonical:
+            _fail(f"{path}.canonical_item_id", "must be the earliest deterministic item")
+        if match_basis == "canonical-url" and len({items[item_id]["url"] for item_id in group_item_ids}) != 1:
+            _fail(f"{path}.match_basis", "canonical-url groups must share one URL")
+        if match_basis == "exact-title" and len({items[item_id]["normalized_title"].casefold() for item_id in group_item_ids}) != 1:
+            _fail(f"{path}.match_basis", "exact-title groups must share one normalized title")
+        if canonical["observer_id"] != observer_id:
+            _fail(f"{path}.canonical_item_id", "does not belong to the group's observer")
+    if grouped_item_ids != item_ids:
+        _fail("document.mirror_groups", "must partition every collected item exactly once")
+    return document
+
+
+def validate_collection_health(
+    document: Any,
+    registry: dict[str, Any] | None = None,
+    batch: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Validate channel availability and coverage accounting for one run."""
+    document = _object(
+        document,
+        {
+            "document_type",
+            "schema_version",
+            "run_id",
+            "registry_updated_at",
+            "started_at",
+            "completed_at",
+            "summary",
+            "channels",
+        },
+    )
+    _header(document, "media-collection-health")
+    _slug(document["run_id"], "document.run_id")
+    registry_updated_at = _timestamp(document["registry_updated_at"], "document.registry_updated_at")
+    started_at = _timestamp(document["started_at"], "document.started_at")
+    completed_at = _timestamp(document["completed_at"], "document.completed_at")
+    if started_at > completed_at:
+        _fail("document", "started_at cannot follow completed_at")
+    if registry_updated_at > completed_at:
+        _fail("document.registry_updated_at", "cannot be later than collection completion")
+
+    observer_index: dict[str, dict[str, Any]] = {}
+    channel_index: dict[str, tuple[str, dict[str, Any]]] = {}
+    if registry is not None:
+        validate_observer_registry(registry)
+        observer_index, channel_index = _registry_indexes(registry)
+        if registry["updated_at"] != document["registry_updated_at"]:
+            _fail("document.registry_updated_at", "does not match the supplied registry")
+
+    channel_ids: set[str] = set()
+    successful_channels: set[str] = set()
+    failed_channels: set[str] = set()
+    disabled_channels: set[str] = set()
+    attempted_media: set[str] = set()
+    successful_observers: set[str] = set()
+    attempted_observers: set[str] = set()
+    qualifying_by_channel: dict[str, int] = {}
+    for index, channel in enumerate(_array(document["channels"], "document.channels")):
+        path = f"document.channels[{index}]"
+        channel = _object(
+            channel,
+            {
+                "channel_id",
+                "observer_id",
+                "medium",
+                "status",
+                "attempted_at",
+                "completed_at",
+                "http_status",
+                "final_url",
+                "item_count",
+                "qualifying_item_count",
+                "newest_attention_at",
+                "error_code",
+            },
+            path=path,
+        )
+        channel_id = _slug(channel["channel_id"], f"{path}.channel_id")
+        if channel_id in channel_ids:
+            _fail(f"{path}.channel_id", "duplicates another health row")
+        channel_ids.add(channel_id)
+        observer_id = _slug(channel["observer_id"], f"{path}.observer_id")
+        medium = _enum(channel["medium"], MEDIA, f"{path}.medium")
+        status = _enum(channel["status"], COLLECTION_STATUSES, f"{path}.status")
+        item_count = _integer(channel["item_count"], f"{path}.item_count")
+        qualifying_count = _integer(channel["qualifying_item_count"], f"{path}.qualifying_item_count")
+        if qualifying_count > item_count:
+            _fail(f"{path}.qualifying_item_count", "cannot exceed item_count")
+        qualifying_by_channel[channel_id] = qualifying_count
+        if registry is not None:
+            if observer_id not in observer_index:
+                _fail(f"{path}.observer_id", "does not name a registered observer")
+            if channel_id not in channel_index:
+                _fail(f"{path}.channel_id", "does not name a registered channel")
+            registered_observer, registered_channel = channel_index[channel_id]
+            if registered_observer != observer_id or registered_channel["medium"] != medium:
+                _fail(path, "does not match the registered channel")
+            if status == "disabled" and registered_channel["enabled"]:
+                _fail(f"{path}.status", "cannot be disabled for an enabled channel")
+            if status != "disabled" and not registered_channel["enabled"]:
+                _fail(f"{path}.status", "must be disabled for a disabled channel")
+
+        nullable_timestamps: dict[str, datetime | None] = {}
+        for field in ("attempted_at", "completed_at", "newest_attention_at"):
+            value = channel[field]
+            nullable_timestamps[field] = None if value is None else _timestamp(value, f"{path}.{field}")
+        if channel["http_status"] is not None:
+            _integer(channel["http_status"], f"{path}.http_status", 100)
+            if channel["http_status"] > 599:
+                _fail(f"{path}.http_status", "must be a valid HTTP status")
+        if channel["final_url"] is not None:
+            _url(channel["final_url"], f"{path}.final_url")
+        if channel["error_code"] is not None:
+            _slug(channel["error_code"], f"{path}.error_code")
+
+        if status == "disabled":
+            disabled_channels.add(channel_id)
+            if any(channel[field] is not None for field in ("attempted_at", "completed_at", "http_status", "final_url", "newest_attention_at", "error_code")):
+                _fail(path, "disabled channels cannot contain attempt results")
+            if item_count or qualifying_count:
+                _fail(path, "disabled channels must have zero item counts")
+            continue
+
+        attempted_media.add(medium)
+        attempted_observers.add(observer_id)
+        attempted_at = nullable_timestamps["attempted_at"]
+        channel_completed_at = nullable_timestamps["completed_at"]
+        if attempted_at is None or channel_completed_at is None:
+            _fail(path, "attempted channels require attempted_at and completed_at")
+        if not started_at <= attempted_at <= channel_completed_at <= completed_at:
+            _fail(path, "channel attempt timestamps must fall within the run")
+        if status in {"ok", "empty"}:
+            successful_channels.add(channel_id)
+            successful_observers.add(observer_id)
+            if channel["error_code"] is not None:
+                _fail(f"{path}.error_code", "must be null after a successful request")
+            if status == "ok" and qualifying_count == 0:
+                _fail(f"{path}.status", "ok requires at least one qualifying item")
+            if status == "empty" and qualifying_count != 0:
+                _fail(f"{path}.status", "empty requires zero qualifying items")
+            if status == "ok" and nullable_timestamps["newest_attention_at"] is None:
+                _fail(f"{path}.newest_attention_at", "is required when qualifying items exist")
+            if status == "empty" and nullable_timestamps["newest_attention_at"] is not None:
+                _fail(f"{path}.newest_attention_at", "must be null when no qualifying items exist")
+        else:
+            failed_channels.add(channel_id)
+            if channel["error_code"] is None:
+                _fail(f"{path}.error_code", "is required after a failed request")
+            if qualifying_count:
+                _fail(f"{path}.qualifying_item_count", "failed channels cannot retain items")
+            if nullable_timestamps["newest_attention_at"] is not None:
+                _fail(f"{path}.newest_attention_at", "must be null after a failed request")
+
+    summary = _object(
+        document["summary"],
+        {
+            "configured_channel_count",
+            "enabled_channel_count",
+            "attempted_channel_count",
+            "succeeded_channel_count",
+            "failed_channel_count",
+            "disabled_channel_count",
+            "retained_item_count",
+            "mirror_group_count",
+            "successful_observer_ids",
+            "failed_observer_ids",
+            "attempted_media",
+        },
+        path="document.summary",
+    )
+    expected_counts = {
+        "configured_channel_count": len(channel_ids),
+        "enabled_channel_count": len(channel_ids - disabled_channels),
+        "attempted_channel_count": len(successful_channels | failed_channels),
+        "succeeded_channel_count": len(successful_channels),
+        "failed_channel_count": len(failed_channels),
+        "disabled_channel_count": len(disabled_channels),
+    }
+    for field, expected in expected_counts.items():
+        if _integer(summary[field], f"document.summary.{field}") != expected:
+            _fail(f"document.summary.{field}", f"must equal {expected}")
+    for field in ("retained_item_count", "mirror_group_count"):
+        _integer(summary[field], f"document.summary.{field}")
+    successful_ids = _array(summary["successful_observer_ids"], "document.summary.successful_observer_ids")
+    failed_ids = _array(summary["failed_observer_ids"], "document.summary.failed_observer_ids")
+    for path, values in (("successful_observer_ids", successful_ids), ("failed_observer_ids", failed_ids)):
+        for index, observer_id in enumerate(values):
+            _slug(observer_id, f"document.summary.{path}[{index}]")
+        _unique(values, f"document.summary.{path}")
+    expected_failed_observers = attempted_observers - successful_observers
+    if set(successful_ids) != successful_observers:
+        _fail("document.summary.successful_observer_ids", "does not match successful channels")
+    if set(failed_ids) != expected_failed_observers:
+        _fail("document.summary.failed_observer_ids", "does not match observer-level failures")
+    media = _media_list(summary["attempted_media"], "document.summary.attempted_media")
+    if set(media) != attempted_media:
+        _fail("document.summary.attempted_media", "does not match attempted channels")
+    if registry is not None and channel_ids != set(channel_index):
+        _fail("document.channels", "must report every configured channel")
+
+    if batch is not None:
+        validate_collection_batch(batch, registry)
+        for field in ("run_id", "registry_updated_at", "started_at", "completed_at"):
+            if document[field] != batch[field]:
+                _fail(f"document.{field}", "does not match the supplied collection batch")
+        if summary["retained_item_count"] != len(batch["items"]):
+            _fail("document.summary.retained_item_count", "does not match the collection batch")
+        if summary["mirror_group_count"] != len(batch["mirror_groups"]):
+            _fail("document.summary.mirror_group_count", "does not match the collection batch")
+        batch_counts: dict[str, int] = {}
+        batch_newest: dict[str, datetime] = {}
+        for item in batch["items"]:
+            batch_counts[item["channel_id"]] = batch_counts.get(item["channel_id"], 0) + 1
+            attention_at = _timestamp(item["attention_at"], "batch.item.attention_at")
+            batch_newest[item["channel_id"]] = max(
+                attention_at,
+                batch_newest.get(item["channel_id"], attention_at),
+            )
+        if any(batch_counts.get(channel_id, 0) != count for channel_id, count in qualifying_by_channel.items()):
+            _fail("document.channels", "qualifying item counts do not match the collection batch")
+        for index, channel in enumerate(document["channels"]):
+            expected_newest = batch_newest.get(channel["channel_id"])
+            reported_newest = (
+                None
+                if channel["newest_attention_at"] is None
+                else _timestamp(channel["newest_attention_at"], f"document.channels[{index}].newest_attention_at")
+            )
+            if reported_newest != expected_newest:
+                _fail(f"document.channels[{index}].newest_attention_at", "does not match the collection batch")
+    return document
 
 
 def validate_observation_manifest(
@@ -1397,6 +1881,9 @@ def validate_lineage_scenarios(document: Any) -> dict[str, Any]:
 
 VALIDATORS = {
     "media-observer-registry": validate_observer_registry,
+    "media-panel-candidate-reservoir": validate_candidate_reservoir,
+    "media-collection-batch": validate_collection_batch,
+    "media-collection-health": validate_collection_health,
     "media-observation-manifest": validate_observation_manifest,
     "media-weekly-model": validate_weekly_model,
     "media-current-snapshot": validate_current_snapshot,
@@ -1424,15 +1911,23 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Validate Observatory media-attention JSON contracts.")
     parser.add_argument("files", nargs="+", type=Path)
     parser.add_argument("--registry", type=Path, help="Frozen observer registry for cross-reference checks")
+    parser.add_argument("--collection-batch", type=Path, help="Collection batch for health-report consistency checks")
     parser.add_argument("--weekly-model", type=Path, help="Weekly model for snapshot consistency checks")
     parser.add_argument("--observations", type=Path, action="append", default=[], help="Evidence manifest; repeat across week boundaries")
     args = parser.parse_args()
     registry = load_document(args.registry) if args.registry else None
+    batch = load_document(args.collection_batch) if args.collection_batch else None
     model = load_document(args.weekly_model) if args.weekly_model else None
     manifests = [load_document(path) for path in args.observations] if args.observations else None
     for path in args.files:
         document = validate_document(load_document(path))
-        if document["document_type"] == "media-observation-manifest":
+        if document["document_type"] == "media-panel-candidate-reservoir":
+            validate_candidate_reservoir(document, registry)
+        elif document["document_type"] == "media-collection-batch":
+            validate_collection_batch(document, registry)
+        elif document["document_type"] == "media-collection-health":
+            validate_collection_health(document, registry, batch)
+        elif document["document_type"] == "media-observation-manifest":
             validate_observation_manifest(document, registry)
         elif document["document_type"] == "media-weekly-model":
             validate_weekly_model(document, registry)

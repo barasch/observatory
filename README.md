@@ -10,6 +10,7 @@ A public weekly selection of primary sources, with private feedback for its owne
 - [Public edition schema](docs/EDITION_FORMAT.md)
 - [Media-attention method contract](docs/MEDIA_NETWORKS.md)
 - [Media-attention data contract](docs/NETWORK_FORMAT.md)
+- [Media-attention Stage 2 collection](docs/MEDIA_COLLECTION.md)
 
 ## Build and verify
 
@@ -17,6 +18,7 @@ Building needs Python 3.11+. Feedback and interface tests use Node 22+ and the l
 
 ```sh
 python scripts/build.py --check
+python scripts/media_validate.py --registry config/media-observers.json config/media-panel-candidates.json
 python -m unittest discover -s tests -v
 npm ci
 npm test

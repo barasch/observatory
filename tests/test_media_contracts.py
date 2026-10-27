@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from media_validate import (
     MediaValidationError, load_document, validate_document,
-    validate_observer_registry, validate_observation_manifest,
+    validate_candidate_reservoir, validate_observer_registry, validate_observation_manifest,
     validate_weekly_model, validate_current_snapshot,
     validate_model_order_diagnostics,
 )
@@ -35,10 +35,28 @@ class MediaContractTests(unittest.TestCase):
                 validate_document(load_document(path))
         self.bundle()
 
-    def test_production_registry_is_empty_and_valid_at_stage_one(self):
+    def test_production_registry_is_shadow_only_and_valid_at_stage_two(self):
         registry = load_document(ROOT / "config/media-observers.json")
         validate_observer_registry(registry)
-        self.assertEqual(registry["observers"], [])
+        self.assertEqual(len(registry["observers"]), 106)
+        self.assertNotIn("active", {observer["panel_status"] for observer in registry["observers"]})
+        self.assertNotIn("retired", {observer["panel_status"] for observer in registry["observers"]})
+
+    def test_candidate_reservoir_covers_registry_and_target_range(self):
+        registry = load_document(ROOT / "config/media-observers.json")
+        reservoir = load_document(ROOT / "config/media-panel-candidates.json")
+        validate_candidate_reservoir(reservoir, registry)
+        self.assertGreaterEqual(len(reservoir["candidates"]), 150)
+        self.assertLessEqual(len(reservoir["candidates"]), 200)
+        self.assertIn("bluesky", {candidate["primary_medium"] for candidate in reservoir["candidates"]})
+
+    def test_unverified_candidate_cannot_claim_a_registered_observer(self):
+        registry = load_document(ROOT / "config/media-observers.json")
+        reservoir = load_document(ROOT / "config/media-panel-candidates.json")
+        candidate = next(item for item in reservoir["candidates"] if item["route_status"] == "unverified")
+        candidate["registry_observer_id"] = registry["observers"][0]["id"]
+        with self.assertRaises(MediaValidationError):
+            validate_candidate_reservoir(reservoir, registry)
 
     def test_compressed_manifests_are_accepted(self):
         with tempfile.TemporaryDirectory() as directory:

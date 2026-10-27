@@ -1,6 +1,6 @@
 # Media-attention networks: v1 method contract
 
-**Implementation status:** Stage 1 defines and tests the data contracts only. No live observers, collection, clustering, inference, scoring, page, navigation link, or schedule is active.
+**Implementation status:** Stage 2 adds a private candidate reservoir, shadow observer registry, RSS/Atom collector, normalization, within-observer mirror collapse, and health reporting. No clustering, inference, scoring, page, navigation link, schedule, active panel, or public data publication exists. See [MEDIA_COLLECTION.md](MEDIA_COLLECTION.md).
 
 ## Question and limit
 
@@ -131,4 +131,4 @@ The media-network files are a separate public product. They neither read from no
 
 All public documents use strict field allowlists, versioned schemas, explicit-offset timestamps, HTTPS URLs without embedded credentials, and atomic last-good publication. A collection or scoring failure leaves the preceding snapshot intact and exposes its age. A failed or unstable reconstruction leaves the prior weekly model in force. Material coverage gaps remain visible.
 
-Stage 1 supplies the validator, empty registry, documentation, and invented fixtures. Later stages must not weaken these contracts silently; a material change requires a schema-version or documented contract change.
+Stage 1 supplied the validator, documentation, and invented fixtures. Stage 2 populates only `candidate` and `shadow` registry states and writes collection artifacts to an ignored private work directory. Later stages must not weaken these contracts silently; a material change requires a schema-version or documented contract change.

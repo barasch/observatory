@@ -10,3 +10,4 @@ preferences.json
 profile.json
 playwright-report/
 test-results/
+.work/

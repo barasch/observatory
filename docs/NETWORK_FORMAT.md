@@ -1,21 +1,45 @@
-# Media-attention public data contract, version 1
+# Media-attention data contract, version 1
 
 This document specifies the JSON admitted by `scripts/media_validate.py`. The examples under `tests/fixtures/media/` are synthetic and do not describe real outlets or empirical networks.
 
 Every document is a UTF-8 JSON object with `schema_version: 1` and a recognized `document_type`. The validator rejects unknown fields at every level. Timestamps include seconds and an explicit `Z` or numeric UTC offset. Public URLs must use HTTPS and cannot contain embedded credentials, whitespace, control characters, or backslashes. Files ending in `.json.gz` are accepted by the command-line validator.
+
+The registry and candidate reservoir are checked-in research inputs. Stage 2 collection batches and health reports are private intermediate records under `.work/`; they are contracts so later stages cannot reinterpret failures or silently acquire extra fields. The observation manifest, weekly model, diagnostics, and current snapshot remain planned public outputs.
 
 ## Files and roles
 
 | Intended path | `document_type` | Role |
 | --- | --- | --- |
 | `config/media-observers.json` | `media-observer-registry` | Auditable entity, family, channel, and panel-state registry |
+| `config/media-panel-candidates.json` | `media-panel-candidate-reservoir` | Auditable 150–200-row source-research reservoir and route state |
+| `.work/media-networks/RUN_ID/collection.json` | `media-collection-batch` | Private normalized pre-clustering metadata and mirror groups |
+| `.work/media-networks/RUN_ID/health.json` | `media-collection-health` | Private per-channel attempt result and recomputed run coverage |
 | `data/networks/observations/YYYY-Www.json.gz` | `media-observation-manifest` | Compact observation-to-story evidence for one New York ISO week |
 | `data/networks/weeks/YYYY-Www.json` | `media-weekly-model` | Complete memberships, participant shares, diagnostics, and lineage events |
 | `data/networks/latest.json` | `media-current-snapshot` | Zero to three trailing-24-hour stories for each current network |
 | `data/networks/diagnostics/*.json` | `media-model-order-diagnostics` | Comparable model-order evaluations and the recorded decision |
 | `tests/fixtures/media/lineage-scenarios.json` | `media-lineage-scenarios` | Synthetic expected outcomes for the later lineage algorithm |
 
-Only the first path and synthetic fixtures exist in Stage 1. No production observation, model, snapshot, or diagnostic file is yet generated.
+The first two paths and synthetic fixtures are checked in at Stage 2. The collector writes the next two paths only to the ignored private work directory. No production observation, model, snapshot, diagnostic, public page, or schedule exists.
+
+## Candidate reservoir
+
+Top-level fields: `document_type`, `schema_version`, `updated_at`, `target_range`, `selection_basis`, `inventory_sources`, `candidates`.
+
+`target_range` states the allowed reservoir size and is currently 150–200. The validator enforces the bounds. Each inventory source has a stable `id`, factual `display_name`, HTTPS `url`, and `retrieved_at` date.
+
+Each candidate has:
+
+| Field | Contract |
+| --- | --- |
+| `id` | Stable lowercase candidate slug. |
+| `display_name` | Factual public name. |
+| `primary_medium` | One recognized medium used for coverage accounting. |
+| `route_status` | `enabled-shadow`, `disabled-candidate`, or `unverified`. |
+| `inventory_source_ids` | One or more declared provenance references. |
+| `registry_observer_id` | Required for the two registered states and forbidden for `unverified`. |
+
+When a registry is supplied, every registered observer must appear exactly once. `enabled-shadow` requires a `shadow` observer with at least one enabled channel; other registered rows must be `disabled-candidate`. The reservoir has no field for ideology, party, audience, quality, or inferred network.
 
 ## Observer registry
 
@@ -44,6 +68,36 @@ Each observer has:
 Each channel has a globally unique `id`, a `medium`, a lowercase-slug `collection_method`, an `endpoint_url`, a reader-facing `public_url`, and Boolean `enabled`. The recognized media are `website`, `newsletter`, `podcast`, `youtube`, `bluesky`, `x`, `tiktok`, and `instagram`. Collection methods identify adapters but are not political categories.
 
 Endpoint URLs are globally unique. The same feed therefore cannot be assigned to two observers. A second channel for the same observer is allowed and expected for cross-platform mirrors.
+
+## Stage 2 collection batch
+
+Top-level fields: `document_type`, `schema_version`, `run_id`, `registry_updated_at`, `started_at`, `completed_at`, `timezone`, `lookback_started_at`, `items`, `mirror_groups`.
+
+An item contains exactly:
+
+| Field | Meaning |
+| --- | --- |
+| `id` | Stable hash-derived item identifier. |
+| `observer_id`, `channel_id`, `medium` | Registry identity; all three must agree. |
+| `normalized_title` | Unicode-normalized, markup-free title, at most 300 characters. |
+| `url` | Canonical public HTTPS item URL with common tracking parameters and fragments removed. |
+| `external_id` | Endpoint-provided identifier, or canonical URL fallback. |
+| `attention_at` | Publication time or stable first-seen time. |
+| `timestamp_basis` | `published` or `first-seen`. |
+| `collected_at` | Time this item was normalized. |
+| `mirror_group_id` | Exactly one declared within-observer mirror group. |
+
+Items cannot contain a body, description, transcript, embedding, story identifier, cluster score, private field, or inferred classification. Times must fall within the declared lookback interval and run boundary. Channel/external-identifier pairs are unique.
+
+Every mirror group contains one observer's items and records a deterministic earliest canonical item. Its `match_basis` is `singleton`, `canonical-url`, or `exact-title`. An exact-title group uses case-folded equality; it is not a fuzzy story match. Mirror groups partition the complete item set.
+
+## Stage 2 collection health
+
+Top-level fields: `document_type`, `schema_version`, `run_id`, `registry_updated_at`, `started_at`, `completed_at`, `summary`, `channels`.
+
+Every configured channel appears exactly once. A channel row records observer and medium, status, attempt/completion times, HTTP status, final URL, raw and qualifying item counts, newest attention time, and a bounded error code. Nullable fields must be null when they do not apply.
+
+The admitted statuses are `ok`, `empty`, `disabled`, `http-error`, `network-error`, `parse-error`, `unsafe-redirect`, and `unsupported-method`. Only `ok` and `empty` count as a successful check. The validator recomputes configured, enabled, attempted, succeeded, failed, and disabled channel counts; successful and failed observer sets; attempted media; retained item count; and mirror-group count. When a collection batch is supplied, run identity, times, registry version, item counts, and per-channel yields must match it.
 
 ## Weekly observation manifest
 
@@ -164,7 +218,29 @@ Validate one self-contained document:
 
 ```sh
 python scripts/media_validate.py config/media-observers.json
+python scripts/media_validate.py config/media-panel-candidates.json
 python scripts/media_validate.py tests/fixtures/media/*.json
+```
+
+Validate the Stage 2 research inputs together:
+
+```sh
+python scripts/media_validate.py \
+  --registry config/media-observers.json \
+  config/media-panel-candidates.json
+```
+
+Validate a private collection run against its frozen registry and batch:
+
+```sh
+python scripts/media_validate.py \
+  --registry config/media-observers.json \
+  .work/media-networks/RUN_ID/collection.json
+
+python scripts/media_validate.py \
+  --registry config/media-observers.json \
+  --collection-batch .work/media-networks/RUN_ID/collection.json \
+  .work/media-networks/RUN_ID/health.json
 ```
 
 Validate a snapshot against its frozen dependencies:
