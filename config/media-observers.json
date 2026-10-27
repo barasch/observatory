@@ -1,7 +1,2421 @@
 {
   "document_type": "media-observer-registry",
   "schema_version": 1,
-  "updated_at": "2026-10-16T17:20:00Z",
-  "brand_families": [],
-  "observers": []
+  "updated_at": "2026-10-27T13:04:00Z",
+  "brand_families": [
+    {
+      "id": "brand-all-in-with-chamath-jason-sacks-and-friedberg",
+      "display_name": "All-In with Chamath, Jason, Sacks & Friedberg"
+    },
+    {
+      "id": "brand-associated-press",
+      "display_name": "Associated Press"
+    },
+    {
+      "id": "brand-axios",
+      "display_name": "Axios"
+    },
+    {
+      "id": "brand-bbc-news",
+      "display_name": "BBC News"
+    },
+    {
+      "id": "brand-blaze-media",
+      "display_name": "Blaze Media"
+    },
+    {
+      "id": "brand-breaking-points-with-krystal-and-saagar",
+      "display_name": "Breaking Points with Krystal and Saagar"
+    },
+    {
+      "id": "brand-breitbart",
+      "display_name": "Breitbart"
+    },
+    {
+      "id": "brand-brian-tyler-cohen",
+      "display_name": "Brian Tyler Cohen"
+    },
+    {
+      "id": "brand-candace",
+      "display_name": "Candace"
+    },
+    {
+      "id": "brand-center-for-public-integrity",
+      "display_name": "Center for Public Integrity"
+    },
+    {
+      "id": "brand-christianity-today",
+      "display_name": "Christianity Today"
+    },
+    {
+      "id": "brand-cnn",
+      "display_name": "CNN"
+    },
+    {
+      "id": "brand-commentary",
+      "display_name": "Commentary"
+    },
+    {
+      "id": "brand-conde-nast",
+      "display_name": "Condé Nast"
+    },
+    {
+      "id": "brand-crooked-media",
+      "display_name": "Crooked Media"
+    },
+    {
+      "id": "brand-daily-caller",
+      "display_name": "Daily Caller"
+    },
+    {
+      "id": "brand-daily-signal",
+      "display_name": "Daily Signal"
+    },
+    {
+      "id": "brand-daily-wire",
+      "display_name": "Daily Wire"
+    },
+    {
+      "id": "brand-democracy-docket",
+      "display_name": "Democracy Docket"
+    },
+    {
+      "id": "brand-democracy-now",
+      "display_name": "Democracy Now"
+    },
+    {
+      "id": "brand-disney",
+      "display_name": "The Walt Disney Company"
+    },
+    {
+      "id": "brand-electronic-frontier-foundation",
+      "display_name": "Electronic Frontier Foundation"
+    },
+    {
+      "id": "brand-forbes",
+      "display_name": "Forbes"
+    },
+    {
+      "id": "brand-fox",
+      "display_name": "Fox Corporation"
+    },
+    {
+      "id": "brand-news-corp",
+      "display_name": "News Corp"
+    },
+    {
+      "id": "brand-huffpost",
+      "display_name": "HuffPost"
+    },
+    {
+      "id": "brand-ict-news",
+      "display_name": "ICT News"
+    },
+    {
+      "id": "brand-jacobin",
+      "display_name": "Jacobin"
+    },
+    {
+      "id": "brand-just-security",
+      "display_name": "Just Security"
+    },
+    {
+      "id": "brand-kff-health-news",
+      "display_name": "KFF Health News"
+    },
+    {
+      "id": "brand-lawfare",
+      "display_name": "Lawfare"
+    },
+    {
+      "id": "brand-lex-fridman-podcast",
+      "display_name": "Lex Fridman Podcast"
+    },
+    {
+      "id": "brand-mother-jones",
+      "display_name": "Mother Jones"
+    },
+    {
+      "id": "brand-national-review",
+      "display_name": "National Review"
+    },
+    {
+      "id": "brand-nbcuniversal",
+      "display_name": "NBCUniversal"
+    },
+    {
+      "id": "brand-new-york-times",
+      "display_name": "The New York Times Company"
+    },
+    {
+      "id": "brand-newsmax",
+      "display_name": "Newsmax"
+    },
+    {
+      "id": "brand-newsweek",
+      "display_name": "Newsweek"
+    },
+    {
+      "id": "brand-npr",
+      "display_name": "NPR"
+    },
+    {
+      "id": "brand-paramount",
+      "display_name": "Paramount"
+    },
+    {
+      "id": "brand-pbd-podcast",
+      "display_name": "PBD Podcast"
+    },
+    {
+      "id": "brand-pbs-newshour",
+      "display_name": "PBS NewsHour"
+    },
+    {
+      "id": "brand-politically-georgia",
+      "display_name": "Politically Georgia"
+    },
+    {
+      "id": "brand-politico",
+      "display_name": "Politico"
+    },
+    {
+      "id": "brand-propublica",
+      "display_name": "ProPublica"
+    },
+    {
+      "id": "brand-realclear",
+      "display_name": "RealClear"
+    },
+    {
+      "id": "brand-reason",
+      "display_name": "Reason"
+    },
+    {
+      "id": "brand-religion-news-service",
+      "display_name": "Religion News Service"
+    },
+    {
+      "id": "brand-reveal",
+      "display_name": "Reveal"
+    },
+    {
+      "id": "brand-rewire-news-group",
+      "display_name": "Rewire News Group"
+    },
+    {
+      "id": "brand-ring-of-fire",
+      "display_name": "Ring of Fire"
+    },
+    {
+      "id": "brand-rolling-stone-politics",
+      "display_name": "Rolling Stone Politics"
+    },
+    {
+      "id": "brand-secular-talk",
+      "display_name": "Secular Talk"
+    },
+    {
+      "id": "brand-semafor",
+      "display_name": "Semafor"
+    },
+    {
+      "id": "brand-slate",
+      "display_name": "Slate"
+    },
+    {
+      "id": "brand-the-19th",
+      "display_name": "The 19th"
+    },
+    {
+      "id": "brand-the-advocate",
+      "display_name": "The Advocate"
+    },
+    {
+      "id": "brand-the-american-conservative",
+      "display_name": "The American Conservative"
+    },
+    {
+      "id": "brand-the-atlantic",
+      "display_name": "The Atlantic"
+    },
+    {
+      "id": "brand-the-bulwark",
+      "display_name": "The Bulwark"
+    },
+    {
+      "id": "brand-the-charlie-kirk-show",
+      "display_name": "The Charlie Kirk Show"
+    },
+    {
+      "id": "brand-the-david-pakman-show",
+      "display_name": "The David Pakman Show"
+    },
+    {
+      "id": "brand-the-dispatch",
+      "display_name": "The Dispatch"
+    },
+    {
+      "id": "brand-the-downballot",
+      "display_name": "The Downballot"
+    },
+    {
+      "id": "brand-the-federalist",
+      "display_name": "The Federalist"
+    },
+    {
+      "id": "brand-the-fifth-column",
+      "display_name": "The Fifth Column"
+    },
+    {
+      "id": "brand-the-free-press",
+      "display_name": "The Free Press"
+    },
+    {
+      "id": "brand-the-guardian-us",
+      "display_name": "The Guardian US"
+    },
+    {
+      "id": "brand-the-hill",
+      "display_name": "The Hill"
+    },
+    {
+      "id": "brand-the-intercept",
+      "display_name": "The Intercept"
+    },
+    {
+      "id": "brand-the-joe-rogan-experience",
+      "display_name": "The Joe Rogan Experience"
+    },
+    {
+      "id": "brand-the-lincoln-project",
+      "display_name": "The Lincoln Project"
+    },
+    {
+      "id": "brand-the-majority-report-with-sam-seder",
+      "display_name": "The Majority Report with Sam Seder"
+    },
+    {
+      "id": "brand-the-marshall-project",
+      "display_name": "The Marshall Project"
+    },
+    {
+      "id": "brand-the-megyn-kelly-show",
+      "display_name": "The Megyn Kelly Show"
+    },
+    {
+      "id": "brand-the-meidastouch-podcast",
+      "display_name": "The MeidasTouch Podcast"
+    },
+    {
+      "id": "brand-the-new-republic",
+      "display_name": "The New Republic"
+    },
+    {
+      "id": "brand-the-officer-tatum-show",
+      "display_name": "The Officer Tatum Show"
+    },
+    {
+      "id": "brand-the-rest-is-politics-us",
+      "display_name": "The Rest Is Politics: US"
+    },
+    {
+      "id": "brand-the-rubin-report",
+      "display_name": "The Rubin Report"
+    },
+    {
+      "id": "brand-the-shawn-ryan-show",
+      "display_name": "The Shawn Ryan Show"
+    },
+    {
+      "id": "brand-the-tucker-carlson-show",
+      "display_name": "The Tucker Carlson Show"
+    },
+    {
+      "id": "brand-the-young-turks",
+      "display_name": "The Young Turks"
+    },
+    {
+      "id": "brand-timcast-irl",
+      "display_name": "Timcast IRL"
+    },
+    {
+      "id": "brand-usa-today",
+      "display_name": "USA Today"
+    },
+    {
+      "id": "brand-vox-media",
+      "display_name": "Vox Media"
+    },
+    {
+      "id": "brand-washington-examiner",
+      "display_name": "Washington Examiner"
+    },
+    {
+      "id": "brand-washington-post",
+      "display_name": "Washington Post"
+    }
+  ],
+  "observers": [
+    {
+      "id": "observer-abc-news",
+      "display_name": "ABC News",
+      "brand_family_id": "brand-disney",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-abc-news-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://abcnews.go.com/abcnews/topstories",
+          "public_url": "https://abcnews.go.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-all-in-with-chamath-jason-sacks-and-friedberg",
+      "display_name": "All-In with Chamath, Jason, Sacks & Friedberg",
+      "brand_family_id": "brand-all-in-with-chamath-jason-sacks-and-friedberg",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-all-in-with-chamath-jason-sacks-and-friedberg-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.libsyn.com/shows/254861/destinations/1928300.xml",
+          "public_url": "https://podcasts.apple.com/us/search?term=All-In%20with%20Chamath%2C%20Jason%2C%20Sacks%20%26%20Friedberg",
+          "enabled": true
+        },
+        {
+          "id": "channel-all-in-with-chamath-jason-sacks-and-friedberg-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCESLZhusAkFfsNsApnjF_Cg",
+          "public_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-associated-press",
+      "display_name": "Associated Press",
+      "brand_family_id": "brand-associated-press",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-associated-press-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://apnews.com/hub/ap-top-news?output=rss",
+          "public_url": "https://apnews.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-axios",
+      "display_name": "Axios",
+      "brand_family_id": "brand-axios",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-axios-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://api.axios.com/feed/",
+          "public_url": "https://www.axios.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-bbc-news",
+      "display_name": "BBC News",
+      "brand_family_id": "brand-bbc-news",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-bbc-news-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.bbci.co.uk/news/rss.xml",
+          "public_url": "https://www.bbc.com/news",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-breaking-points-with-krystal-and-saagar",
+      "display_name": "Breaking Points with Krystal and Saagar",
+      "brand_family_id": "brand-breaking-points-with-krystal-and-saagar",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-breaking-points-with-krystal-and-saagar-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/e7fd5ae7-7621-4e41-9b85-b0ab0164b634/4c1a5135-4197-47c9-b19b-b0ab0164b667/podcast.rss",
+          "public_url": "https://podcasts.apple.com/us/search?term=Breaking%20Points%20with%20Krystal%20and%20Saagar",
+          "enabled": true
+        },
+        {
+          "id": "channel-breaking-points-with-krystal-and-saagar-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCDRIjKy6eZOvKtOELtTdeUA",
+          "public_url": "https://www.youtube.com/channel/UCDRIjKy6eZOvKtOELtTdeUA",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-breitbart",
+      "display_name": "Breitbart",
+      "brand_family_id": "brand-breitbart",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-breitbart-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.feedburner.com/breitbart",
+          "public_url": "https://www.breitbart.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-brian-tyler-cohen",
+      "display_name": "Brian Tyler Cohen",
+      "brand_family_id": "brand-brian-tyler-cohen",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-brian-tyler-cohen-youtube-1",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCR6fEDtZ7_McUwc1fI8_xKw",
+          "public_url": "https://www.youtube.com/channel/UCR6fEDtZ7_McUwc1fI8_xKw",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-candace",
+      "display_name": "Candace",
+      "brand_family_id": "brand-candace",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-candace-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/candace",
+          "public_url": "https://podcasts.apple.com/us/search?term=Candace",
+          "enabled": true
+        },
+        {
+          "id": "channel-candace-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2CK9-skcZEucfJGz6n1gCQ",
+          "public_url": "https://www.youtube.com/channel/UC2CK9-skcZEucfJGz6n1gCQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-cbs-news",
+      "display_name": "CBS News",
+      "brand_family_id": "brand-paramount",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-cbs-news-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.cbsnews.com/latest/rss/main",
+          "public_url": "https://www.cbsnews.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-center-for-public-integrity",
+      "display_name": "Center for Public Integrity",
+      "brand_family_id": "brand-center-for-public-integrity",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-center-for-public-integrity-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://publicintegrity.org/feed/",
+          "public_url": "https://publicintegrity.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-christianity-today",
+      "display_name": "Christianity Today",
+      "brand_family_id": "brand-christianity-today",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-christianity-today-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.christianitytoday.com/rss/",
+          "public_url": "https://www.christianitytoday.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-cnn",
+      "display_name": "CNN",
+      "brand_family_id": "brand-cnn",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-cnn-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.cnn.com/rss/cnn_topstories.rss",
+          "public_url": "https://www.cnn.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-commentary",
+      "display_name": "Commentary",
+      "brand_family_id": "brand-commentary",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-commentary-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.commentary.org/feed/",
+          "public_url": "https://www.commentary.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-commentary-magazine-podcast",
+      "display_name": "Commentary Magazine Podcast",
+      "brand_family_id": "brand-commentary",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-commentary-magazine-podcast-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/GEMINIMEDIA2783214431",
+          "public_url": "https://www.commentary.org/podcast/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-daily-caller",
+      "display_name": "Daily Caller",
+      "brand_family_id": "brand-daily-caller",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-daily-caller-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://dailycaller.com/feed/",
+          "public_url": "https://dailycaller.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-daily-signal",
+      "display_name": "Daily Signal",
+      "brand_family_id": "brand-daily-signal",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-daily-signal-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.dailysignal.com/feed/",
+          "public_url": "https://www.dailysignal.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-daily-wire",
+      "display_name": "Daily Wire",
+      "brand_family_id": "brand-daily-wire",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-daily-wire-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.dailywire.com/feeds/rss.xml",
+          "public_url": "https://www.dailywire.com/",
+          "enabled": true
+        },
+        {
+          "id": "channel-daily-wire-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCaeO5vkdj5xOQHp4UmIN6dw",
+          "public_url": "https://www.youtube.com/@DailyWirePlus",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-deadline-white-house",
+      "display_name": "Deadline: White House",
+      "brand_family_id": "brand-nbcuniversal",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-deadline-white-house-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.simplecast.com/iDG4OTeq",
+          "public_url": "https://www.msnbc.com/deadline-white-house",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-democracy-docket",
+      "display_name": "Democracy Docket",
+      "brand_family_id": "brand-democracy-docket",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-democracy-docket-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.democracydocket.com/feed/",
+          "public_url": "https://www.democracydocket.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-democracy-now",
+      "display_name": "Democracy Now",
+      "brand_family_id": "brand-democracy-now",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-democracy-now-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.democracynow.org/democracynow.rss",
+          "public_url": "https://www.democracynow.org/",
+          "enabled": true
+        },
+        {
+          "id": "channel-democracy-now-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCzuqE7-t13O4NIDYJfakrhw",
+          "public_url": "https://www.youtube.com/channel/UCzuqE7-t13O4NIDYJfakrhw",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-electronic-frontier-foundation",
+      "display_name": "Electronic Frontier Foundation",
+      "brand_family_id": "brand-electronic-frontier-foundation",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-electronic-frontier-foundation-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.eff.org/rss/updates.xml",
+          "public_url": "https://www.eff.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-forbes",
+      "display_name": "Forbes",
+      "brand_family_id": "brand-forbes",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-forbes-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.forbes.com/real-time/feed2/",
+          "public_url": "https://www.forbes.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-fox-news",
+      "display_name": "Fox News",
+      "brand_family_id": "brand-fox",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-fox-news-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://moxie.foxnews.com/google-publisher/latest.xml",
+          "public_url": "https://www.foxnews.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-hacks-on-tap",
+      "display_name": "Hacks on Tap",
+      "brand_family_id": "brand-vox-media",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-hacks-on-tap-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/VMP7545057845",
+          "public_url": "https://www.hacksontap.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-honestly-with-bari-weiss",
+      "display_name": "Honestly with Bari Weiss",
+      "brand_family_id": "brand-the-free-press",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-honestly-with-bari-weiss-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/RSV2347142881",
+          "public_url": "https://podcasts.apple.com/us/search?term=Honestly%20with%20Bari%20Weiss",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-huffpost",
+      "display_name": "HuffPost",
+      "brand_family_id": "brand-huffpost",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-huffpost-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.huffpost.com/section/front-page/feed",
+          "public_url": "https://www.huffpost.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-ict-news",
+      "display_name": "ICT News",
+      "brand_family_id": "brand-ict-news",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-ict-news-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://ictnews.org/feed",
+          "public_url": "https://ictnews.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-jacobin",
+      "display_name": "Jacobin",
+      "brand_family_id": "brand-jacobin",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-jacobin-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://jacobin.com/feed/",
+          "public_url": "https://jacobin.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-just-security",
+      "display_name": "Just Security",
+      "brand_family_id": "brand-just-security",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-just-security-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.justsecurity.org/feed/",
+          "public_url": "https://www.justsecurity.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-kff-health-news",
+      "display_name": "KFF Health News",
+      "brand_family_id": "brand-kff-health-news",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-kff-health-news-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://kffhealthnews.org/feed/",
+          "public_url": "https://kffhealthnews.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-lawfare",
+      "display_name": "Lawfare",
+      "brand_family_id": "brand-lawfare",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-lawfare-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.lawfaremedia.org/feeds/articles",
+          "public_url": "https://www.lawfaremedia.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-lex-fridman-podcast",
+      "display_name": "Lex Fridman Podcast",
+      "brand_family_id": "brand-lex-fridman-podcast",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-lex-fridman-podcast-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.spreaker.com/show/7373683/episodes/feed",
+          "public_url": "https://podcasts.apple.com/us/search?term=Lex%20Fridman%20Podcast",
+          "enabled": true
+        },
+        {
+          "id": "channel-lex-fridman-podcast-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCJIfeSCssxSC_Dhc5s7woww",
+          "public_url": "https://www.youtube.com/channel/UCJIfeSCssxSC_Dhc5s7woww",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-mother-jones",
+      "display_name": "Mother Jones",
+      "brand_family_id": "brand-mother-jones",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-mother-jones-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.motherjones.com/feed/",
+          "public_url": "https://www.motherjones.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-national-review",
+      "display_name": "National Review",
+      "brand_family_id": "brand-national-review",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-national-review-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.nationalreview.com/feed/",
+          "public_url": "https://www.nationalreview.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-nbc-news",
+      "display_name": "NBC News",
+      "brand_family_id": "brand-nbcuniversal",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-nbc-news-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.nbcnews.com/nbcnews/public/news",
+          "public_url": "https://www.nbcnews.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-new-york-post",
+      "display_name": "New York Post",
+      "brand_family_id": "brand-news-corp",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-new-york-post-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://nypost.com/feed/",
+          "public_url": "https://nypost.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-new-york-times",
+      "display_name": "New York Times",
+      "brand_family_id": "brand-new-york-times",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-new-york-times-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+          "public_url": "https://www.nytimes.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-newsmax",
+      "display_name": "Newsmax",
+      "brand_family_id": "brand-newsmax",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-newsmax-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.newsmax.com/rss/Newsfront/1/",
+          "public_url": "https://www.newsmax.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-newsweek",
+      "display_name": "Newsweek",
+      "brand_family_id": "brand-newsweek",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-newsweek-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.newsweek.com/rss",
+          "public_url": "https://www.newsweek.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-no-lie-with-brian-tyler-cohen",
+      "display_name": "No Lie with Brian Tyler Cohen",
+      "brand_family_id": "brand-brian-tyler-cohen",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-no-lie-with-brian-tyler-cohen-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.art19.com/no-lie",
+          "public_url": "https://briantylercohen.com/podcast/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-npr",
+      "display_name": "NPR",
+      "brand_family_id": "brand-npr",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-npr-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.npr.org/1001/rss.xml",
+          "public_url": "https://www.npr.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-pbd-podcast",
+      "display_name": "PBD Podcast",
+      "brand_family_id": "brand-pbd-podcast",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-pbd-podcast-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://anchor.fm/s/2fa50a94/podcast/rss",
+          "public_url": "https://podcasts.apple.com/us/search?term=PBD%20Podcast",
+          "enabled": true
+        },
+        {
+          "id": "channel-pbd-podcast-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCIHdDJ0tjn_3j-FS7s_X1kQ",
+          "public_url": "https://www.youtube.com/channel/UCIHdDJ0tjn_3j-FS7s_X1kQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-pbs-newshour",
+      "display_name": "PBS NewsHour",
+      "brand_family_id": "brand-pbs-newshour",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-pbs-newshour-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+          "public_url": "https://www.pbs.org/newshour/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-pod-save-america",
+      "display_name": "Pod Save America",
+      "brand_family_id": "brand-crooked-media",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-pod-save-america-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://audioboom.com/channels/5166624.rss",
+          "public_url": "https://podcasts.apple.com/us/search?term=Pod%20Save%20America",
+          "enabled": true
+        },
+        {
+          "id": "channel-pod-save-america-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC0jYTMDGoHT_Q6HQ7SFtGXg",
+          "public_url": "https://www.youtube.com/channel/UC0jYTMDGoHT_Q6HQ7SFtGXg",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-political-gabfest",
+      "display_name": "Political Gabfest",
+      "brand_family_id": "brand-slate",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-political-gabfest-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://my.slate.com/podcasts/feeds/political-gabfest/",
+          "public_url": "https://slate.com/podcasts/political-gabfest",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-politically-georgia",
+      "display_name": "Politically Georgia",
+      "brand_family_id": "brand-politically-georgia",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-politically-georgia-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/CMGA1164469972",
+          "public_url": "https://www.ajc.com/politics/politicallygeorgia/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-politico",
+      "display_name": "Politico",
+      "brand_family_id": "brand-politico",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-politico-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.politico.com/politics-news.xml",
+          "public_url": "https://www.politico.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-propublica",
+      "display_name": "ProPublica",
+      "brand_family_id": "brand-propublica",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-propublica-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.propublica.org/propublica/main",
+          "public_url": "https://www.propublica.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-realclearpolitics",
+      "display_name": "RealClearPolitics",
+      "brand_family_id": "brand-realclear",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-realclearpolitics-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.realclearpolitics.com/index.xml",
+          "public_url": "https://www.realclearpolitics.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-realclearpolitics-podcast",
+      "display_name": "RealClearPolitics Podcast",
+      "brand_family_id": "brand-realclear",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-realclearpolitics-podcast-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.simplecast.com/pzzjlbXr",
+          "public_url": "https://www.realclearpolitics.com/podcasts/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-reason",
+      "display_name": "Reason",
+      "brand_family_id": "brand-reason",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-reason-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://reason.com/feed/",
+          "public_url": "https://reason.com/",
+          "enabled": true
+        },
+        {
+          "id": "channel-reason-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ_idvaUVLeOT7kQllfctjQ",
+          "public_url": "https://www.youtube.com/channel/UCJ_idvaUVLeOT7kQllfctjQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-religion-news-service",
+      "display_name": "Religion News Service",
+      "brand_family_id": "brand-religion-news-service",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-religion-news-service-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://religionnews.com/feed/",
+          "public_url": "https://religionnews.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-reveal",
+      "display_name": "Reveal",
+      "brand_family_id": "brand-reveal",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-reveal-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://revealnews.org/feed/",
+          "public_url": "https://revealnews.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-rewire-news-group",
+      "display_name": "Rewire News Group",
+      "brand_family_id": "brand-rewire-news-group",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-rewire-news-group-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://rewirenewsgroup.com/feed/",
+          "public_url": "https://rewirenewsgroup.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-ring-of-fire",
+      "display_name": "Ring of Fire",
+      "brand_family_id": "brand-ring-of-fire",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-ring-of-fire-youtube-1",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCYWIEbibRcZav6xMLo9qWWw",
+          "public_url": "https://www.youtube.com/channel/UCYWIEbibRcZav6xMLo9qWWw",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-rolling-stone-politics",
+      "display_name": "Rolling Stone Politics",
+      "brand_family_id": "brand-rolling-stone-politics",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-rolling-stone-politics-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.rollingstone.com/politics/politics-news/feed/",
+          "public_url": "https://www.rollingstone.com/politics/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-secular-talk",
+      "display_name": "Secular Talk",
+      "brand_family_id": "brand-secular-talk",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-secular-talk-youtube-1",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCldfgbzNILYZA4dmDt4Cd6A",
+          "public_url": "https://www.youtube.com/channel/UCldfgbzNILYZA4dmDt4Cd6A",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-semafor",
+      "display_name": "Semafor",
+      "brand_family_id": "brand-semafor",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-semafor-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.semafor.com/rss.xml",
+          "public_url": "https://www.semafor.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-slate",
+      "display_name": "Slate",
+      "brand_family_id": "brand-slate",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-slate-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://slate.com/feeds/all.rss",
+          "public_url": "https://slate.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-19th",
+      "display_name": "The 19th",
+      "brand_family_id": "brand-the-19th",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-19th-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://19thnews.org/feed/",
+          "public_url": "https://19thnews.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-advocate",
+      "display_name": "The Advocate",
+      "brand_family_id": "brand-the-advocate",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-advocate-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.advocate.com/feeds/feed.rss",
+          "public_url": "https://www.advocate.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-american-conservative",
+      "display_name": "The American Conservative",
+      "brand_family_id": "brand-the-american-conservative",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-american-conservative-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.theamericanconservative.com/feed/",
+          "public_url": "https://www.theamericanconservative.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-atlantic",
+      "display_name": "The Atlantic",
+      "brand_family_id": "brand-the-atlantic",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-atlantic-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.theatlantic.com/feed/all/",
+          "public_url": "https://www.theatlantic.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-ben-shapiro-show",
+      "display_name": "The Ben Shapiro Show",
+      "brand_family_id": "brand-daily-wire",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-ben-shapiro-show-youtube-1",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCxUQLGMbb2cI8CqiwZ0WhAQ",
+          "public_url": "https://www.youtube.com/channel/UCxUQLGMbb2cI8CqiwZ0WhAQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-blaze",
+      "display_name": "The Blaze",
+      "brand_family_id": "brand-blaze-media",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-blaze-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.theblaze.com/feeds/feed.rss",
+          "public_url": "https://www.theblaze.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-bulwark",
+      "display_name": "The Bulwark",
+      "brand_family_id": "brand-the-bulwark",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-bulwark-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://audioboom.com/channels/5114286.rss",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Bulwark",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-bulwark-website-2",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.thebulwark.com/feed/",
+          "public_url": "https://www.thebulwark.com/",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-bulwark-youtube-3",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCG4Hp1KbGw4e02N7FpPXDgQ",
+          "public_url": "https://www.youtube.com/channel/UCG4Hp1KbGw4e02N7FpPXDgQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-charlie-kirk-show",
+      "display_name": "The Charlie Kirk Show",
+      "brand_family_id": "brand-the-charlie-kirk-show",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-charlie-kirk-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.omnycontent.com/d/playlist/5e27a451-e6e6-4c51-aa03-a7370003783c/c865b590-c84f-4f7e-a43e-ac64014b61d9/8978e846-cacd-4d65-b085-ac64014cd49f/podcast.rss",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Charlie%20Kirk%20Show",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-daily",
+      "display_name": "The Daily",
+      "brand_family_id": "brand-new-york-times",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-daily-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.simplecast.com/Sl5CSM3S",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Daily",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-david-pakman-show",
+      "display_name": "The David Pakman Show",
+      "brand_family_id": "brand-the-david-pakman-show",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-david-pakman-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/SHHWD4599743349",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20David%20Pakman%20Show",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-david-pakman-show-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCvixJtaXuNdMPUGdOPcY8Ag",
+          "public_url": "https://www.youtube.com/channel/UCvixJtaXuNdMPUGdOPcY8Ag",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-dispatch",
+      "display_name": "The Dispatch",
+      "brand_family_id": "brand-the-dispatch",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-dispatch-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://thedispatch.com/feed/",
+          "public_url": "https://thedispatch.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-dispatch-podcast",
+      "display_name": "The Dispatch Podcast",
+      "brand_family_id": "brand-the-dispatch",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-dispatch-podcast-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.truckshop411.com/podcasts/the-dispatch-podcast/feed/",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Dispatch%20Podcast",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-downballot",
+      "display_name": "The Downballot",
+      "brand_family_id": "brand-the-downballot",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-downballot-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://api.substack.com/feed/podcast/2418217.rss",
+          "public_url": "https://www.the-downballot.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-editors",
+      "display_name": "The Editors",
+      "brand_family_id": "brand-national-review",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-editors-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.simplecast.com/bAMj0tiC",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Editors",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-ezra-klein-show",
+      "display_name": "The Ezra Klein Show",
+      "brand_family_id": "brand-new-york-times",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-ezra-klein-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.spreaker.com/show/7424778/episodes/feed",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Ezra%20Klein%20Show",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-federalist",
+      "display_name": "The Federalist",
+      "brand_family_id": "brand-the-federalist",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-federalist-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://thefederalist.com/feed/",
+          "public_url": "https://thefederalist.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-fifth-column",
+      "display_name": "The Fifth Column",
+      "brand_family_id": "brand-the-fifth-column",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-fifth-column-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://wethefifth.substack.com/feed",
+          "public_url": "https://wethefifth.substack.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-the-focus-group-podcast",
+      "display_name": "The Focus Group Podcast",
+      "brand_family_id": "brand-the-bulwark",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-focus-group-podcast-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://audioboom.com/channels/5114313.rss",
+          "public_url": "https://www.thebulwark.com/s/the-focus-group-podcast",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-free-press",
+      "display_name": "The Free Press",
+      "brand_family_id": "brand-the-free-press",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-free-press-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.thefp.com/feed",
+          "public_url": "https://www.thefp.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-glenn-beck-program",
+      "display_name": "The Glenn Beck Program",
+      "brand_family_id": "brand-blaze-media",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-glenn-beck-program-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/BMDC3567910388",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Glenn%20Beck%20Program",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-glenn-beck-program-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCvqtzdcURSqNjY9RQEK4XmQ",
+          "public_url": "https://www.youtube.com/channel/UCvqtzdcURSqNjY9RQEK4XmQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-guardian-us",
+      "display_name": "The Guardian US",
+      "brand_family_id": "brand-the-guardian-us",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-guardian-us-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.theguardian.com/us-news/rss",
+          "public_url": "https://www.theguardian.com/us",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-hill",
+      "display_name": "The Hill",
+      "brand_family_id": "brand-the-hill",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-hill-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://thehill.com/feed/",
+          "public_url": "https://thehill.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-intercept",
+      "display_name": "The Intercept",
+      "brand_family_id": "brand-the-intercept",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-intercept-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://theintercept.com/feed/?rss",
+          "public_url": "https://theintercept.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-the-joe-rogan-experience",
+      "display_name": "The Joe Rogan Experience",
+      "brand_family_id": "brand-the-joe-rogan-experience",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-joe-rogan-experience-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/GLT1412515089",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Joe%20Rogan%20Experience",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-joe-rogan-experience-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCzQUP1qoWDoEbmsQxvdjxgQ",
+          "public_url": "https://www.youtube.com/channel/UCzQUP1qoWDoEbmsQxvdjxgQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-lincoln-project",
+      "display_name": "The Lincoln Project",
+      "brand_family_id": "brand-the-lincoln-project",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-lincoln-project-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.pdrl.fm/7f1e15/audioboom.com/channels/5157535.rss",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Lincoln%20Project",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-majority-report-with-sam-seder",
+      "display_name": "The Majority Report with Sam Seder",
+      "brand_family_id": "brand-the-majority-report-with-sam-seder",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-majority-report-with-sam-seder-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://majorityfm.libsyn.com/rss",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Majority%20Report%20with%20Sam%20Seder",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-majority-report-with-sam-seder-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC-3jIAlnQmbbVMV6gR7K8aQ",
+          "public_url": "https://www.youtube.com/channel/UC-3jIAlnQmbbVMV6gR7K8aQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-marshall-project",
+      "display_name": "The Marshall Project",
+      "brand_family_id": "brand-the-marshall-project",
+      "panel_status": "shadow",
+      "status_since": "2026-10-27",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-marshall-project-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.themarshallproject.org/rss/recent.rss",
+          "public_url": "https://www.themarshallproject.org/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-matt-walsh-show",
+      "display_name": "The Matt Walsh Show",
+      "brand_family_id": "brand-daily-wire",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-matt-walsh-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.pdrl.fm/1fc256/feeds.megaphone.fm/BVDWV7762869899",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Matt%20Walsh%20Show",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-megyn-kelly-show",
+      "display_name": "The Megyn Kelly Show",
+      "brand_family_id": "brand-the-megyn-kelly-show",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-megyn-kelly-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.simplecast.com/RV1USAfC",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Megyn%20Kelly%20Show",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-megyn-kelly-show-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCYHLSymuIqAM3HVqOk6-5KQ",
+          "public_url": "https://www.youtube.com/channel/UCYHLSymuIqAM3HVqOk6-5KQ",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-meidastouch-podcast",
+      "display_name": "The MeidasTouch Podcast",
+      "brand_family_id": "brand-the-meidastouch-podcast",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-meidastouch-podcast-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.amperwave.net/v2/feed/audacynetwork/16aa3c6bf526fae9db63070c73cad09f",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20MeidasTouch%20Podcast",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-meidastouch-podcast-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCJgZJZZbnLFPr5GJdCuIwpA",
+          "public_url": "https://www.youtube.com/channel/UCJgZJZZbnLFPr5GJdCuIwpA",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-michael-knowles-show",
+      "display_name": "The Michael Knowles Show",
+      "brand_family_id": "brand-daily-wire",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-michael-knowles-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.pdrl.fm/34758b/feeds.megaphone.fm/BVDWV5810064903",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Michael%20Knowles%20Show",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-new-republic",
+      "display_name": "The New Republic",
+      "brand_family_id": "brand-the-new-republic",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-the-new-republic-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://newrepublic.com/rss.xml",
+          "public_url": "https://newrepublic.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-npr-politics-podcast",
+      "display_name": "The NPR Politics Podcast",
+      "brand_family_id": "brand-npr",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-npr-politics-podcast-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.spreaker.com/show/7490547/episodes/feed",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20NPR%20Politics%20Podcast",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-officer-tatum-show",
+      "display_name": "The Officer Tatum Show",
+      "brand_family_id": "brand-the-officer-tatum-show",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-officer-tatum-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feed.podbean.com/theofficertatum/feed.xml",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Officer%20Tatum%20Show",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-political-scene-the-new-yorker",
+      "display_name": "The Political Scene | The New Yorker",
+      "brand_family_id": "brand-conde-nast",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-political-scene-the-new-yorker-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/CNE3630198409",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Political%20Scene%20%7C%20The%20New%20Yorker",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-rest-is-politics-us",
+      "display_name": "The Rest Is Politics: US",
+      "brand_family_id": "brand-the-rest-is-politics-us",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-rest-is-politics-us-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/GLT5336643697",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Rest%20Is%20Politics%3A%20US",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-rubin-report",
+      "display_name": "The Rubin Report",
+      "brand_family_id": "brand-the-rubin-report",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-rubin-report-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.libsyn.com/shows/576235/destinations/4990775.xml",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Rubin%20Report",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-shawn-ryan-show",
+      "display_name": "The Shawn Ryan Show",
+      "brand_family_id": "brand-the-shawn-ryan-show",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-shawn-ryan-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.spreaker.com/show/7424780/episodes/feed",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Shawn%20Ryan%20Show",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-shawn-ryan-show-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1vUksRWfEfd6V4pPDIQ0jw",
+          "public_url": "https://www.youtube.com/channel/UC1vUksRWfEfd6V4pPDIQ0jw",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-tucker-carlson-show",
+      "display_name": "The Tucker Carlson Show",
+      "brand_family_id": "brand-the-tucker-carlson-show",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-tucker-carlson-show-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.megaphone.fm/RSV1597324942",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Tucker%20Carlson%20Show",
+          "enabled": true
+        },
+        {
+          "id": "channel-the-tucker-carlson-show-youtube-2",
+          "medium": "youtube",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCjjBjVc0b1cIpNGEeZtS2lg",
+          "public_url": "https://www.youtube.com/channel/UCjjBjVc0b1cIpNGEeZtS2lg",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-the-young-turks",
+      "display_name": "The Young Turks",
+      "brand_family_id": "brand-the-young-turks",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-the-young-turks-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.pdrl.fm/5e32e9/feeds.megaphone.fm/theyoungturks",
+          "public_url": "https://podcasts.apple.com/us/search?term=The%20Young%20Turks",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-timcast-irl",
+      "display_name": "Timcast IRL",
+      "brand_family_id": "brand-timcast-irl",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named program with its own editorial output; mirrored channels collapse to this observer.",
+      "channels": [
+        {
+          "id": "channel-timcast-irl-podcast-1",
+          "medium": "podcast",
+          "collection_method": "feed",
+          "endpoint_url": "https://rss.libsyn.com/shows/574450/destinations/4973860.xml",
+          "public_url": "https://podcasts.apple.com/us/search?term=Timcast%20IRL",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-usa-today",
+      "display_name": "USA Today",
+      "brand_family_id": "brand-usa-today",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-usa-today-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://rssfeeds.usatoday.com/usatoday-NewsTopStories",
+          "public_url": "https://www.usatoday.com/",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "observer-vox",
+      "display_name": "Vox",
+      "brand_family_id": "brand-vox-media",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-vox-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.vox.com/rss/index.xml",
+          "public_url": "https://www.vox.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-wall-street-journal",
+      "display_name": "Wall Street Journal",
+      "brand_family_id": "brand-news-corp",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-wall-street-journal-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.a.dj.com/rss/RSSWorldNews.xml",
+          "public_url": "https://www.wsj.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-washington-examiner",
+      "display_name": "Washington Examiner",
+      "brand_family_id": "brand-washington-examiner",
+      "panel_status": "shadow",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-washington-examiner-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://www.washingtonexaminer.com/feed",
+          "public_url": "https://www.washingtonexaminer.com/",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "observer-washington-post",
+      "display_name": "Washington Post",
+      "brand_family_id": "brand-washington-post",
+      "panel_status": "candidate",
+      "status_since": "2026-10-14",
+      "independence_basis": "Distinct named publication with its own editorial output.",
+      "channels": [
+        {
+          "id": "channel-washington-post-website-1",
+          "medium": "website",
+          "collection_method": "feed",
+          "endpoint_url": "https://feeds.washingtonpost.com/rss/politics",
+          "public_url": "https://www.washingtonpost.com/",
+          "enabled": false
+        }
+      ]
+    }
+  ]
 }

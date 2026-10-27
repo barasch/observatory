@@ -1,0 +1,1958 @@
+{
+  "document_type": "media-panel-candidate-reservoir",
+  "schema_version": 1,
+  "updated_at": "2026-10-27T13:04:00Z",
+  "target_range": {
+    "minimum": 150,
+    "maximum": 200
+  },
+  "selection_basis": [
+    "Candidate inclusion records factual medium and inventory provenance; it does not encode ideology, party, audience, quality, or network membership.",
+    "Route verification, distinct-editorial-product review, family assignment, reliability, and marginal coverage value are required before shadow registration.",
+    "The reservoir deliberately includes national, specialist, state, local, newsletter, podcast, and creator-led products so the initial panel is not merely a list of high-traffic national websites."
+  ],
+  "inventory_sources": [
+    {
+      "id": "bluesky-public-profiles",
+      "display_name": "Bluesky public profiles",
+      "url": "https://bsky.app/",
+      "retrieved_at": "2026-10-27"
+    },
+    {
+      "id": "election-newspaper-podcasts",
+      "display_name": "The Election Newspaper podcast directory",
+      "url": "https://theelectionnewspaper.com/podcasts",
+      "retrieved_at": "2026-10-27"
+    },
+    {
+      "id": "election-newspaper-sources",
+      "display_name": "The Election Newspaper source directory",
+      "url": "https://theelectionnewspaper.com/sources",
+      "retrieved_at": "2026-10-27"
+    },
+    {
+      "id": "media-cloud-directory",
+      "display_name": "Media Cloud Directory",
+      "url": "https://www.mediacloud.org/media-cloud-directory",
+      "retrieved_at": "2026-10-27"
+    },
+    {
+      "id": "pew-news-influencers",
+      "display_name": "Pew Research Center America's News Influencers",
+      "url": "https://www.pewresearch.org/journalism/2024/11/18/americas-news-influencers/",
+      "retrieved_at": "2026-10-27"
+    },
+    {
+      "id": "pew-news-media-tracker",
+      "display_name": "Pew Research Center News Media Tracker",
+      "url": "https://www.pewresearch.org/journalism/2025/06/10/news-media-tracker-frequently-asked-questions/",
+      "retrieved_at": "2026-10-27"
+    },
+    {
+      "id": "standing-record-sources",
+      "display_name": "Standing Record monitoring sources",
+      "url": "https://standingrecord.com/sources/",
+      "retrieved_at": "2026-10-27"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate-404-media",
+      "display_name": "404 Media",
+      "primary_medium": "newsletter",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-aaron-rupar",
+      "display_name": "Aaron Rupar",
+      "primary_medium": "bluesky",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "bluesky-public-profiles"
+      ]
+    },
+    {
+      "id": "candidate-abc-news",
+      "display_name": "ABC News",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-abc-news"
+    },
+    {
+      "id": "candidate-acyn",
+      "display_name": "Acyn",
+      "primary_medium": "bluesky",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "bluesky-public-profiles"
+      ]
+    },
+    {
+      "id": "candidate-al-monitor",
+      "display_name": "Al-Monitor",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-all-in-with-chamath-jason-sacks-and-friedberg",
+      "display_name": "All-In with Chamath, Jason, Sacks & Friedberg",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-all-in-with-chamath-jason-sacks-and-friedberg"
+    },
+    {
+      "id": "candidate-anchorage-daily-news",
+      "display_name": "Anchorage Daily News",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-ars-technica",
+      "display_name": "Ars Technica",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-associated-press",
+      "display_name": "Associated Press",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-associated-press"
+    },
+    {
+      "id": "candidate-atlanta-journal-constitution",
+      "display_name": "Atlanta Journal-Constitution",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-axios",
+      "display_name": "Axios",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-axios"
+    },
+    {
+      "id": "candidate-ballot-brief",
+      "display_name": "Ballot Brief",
+      "primary_medium": "podcast",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ]
+    },
+    {
+      "id": "candidate-bbc-news",
+      "display_name": "BBC News",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-bbc-news"
+    },
+    {
+      "id": "candidate-black-enterprise",
+      "display_name": "Black Enterprise",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-bloomberg",
+      "display_name": "Bloomberg",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-breaking-points-with-krystal-and-saagar",
+      "display_name": "Breaking Points with Krystal and Saagar",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-breaking-points-with-krystal-and-saagar"
+    },
+    {
+      "id": "candidate-breitbart",
+      "display_name": "Breitbart",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-breitbart"
+    },
+    {
+      "id": "candidate-brian-tyler-cohen",
+      "display_name": "Brian Tyler Cohen",
+      "primary_medium": "youtube",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "pew-news-influencers"
+      ],
+      "registry_observer_id": "observer-brian-tyler-cohen"
+    },
+    {
+      "id": "candidate-business-insider",
+      "display_name": "Business Insider",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-candace",
+      "display_name": "Candace",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-candace"
+    },
+    {
+      "id": "candidate-capital-b",
+      "display_name": "Capital B",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-catholic-news-agency",
+      "display_name": "Catholic News Agency",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-cbs-news",
+      "display_name": "CBS News",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-cbs-news"
+    },
+    {
+      "id": "candidate-center-for-public-integrity",
+      "display_name": "Center for Public Integrity",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-center-for-public-integrity"
+    },
+    {
+      "id": "candidate-chalkbeat",
+      "display_name": "Chalkbeat",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-chicago-tribune",
+      "display_name": "Chicago Tribune",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-christianity-today",
+      "display_name": "Christianity Today",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-christianity-today"
+    },
+    {
+      "id": "candidate-cnbc",
+      "display_name": "CNBC",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-cnn",
+      "display_name": "CNN",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-cnn"
+    },
+    {
+      "id": "candidate-commentary",
+      "display_name": "Commentary",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-commentary"
+    },
+    {
+      "id": "candidate-commentary-magazine-podcast",
+      "display_name": "Commentary Magazine Podcast",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-commentary-magazine-podcast"
+    },
+    {
+      "id": "candidate-daily-caller",
+      "display_name": "Daily Caller",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-daily-caller"
+    },
+    {
+      "id": "candidate-daily-signal",
+      "display_name": "Daily Signal",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-daily-signal"
+    },
+    {
+      "id": "candidate-daily-wire",
+      "display_name": "Daily Wire",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-daily-wire"
+    },
+    {
+      "id": "candidate-deadline-white-house",
+      "display_name": "Deadline: White House",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-deadline-white-house"
+    },
+    {
+      "id": "candidate-defense-one",
+      "display_name": "Defense One",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-democracy-docket",
+      "display_name": "Democracy Docket",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-democracy-docket"
+    },
+    {
+      "id": "candidate-democracy-now",
+      "display_name": "Democracy Now",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-democracy-now"
+    },
+    {
+      "id": "candidate-detroit-free-press",
+      "display_name": "Detroit Free Press",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-electronic-frontier-foundation",
+      "display_name": "Electronic Frontier Foundation",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-electronic-frontier-foundation"
+    },
+    {
+      "id": "candidate-emptywheel",
+      "display_name": "emptywheel",
+      "primary_medium": "bluesky",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "bluesky-public-profiles"
+      ]
+    },
+    {
+      "id": "candidate-fast-politics",
+      "display_name": "Fast Politics",
+      "primary_medium": "podcast",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ]
+    },
+    {
+      "id": "candidate-financial-times",
+      "display_name": "Financial Times",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-forbes",
+      "display_name": "Forbes",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-forbes"
+    },
+    {
+      "id": "candidate-foreign-affairs",
+      "display_name": "Foreign Affairs",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-foreign-policy",
+      "display_name": "Foreign Policy",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-fox-news",
+      "display_name": "Fox News",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-fox-news"
+    },
+    {
+      "id": "candidate-hacks-on-tap",
+      "display_name": "Hacks on Tap",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-hacks-on-tap"
+    },
+    {
+      "id": "candidate-honestly-with-bari-weiss",
+      "display_name": "Honestly with Bari Weiss",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-honestly-with-bari-weiss"
+    },
+    {
+      "id": "candidate-honolulu-civil-beat",
+      "display_name": "Honolulu Civil Beat",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-huffpost",
+      "display_name": "HuffPost",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-huffpost"
+    },
+    {
+      "id": "candidate-ict-news",
+      "display_name": "ICT News",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-ict-news"
+    },
+    {
+      "id": "candidate-impolitic-with-john-heilemann",
+      "display_name": "Impolitic with John Heilemann",
+      "primary_medium": "podcast",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ]
+    },
+    {
+      "id": "candidate-inside-higher-ed",
+      "display_name": "Inside Higher Ed",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-jacobin",
+      "display_name": "Jacobin",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-jacobin"
+    },
+    {
+      "id": "candidate-jewish-telegraphic-agency",
+      "display_name": "Jewish Telegraphic Agency",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-just-security",
+      "display_name": "Just Security",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-just-security"
+    },
+    {
+      "id": "candidate-kff-health-news",
+      "display_name": "KFF Health News",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-kff-health-news"
+    },
+    {
+      "id": "candidate-las-vegas-review-journal",
+      "display_name": "Las Vegas Review-Journal",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-latino-rebels",
+      "display_name": "Latino Rebels",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-lawfare",
+      "display_name": "Lawfare",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-lawfare"
+    },
+    {
+      "id": "candidate-lex-fridman-podcast",
+      "display_name": "Lex Fridman Podcast",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-lex-fridman-podcast"
+    },
+    {
+      "id": "candidate-los-angeles-times",
+      "display_name": "Los Angeles Times",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-miami-herald",
+      "display_name": "Miami Herald",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-military-times",
+      "display_name": "Military Times",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-milwaukee-journal-sentinel",
+      "display_name": "Milwaukee Journal Sentinel",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-minnesota-star-tribune",
+      "display_name": "Minnesota Star Tribune",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-mother-jones",
+      "display_name": "Mother Jones",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-mother-jones"
+    },
+    {
+      "id": "candidate-msnbc",
+      "display_name": "MSNBC",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-mueller-she-wrote",
+      "display_name": "Mueller, She Wrote",
+      "primary_medium": "bluesky",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "bluesky-public-profiles"
+      ]
+    },
+    {
+      "id": "candidate-national-catholic-reporter",
+      "display_name": "National Catholic Reporter",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-national-review",
+      "display_name": "National Review",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-national-review"
+    },
+    {
+      "id": "candidate-native-news-online",
+      "display_name": "Native News Online",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-nbc-news",
+      "display_name": "NBC News",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-nbc-news"
+    },
+    {
+      "id": "candidate-new-york-post",
+      "display_name": "New York Post",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-new-york-post"
+    },
+    {
+      "id": "candidate-new-york-times",
+      "display_name": "New York Times",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-new-york-times"
+    },
+    {
+      "id": "candidate-newsmax",
+      "display_name": "Newsmax",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-newsmax"
+    },
+    {
+      "id": "candidate-newsweek",
+      "display_name": "Newsweek",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-newsweek"
+    },
+    {
+      "id": "candidate-no-lie-with-brian-tyler-cohen",
+      "display_name": "No Lie with Brian Tyler Cohen",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-no-lie-with-brian-tyler-cohen"
+    },
+    {
+      "id": "candidate-nola-com",
+      "display_name": "NOLA.com",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-noticias-telemundo",
+      "display_name": "Noticias Telemundo",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-notus",
+      "display_name": "NOTUS",
+      "primary_medium": "newsletter",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-npr",
+      "display_name": "NPR",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-npr"
+    },
+    {
+      "id": "candidate-pbd-podcast",
+      "display_name": "PBD Podcast",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-pbd-podcast"
+    },
+    {
+      "id": "candidate-pbs-newshour",
+      "display_name": "PBS NewsHour",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-pbs-newshour"
+    },
+    {
+      "id": "candidate-pittsburgh-post-gazette",
+      "display_name": "Pittsburgh Post-Gazette",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-platformer",
+      "display_name": "Platformer",
+      "primary_medium": "newsletter",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-pod-save-america",
+      "display_name": "Pod Save America",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-pod-save-america"
+    },
+    {
+      "id": "candidate-political-gabfest",
+      "display_name": "Political Gabfest",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-political-gabfest"
+    },
+    {
+      "id": "candidate-politically-georgia",
+      "display_name": "Politically Georgia",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-politically-georgia"
+    },
+    {
+      "id": "candidate-politico",
+      "display_name": "Politico",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-politico"
+    },
+    {
+      "id": "candidate-politicology",
+      "display_name": "Politicology",
+      "primary_medium": "podcast",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ]
+    },
+    {
+      "id": "candidate-politics-war-room",
+      "display_name": "Politics War Room",
+      "primary_medium": "podcast",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ]
+    },
+    {
+      "id": "candidate-popular-information",
+      "display_name": "Popular Information",
+      "primary_medium": "newsletter",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-prism",
+      "display_name": "Prism",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-propublica",
+      "display_name": "ProPublica",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-propublica"
+    },
+    {
+      "id": "candidate-punchbowl-news",
+      "display_name": "Punchbowl News",
+      "primary_medium": "newsletter",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-realclearpolitics",
+      "display_name": "RealClearPolitics",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-realclearpolitics"
+    },
+    {
+      "id": "candidate-realclearpolitics-podcast",
+      "display_name": "RealClearPolitics Podcast",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-realclearpolitics-podcast"
+    },
+    {
+      "id": "candidate-reason",
+      "display_name": "Reason",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-reason"
+    },
+    {
+      "id": "candidate-religion-news-service",
+      "display_name": "Religion News Service",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-religion-news-service"
+    },
+    {
+      "id": "candidate-responsible-statecraft",
+      "display_name": "Responsible Statecraft",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-reveal",
+      "display_name": "Reveal",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-reveal"
+    },
+    {
+      "id": "candidate-rewire-news-group",
+      "display_name": "Rewire News Group",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-rewire-news-group"
+    },
+    {
+      "id": "candidate-ring-of-fire",
+      "display_name": "Ring of Fire",
+      "primary_medium": "youtube",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "pew-news-influencers"
+      ],
+      "registry_observer_id": "observer-ring-of-fire"
+    },
+    {
+      "id": "candidate-roll-call",
+      "display_name": "Roll Call",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-rolling-stone-politics",
+      "display_name": "Rolling Stone Politics",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-rolling-stone-politics"
+    },
+    {
+      "id": "candidate-ruthless",
+      "display_name": "Ruthless",
+      "primary_medium": "podcast",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ]
+    },
+    {
+      "id": "candidate-scotusblog",
+      "display_name": "SCOTUSblog",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-secular-talk",
+      "display_name": "Secular Talk",
+      "primary_medium": "youtube",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "pew-news-influencers"
+      ],
+      "registry_observer_id": "observer-secular-talk"
+    },
+    {
+      "id": "candidate-semafor",
+      "display_name": "Semafor",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-semafor"
+    },
+    {
+      "id": "candidate-slate",
+      "display_name": "Slate",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-slate"
+    },
+    {
+      "id": "candidate-st-louis-post-dispatch",
+      "display_name": "St. Louis Post-Dispatch",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-stat",
+      "display_name": "STAT",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-tampa-bay-times",
+      "display_name": "Tampa Bay Times",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-task-and-purpose",
+      "display_name": "Task & Purpose",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-techcrunch",
+      "display_name": "TechCrunch",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-19th",
+      "display_name": "The 19th",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-19th"
+    },
+    {
+      "id": "candidate-the-advocate",
+      "display_name": "The Advocate",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-advocate"
+    },
+    {
+      "id": "candidate-the-american-conservative",
+      "display_name": "The American Conservative",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-american-conservative"
+    },
+    {
+      "id": "candidate-the-arizona-republic",
+      "display_name": "The Arizona Republic",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-atlantic",
+      "display_name": "The Atlantic",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-atlantic"
+    },
+    {
+      "id": "candidate-the-baltimore-banner",
+      "display_name": "The Baltimore Banner",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-baltimore-sun",
+      "display_name": "The Baltimore Sun",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-ben-shapiro-show",
+      "display_name": "The Ben Shapiro Show",
+      "primary_medium": "youtube",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "pew-news-influencers"
+      ],
+      "registry_observer_id": "observer-the-ben-shapiro-show"
+    },
+    {
+      "id": "candidate-the-blaze",
+      "display_name": "The Blaze",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-blaze"
+    },
+    {
+      "id": "candidate-the-boston-globe",
+      "display_name": "The Boston Globe",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-bulwark",
+      "display_name": "The Bulwark",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-bulwark"
+    },
+    {
+      "id": "candidate-the-charlie-kirk-show",
+      "display_name": "The Charlie Kirk Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-charlie-kirk-show"
+    },
+    {
+      "id": "candidate-the-charlotte-observer",
+      "display_name": "The Charlotte Observer",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-chronicle-of-higher-education",
+      "display_name": "The Chronicle of Higher Education",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-colorado-sun",
+      "display_name": "The Colorado Sun",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-daily",
+      "display_name": "The Daily",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-daily"
+    },
+    {
+      "id": "candidate-the-dallas-morning-news",
+      "display_name": "The Dallas Morning News",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-david-pakman-show",
+      "display_name": "The David Pakman Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-david-pakman-show"
+    },
+    {
+      "id": "candidate-the-denver-post",
+      "display_name": "The Denver Post",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-des-moines-register",
+      "display_name": "The Des Moines Register",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-dispatch",
+      "display_name": "The Dispatch",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-dispatch"
+    },
+    {
+      "id": "candidate-the-dispatch-podcast",
+      "display_name": "The Dispatch Podcast",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-dispatch-podcast"
+    },
+    {
+      "id": "candidate-the-downballot",
+      "display_name": "The Downballot",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-downballot"
+    },
+    {
+      "id": "candidate-the-economist",
+      "display_name": "The Economist",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-editors",
+      "display_name": "The Editors",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-editors"
+    },
+    {
+      "id": "candidate-the-ezra-klein-show",
+      "display_name": "The Ezra Klein Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-ezra-klein-show"
+    },
+    {
+      "id": "candidate-the-federalist",
+      "display_name": "The Federalist",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-federalist"
+    },
+    {
+      "id": "candidate-the-fifth-column",
+      "display_name": "The Fifth Column",
+      "primary_medium": "podcast",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-fifth-column"
+    },
+    {
+      "id": "candidate-the-focus-group-podcast",
+      "display_name": "The Focus Group Podcast",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-focus-group-podcast"
+    },
+    {
+      "id": "candidate-the-forward",
+      "display_name": "The Forward",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-free-press",
+      "display_name": "The Free Press",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-free-press"
+    },
+    {
+      "id": "candidate-the-glenn-beck-program",
+      "display_name": "The Glenn Beck Program",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-glenn-beck-program"
+    },
+    {
+      "id": "candidate-the-guardian-us",
+      "display_name": "The Guardian US",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-guardian-us"
+    },
+    {
+      "id": "candidate-the-hill",
+      "display_name": "The Hill",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-hill"
+    },
+    {
+      "id": "candidate-the-intercept",
+      "display_name": "The Intercept",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-intercept"
+    },
+    {
+      "id": "candidate-the-joe-rogan-experience",
+      "display_name": "The Joe Rogan Experience",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-joe-rogan-experience"
+    },
+    {
+      "id": "candidate-the-kansas-city-star",
+      "display_name": "The Kansas City Star",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-lever",
+      "display_name": "The Lever",
+      "primary_medium": "newsletter",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-lincoln-project",
+      "display_name": "The Lincoln Project",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-lincoln-project"
+    },
+    {
+      "id": "candidate-the-majority-report-with-sam-seder",
+      "display_name": "The Majority Report with Sam Seder",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-majority-report-with-sam-seder"
+    },
+    {
+      "id": "candidate-the-marshall-project",
+      "display_name": "The Marshall Project",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-marshall-project"
+    },
+    {
+      "id": "candidate-the-matt-walsh-show",
+      "display_name": "The Matt Walsh Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-matt-walsh-show"
+    },
+    {
+      "id": "candidate-the-megyn-kelly-show",
+      "display_name": "The Megyn Kelly Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-megyn-kelly-show"
+    },
+    {
+      "id": "candidate-the-meidastouch-podcast",
+      "display_name": "The MeidasTouch Podcast",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-meidastouch-podcast"
+    },
+    {
+      "id": "candidate-the-michael-knowles-show",
+      "display_name": "The Michael Knowles Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-michael-knowles-show"
+    },
+    {
+      "id": "candidate-the-nevada-independent",
+      "display_name": "The Nevada Independent",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-new-republic",
+      "display_name": "The New Republic",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-the-new-republic"
+    },
+    {
+      "id": "candidate-the-news-and-observer",
+      "display_name": "The News & Observer",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-npr-politics-podcast",
+      "display_name": "The NPR Politics Podcast",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-npr-politics-podcast"
+    },
+    {
+      "id": "candidate-the-officer-tatum-show",
+      "display_name": "The Officer Tatum Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-officer-tatum-show"
+    },
+    {
+      "id": "candidate-the-oregonian",
+      "display_name": "The Oregonian",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-philadelphia-inquirer",
+      "display_name": "The Philadelphia Inquirer",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-political-scene-the-new-yorker",
+      "display_name": "The Political Scene | The New Yorker",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-political-scene-the-new-yorker"
+    },
+    {
+      "id": "candidate-the-rest-is-politics-us",
+      "display_name": "The Rest Is Politics: US",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-rest-is-politics-us"
+    },
+    {
+      "id": "candidate-the-rubin-report",
+      "display_name": "The Rubin Report",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-rubin-report"
+    },
+    {
+      "id": "candidate-the-run-up",
+      "display_name": "The Run-Up",
+      "primary_medium": "podcast",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ]
+    },
+    {
+      "id": "candidate-the-salt-lake-tribune",
+      "display_name": "The Salt Lake Tribune",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-seattle-times",
+      "display_name": "The Seattle Times",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-shawn-ryan-show",
+      "display_name": "The Shawn Ryan Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-shawn-ryan-show"
+    },
+    {
+      "id": "candidate-the-tennessean",
+      "display_name": "The Tennessean",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-tennessee-holler",
+      "display_name": "The Tennessee Holler",
+      "primary_medium": "bluesky",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "bluesky-public-profiles"
+      ]
+    },
+    {
+      "id": "candidate-the-texas-tribune",
+      "display_name": "The Texas Tribune",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-the-tucker-carlson-show",
+      "display_name": "The Tucker Carlson Show",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-tucker-carlson-show"
+    },
+    {
+      "id": "candidate-the-young-turks",
+      "display_name": "The Young Turks",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-the-young-turks"
+    },
+    {
+      "id": "candidate-thegrio",
+      "display_name": "TheGrio",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-timcast-irl",
+      "display_name": "Timcast IRL",
+      "primary_medium": "podcast",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "election-newspaper-podcasts"
+      ],
+      "registry_observer_id": "observer-timcast-irl"
+    },
+    {
+      "id": "candidate-time",
+      "display_name": "Time",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-univision-noticias",
+      "display_name": "Univision Noticias",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    },
+    {
+      "id": "candidate-usa-today",
+      "display_name": "USA Today",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-usa-today"
+    },
+    {
+      "id": "candidate-vox",
+      "display_name": "Vox",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-vox"
+    },
+    {
+      "id": "candidate-wall-street-journal",
+      "display_name": "Wall Street Journal",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-wall-street-journal"
+    },
+    {
+      "id": "candidate-washington-examiner",
+      "display_name": "Washington Examiner",
+      "primary_medium": "website",
+      "route_status": "enabled-shadow",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-washington-examiner"
+    },
+    {
+      "id": "candidate-washington-post",
+      "display_name": "Washington Post",
+      "primary_medium": "website",
+      "route_status": "disabled-candidate",
+      "inventory_source_ids": [
+        "media-cloud-directory"
+      ],
+      "registry_observer_id": "observer-washington-post"
+    },
+    {
+      "id": "candidate-wired",
+      "display_name": "Wired",
+      "primary_medium": "website",
+      "route_status": "unverified",
+      "inventory_source_ids": [
+        "election-newspaper-sources",
+        "media-cloud-directory"
+      ]
+    }
+  ]
+}
