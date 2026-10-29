@@ -67,7 +67,8 @@ def init(directory, start, end, pilot=True, registry=None):
         state = {'schema_version':1,'protocol':'weekly-v1','window':{'start':start,'end':end},
           'run_id':start+'_'+end, 'pilot':pilot,'stage':'collect','created_at':now(),
           'limits':LIMITS, 'actions':[], 'candidates':[], 'excluded':[], 'assessments':{},
-          'verifications':{}, 'exposures':[], 'coverage':{},'validation_attempts':0,
+          'verifications':{}, 'exposures':[], 'coverage':{}, 'route_health':{}, 'referrals':[],
+          'validation_attempts':0,
           'publication':{'state':'unpublished'}, 'registry_snapshot':registry or [],
           'screening_words':0, 'checkpoints':[]}
         write_json(directory / 'run.json', state)
@@ -113,7 +114,8 @@ def add_candidates(directory, records):
         for raw in records:
             # Whitelist: accidental abstract/body/profile fields never reach screening.
             c={k:raw[k] for k in ('title','date','source','themes','url','route','category','date_provenance',
-                 'work_id','version_id','revision_of','first_release','source_type') if k in raw}
+                 'date_status','date_precision','date_basis','work_id','version_id','revision_of',
+                 'first_release','source_type','found_by') if k in raw}
             for field in ('title','source','url','route','category'):
                 if not c.get(field): raise ValueError('Missing '+field)
             if c['category'] not in CATEGORIES: raise ValueError('Unknown category')
@@ -127,15 +129,50 @@ def add_candidates(directory, records):
             else: c['date']=None
             if c['work_id'] in known:
                 previous=known[c['work_id']]
-                previous.setdefault('also_found_by',[]).append(c['route']); continue
+                routes=previous.setdefault('also_found_by',[])
+                if c['route'] != previous['route'] and c['route'] not in routes: routes.append(c['route'])
+                continue
             if len(s['candidates'])>=1000:
                 s['coverage']['record_cap_reached']=True
                 s['excluded'].append({'id':c['id'],'route':c['route'],'reason':'record-cap'}); continue
             c['title']=bounded(c['title'],30); c['source']=bounded(c['source'],8)
             c['themes']=bounded(' '.join(c.get('themes',[])) if isinstance(c.get('themes'),list) else c.get('themes',''),10)
             c['screen_text']=bounded(f"{c['title']} | {c['date'] or 'date unknown'} | {c['source']} | {c['themes']}",50)
-            c['date_status']='provisional' if not c.get('date_provenance') else 'listed'
+            if c.get('date_status') not in (None,'listed','provisional','verified'):
+                raise ValueError('Unknown date status')
+            c['date_status']=c.get('date_status') or ('provisional' if not c.get('date_provenance') else 'listed')
             s['candidates'].append(c); known[c['work_id']]=c
+
+def record_route_health(directory, route_id, record):
+    """Persist semantic route health; HTTP success alone is never a healthy result."""
+    with transaction(directory) as s:
+        if s['stage']!='collect': raise ValueError('Collection is closed')
+        required={'reachable','parsed','complete','records_seen','records_in_window'}
+        if not required <= record.keys(): raise ValueError('Incomplete route health record')
+        clean={k:record[k] for k in ('reachable','parsed','fresh','complete','window_covered',
+              'records_seen','records_dated','records_in_window','truncated','endpoint','adapter',
+              'error','notes') if k in record}
+        clean['healthy']=bool(clean.get('reachable') and clean.get('parsed') and
+          clean.get('complete') and clean.get('window_covered'))
+        clean['checked_at']=now()
+        s.setdefault('route_health',{})[route_id]=clean
+
+def add_referrals(directory, records):
+    """Store discovery pointers separately from primary-document candidates."""
+    with transaction(directory) as s:
+        if s['stage']!='collect': raise ValueError('Collection is closed')
+        known={(r['referrer_id'],r['target_url']) for r in s.setdefault('referrals',[])}
+        for raw in records:
+            required={'referrer_id','post_title','post_date','post_url','target_url'}
+            if not required <= raw.keys(): raise ValueError('Incomplete referral')
+            referral={k:raw[k] for k in required}
+            referral['post_url']=canonical(referral['post_url'])
+            referral['target_url']=canonical(referral['target_url'])
+            date.fromisoformat(referral['post_date'])
+            if not s['window']['start'] <= referral['post_date'] < s['window']['end']: continue
+            key=(referral['referrer_id'],referral['target_url'])
+            if key not in known:
+                s['referrals'].append(referral); known.add(key)
 
 def transition(directory, target):
     with transaction(directory) as s:
@@ -295,7 +332,12 @@ def audit(directory):
       'screening_words':s['screening_words'],'reading_words':dict(Counter({b:sum(e['words'] for e in s['exposures'] if e['bucket']==b) for b in ('assess','verify')})),
       'by_category':dict(Counter(c['category'] for c in s['candidates'])),
       'by_source':dict(Counter(c['source'] for c in s['candidates'])),
-      'by_route':dict(Counter(c['route'] for c in s['candidates'])), 'coverage':s['coverage']}
+      'by_route':dict(Counter(c['route'] for c in s['candidates'])),
+      'routes':{'checked':len(s.get('route_health',{})),
+        'healthy':sum(r.get('healthy',False) for r in s.get('route_health',{}).values()),
+        'reachable_but_unparsed':sum(r.get('reachable') and not r.get('parsed') for r in s.get('route_health',{}).values()),
+        'incomplete':sum(r.get('parsed') and not r.get('complete') for r in s.get('route_health',{}).values())},
+      'referrals':len(s.get('referrals',[])), 'coverage':s['coverage']}
 
 def publication_gate(directory,edition,feedback):
     from editions import validate_edition
