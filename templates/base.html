@@ -17,13 +17,12 @@
 <body id="top" data-root="{{ROOT}}">
   <a class="skip-link" href="#content">Skip to the record</a>
   <header class="site-header">
-    <a class="site-wordmark" href="{{ROOT}}index.html" aria-label="Observatory home"{{NAV_HOME}}>
-      <img class="site-mark" src="{{ROOT}}assets/sb-mark.png" alt="">
-      <span>Observatory</span>
-    </a>
-    <nav class="site-links" aria-label="Primary">
+    <div class="site-identity">
+      <a class="site-mark-link" href="https://barasch.github.io/index/" aria-label="SB home"><img class="site-mark" src="{{ROOT}}assets/sb-mark.png" alt=""></a>
+      <a class="site-wordmark" href="{{ROOT}}index.html" aria-label="Observatory home"{{NAV_HOME}}><span>Observatory</span></a>
+    </div>
+    <nav class="site-links" aria-label="Observatory">
       <a href="{{ROOT}}archive/index.html"{{NAV_ARCHIVE}}>Archive</a>
-      <a href="https://barasch.github.io/notes/">Notes</a>
       <button type="button" id="unlock">Unlock</button>
       <button type="button" id="preferences" hidden>Preferences</button>
       <button type="button" id="lock" hidden>Lock</button>
@@ -38,6 +37,7 @@
       <a href="#top">Top</a>
       <a href="{{ROOT}}index.html">Observatory home</a>
       <a href="https://github.com/barasch/observatory">Methods, sources, and code</a>
+      <span>© 2026 SB</span>
     </nav>
     <p>Daily editions contain summaries composed by ChatGPT. Earlier collected records retain source-supplied descriptions. Read the original documents for their evidence, methods, and qualifications.</p>
   </footer>
