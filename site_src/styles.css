@@ -109,6 +109,19 @@ input:focus-visible {
   width: 90%;
 }
 
+.site-identity {
+  align-items: center;
+  display: inline-flex;
+  gap: 9px;
+}
+
+.site-mark-link {
+  align-items: center;
+  display: inline-flex;
+  line-height: 1;
+  text-decoration: none;
+}
+
 .site-wordmark {
   align-items: center;
   display: inline-flex;
