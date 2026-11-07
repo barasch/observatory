@@ -14,8 +14,8 @@ CATEGORIES = {'law': 'Courts & Law', 'economy': 'Economy & Finance',
               'government': 'Government & Public Services', 'science': 'Science & Research'}
 EDITION_KEYS = {'schema_version', 'date', 'prepared_at', 'items', 'coverage_note', 'window'}
 ITEM_KEYS = {'id', 'category', 'title', 'publisher', 'published', 'geography', 'summary',
-             'detail', 'source_url', 'document_url', 'source_type', 'tags', 'preview_url', 'revision_of'}
-REQUIRED = ITEM_KEYS - {'detail', 'preview_url', 'revision_of'}
+             'authors', 'detail', 'source_url', 'document_url', 'source_type', 'tags', 'preview_url', 'revision_of'}
+REQUIRED = ITEM_KEYS - {'authors', 'detail', 'preview_url', 'revision_of'}
 ROOT = Path(__file__).resolve().parents[1]
 
 def esc(value):
@@ -66,6 +66,12 @@ def validate_edition(edition):
         for field, limit in length_limits.items():
             if len(item[field]) > limit:
                 raise ValueError(f'{field} exceeds {limit} characters')
+        if 'authors' in item and (
+            not isinstance(item['authors'], str)
+            or not item['authors'].strip()
+            or len(item['authors']) > 1000
+        ):
+            raise ValueError('authors must be nonempty text of at most 1000 characters')
         if not 30 <= len(item['summary'].split()) <= 120:
             raise ValueError('Summary must be 30–120 words (target 60–90)')
         published = date.fromisoformat(item['published'])
@@ -155,8 +161,10 @@ def tile(item):
     if item.get('preview_url'):
         preview = f'<a class="document-preview" href="{esc(item["document_url"])}" target="_blank" rel="noopener noreferrer" aria-label="Open original document: {esc(item["title"])}"><img src="{esc(item["preview_url"])}" alt="Document preview" loading="lazy" referrerpolicy="no-referrer"></a>'
     # Static text is escaped. Feedback metadata uses a JSON text node, never HTML.
-    meta = json.dumps({k: item[k] for k in ('id','category','title','publisher','document_url','source_type','tags')}, ensure_ascii=True).replace('<', '\\u003c')
+    metadata_keys = ('id','category','title','authors','publisher','document_url','source_type','tags')
+    meta = json.dumps({k: item[k] for k in metadata_keys if k in item}, ensure_ascii=True).replace('<', '\\u003c')
     detail = f'<p>{esc(item["detail"])}</p>' if item.get('detail') else ''
+    authors = f'<p class="tile-authors">{esc(item["authors"])}</p>' if item.get('authors') else ''
     if item.get('revision_of'):
         rev = item['revision_of']
         detail += f'<p>Revision of <a href="https://barasch.github.io/observatory/editions/{esc(rev["edition_date"])}/#item-{esc(rev["item_id"])}">earlier publication</a>: {esc(rev["changes"])}</p>'
@@ -166,6 +174,7 @@ def tile(item):
       <div class="tile-body">
         <p class="tile-meta">{esc(item['publisher'])} <span>· {esc(item['published'])}</span></p>
         <h3><button class="tile-toggle" type="button" aria-expanded="false" aria-controls="detail-{ident}">{esc(item['title'])}</button></h3>
+        {authors}
         <p class="tile-summary">{esc(item['summary'])}</p>
         <p class="tile-labels">{esc(item['geography'])} <span>· {esc(item['source_type'])}</span></p>
         <div class="tile-detail" id="detail-{ident}" hidden>{detail}

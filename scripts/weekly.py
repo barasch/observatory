@@ -66,8 +66,9 @@ def init(directory, start, end, pilot=True, registry=None):
         if (directory / 'run.json').exists(): raise ValueError('Run already exists; resume it')
         state = {'schema_version':1,'protocol':'weekly-v1','window':{'start':start,'end':end},
           'run_id':start+'_'+end, 'pilot':pilot,'stage':'collect','created_at':now(),
-          'limits':LIMITS, 'actions':[], 'candidates':[], 'excluded':[], 'assessments':{},
-          'verifications':{}, 'exposures':[], 'coverage':{},'validation_attempts':0,
+          'limits':LIMITS, 'actions':[], 'inventory':[], 'candidates':[], 'excluded':[], 'assessments':{},
+          'verifications':{}, 'exposures':[], 'coverage':{}, 'route_health':{}, 'referrals':[],
+          'admission':{'status':'pending'}, 'validation_attempts':0,
           'publication':{'state':'unpublished'}, 'registry_snapshot':registry or [],
           'screening_words':0, 'checkpoints':[]}
         write_json(directory / 'run.json', state)
@@ -113,7 +114,9 @@ def add_candidates(directory, records):
         for raw in records:
             # Whitelist: accidental abstract/body/profile fields never reach screening.
             c={k:raw[k] for k in ('title','date','source','themes','url','route','category','date_provenance',
-                 'work_id','version_id','revision_of','first_release','source_type') if k in raw}
+                 'date_status','date_precision','date_basis','work_id','version_id','revision_of',
+                 'first_release','source_type','found_by','also_found_by','admission_signals',
+                 'admission_score') if k in raw}
             for field in ('title','source','url','route','category'):
                 if not c.get(field): raise ValueError('Missing '+field)
             if c['category'] not in CATEGORIES: raise ValueError('Unknown category')
@@ -127,15 +130,80 @@ def add_candidates(directory, records):
             else: c['date']=None
             if c['work_id'] in known:
                 previous=known[c['work_id']]
-                previous.setdefault('also_found_by',[]).append(c['route']); continue
+                routes=previous.setdefault('also_found_by',[])
+                if c['route'] != previous['route'] and c['route'] not in routes: routes.append(c['route'])
+                continue
             if len(s['candidates'])>=1000:
                 s['coverage']['record_cap_reached']=True
                 s['excluded'].append({'id':c['id'],'route':c['route'],'reason':'record-cap'}); continue
             c['title']=bounded(c['title'],30); c['source']=bounded(c['source'],8)
             c['themes']=bounded(' '.join(c.get('themes',[])) if isinstance(c.get('themes'),list) else c.get('themes',''),10)
             c['screen_text']=bounded(f"{c['title']} | {c['date'] or 'date unknown'} | {c['source']} | {c['themes']}",50)
-            c['date_status']='provisional' if not c.get('date_provenance') else 'listed'
+            if c.get('date_status') not in (None,'listed','provisional','verified'):
+                raise ValueError('Unknown date status')
+            c['date_status']=c.get('date_status') or ('provisional' if not c.get('date_provenance') else 'listed')
             s['candidates'].append(c); known[c['work_id']]=c
+
+def add_inventory(directory, records):
+    """Store bounded metadata before admission; no abstracts or document text are accepted."""
+    allowed=('title','date','source','themes','url','route','category','date_provenance',
+      'date_status','date_precision','date_basis','work_id','version_id','revision_of',
+      'first_release','source_type','found_by','admission_signals')
+    with transaction(directory) as s:
+        if s['stage']!='collect': raise ValueError('Collection is closed')
+        known={c['work_id']:c for c in s.setdefault('inventory',[])}
+        for raw in records:
+            c={k:raw[k] for k in allowed if k in raw}
+            for field in ('title','source','url','route','category'):
+                if not c.get(field): raise ValueError('Missing '+field)
+            if c['category'] not in CATEGORIES: raise ValueError('Unknown category')
+            c['url']=canonical(c['url']); c['work_id']=c.get('work_id') or c['url']
+            c['id']=hashlib.sha256((c['work_id']+'|'+str(c.get('version_id',''))).encode()).hexdigest()[:16]
+            if c.get('date'):
+                date.fromisoformat(c['date'])
+                if not s['window']['start'] <= c['date'] < s['window']['end']: continue
+            else: c['date']=None
+            c['title']=bounded(c['title'],30); c['source']=bounded(c['source'],8)
+            c['themes']=bounded(' '.join(c.get('themes',[])) if isinstance(c.get('themes'),list) else c.get('themes',''),10)
+            c['admission_signals']=sorted(set(c.get('admission_signals',[])))[:12]
+            if c['work_id'] in known:
+                prior=known[c['work_id']]
+                prior['admission_signals']=sorted(set(prior.get('admission_signals',[])) | set(c['admission_signals']))[:12]
+                routes=prior.setdefault('also_found_by',[])
+                if c['route'] != prior['route'] and c['route'] not in routes: routes.append(c['route'])
+                continue
+            s['inventory'].append(c); known[c['work_id']]=c
+
+def record_route_health(directory, route_id, record):
+    """Persist semantic route health; HTTP success alone is never a healthy result."""
+    with transaction(directory) as s:
+        if s['stage']!='collect': raise ValueError('Collection is closed')
+        required={'reachable','parsed','complete','records_seen','records_in_window'}
+        if not required <= record.keys(): raise ValueError('Incomplete route health record')
+        clean={k:record[k] for k in ('reachable','parsed','fresh','complete','window_covered',
+              'records_seen','records_dated','records_in_window','truncated','endpoint','adapter',
+              'error','notes') if k in record}
+        clean['healthy']=bool(clean.get('reachable') and clean.get('parsed') and
+          clean.get('complete') and clean.get('window_covered'))
+        clean['checked_at']=now()
+        s.setdefault('route_health',{})[route_id]=clean
+
+def add_referrals(directory, records):
+    """Store discovery pointers separately from primary-document candidates."""
+    with transaction(directory) as s:
+        if s['stage']!='collect': raise ValueError('Collection is closed')
+        known={(r['referrer_id'],r['target_url']) for r in s.setdefault('referrals',[])}
+        for raw in records:
+            required={'referrer_id','post_title','post_date','post_url','target_url'}
+            if not required <= raw.keys(): raise ValueError('Incomplete referral')
+            referral={k:raw[k] for k in required}
+            referral['post_url']=canonical(referral['post_url'])
+            referral['target_url']=canonical(referral['target_url'])
+            date.fromisoformat(referral['post_date'])
+            if not s['window']['start'] <= referral['post_date'] < s['window']['end']: continue
+            key=(referral['referrer_id'],referral['target_url'])
+            if key not in known:
+                s['referrals'].append(referral); known.add(key)
 
 def transition(directory, target):
     with transaction(directory) as s:
@@ -143,6 +211,8 @@ def transition(directory, target):
         if any(a['status']=='reserved' for a in s['actions']): raise ValueError('Resolve pending actions before proceeding')
         if target=='screen':
             if not s['candidates']: raise ValueError('Empty candidate pool')
+            if s.get('inventory') and s.get('admission',{}).get('status')!='complete':
+                raise ValueError('Inventory admission is incomplete')
             s['screening_words']=sum(words(c['screen_text']) for c in s['candidates'])
         if target=='assess':
             if any('decision' not in c for c in s['candidates']): raise ValueError('Screen every candidate')
@@ -290,12 +360,19 @@ def audit(directory):
     return {'run_id':s['run_id'],'stage':s['stage'],'pilot':s['pilot'],'window':s['window'],
       'actions':dict(Counter(a['bucket'] for a in s['actions'])),'failed_actions':sum(a['status']=='failed' for a in s['actions']),
       'pending_actions':sum(a['status']=='reserved' for a in s['actions']),
-      'candidates':len(s['candidates']),'advanced':sum(c.get('decision')=='advance' for c in s['candidates']),
+      'inventory':len(s.get('inventory',[])),'candidates':len(s['candidates']),
+      'advanced':sum(c.get('decision')=='advance' for c in s['candidates']),
       'assessed':len(s['assessments']),'verified':len(s['verifications']),
       'screening_words':s['screening_words'],'reading_words':dict(Counter({b:sum(e['words'] for e in s['exposures'] if e['bucket']==b) for b in ('assess','verify')})),
       'by_category':dict(Counter(c['category'] for c in s['candidates'])),
       'by_source':dict(Counter(c['source'] for c in s['candidates'])),
-      'by_route':dict(Counter(c['route'] for c in s['candidates'])), 'coverage':s['coverage']}
+      'by_route':dict(Counter(c['route'] for c in s['candidates'])),
+      'routes':{'checked':len(s.get('route_health',{})),
+        'healthy':sum(r.get('healthy',False) for r in s.get('route_health',{}).values()),
+        'reachable_but_unparsed':sum(r.get('reachable') and not r.get('parsed') for r in s.get('route_health',{}).values()),
+        'incomplete':sum(r.get('parsed') and not r.get('complete') for r in s.get('route_health',{}).values())},
+      'referrals':len(s.get('referrals',[])), 'admission':s.get('admission',{}),
+      'coverage':s['coverage']}
 
 def publication_gate(directory,edition,feedback):
     from editions import validate_edition

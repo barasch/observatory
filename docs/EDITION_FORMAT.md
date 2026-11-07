@@ -18,9 +18,19 @@ Public edition files are UTF-8 JSON at `data/editions/YYYY-MM-DD.json`. Historic
 Each item contains exactly:
 
 - required: `id`, `category`, `title`, `publisher`, `published`, `geography`, `summary`, `source_url`, `document_url`, `source_type`, `tags`;
-- optional: `detail`, `preview_url`, `revision_of`.
+- optional: `authors`, `detail`, `preview_url`, `revision_of`.
+
+Weekly items should include `authors`: a compact public authorship line, using the responsible
+institution for unsigned official documents and `et al.` for unusually long author lists.
+Historical editions remain valid without it.
 
 `category` is `law`, `economy`, `government`, or `science`. `published` must be the first public release date within the window, except for a substantive revision. Summaries are 30–120 words with a 60–90 target; detail is at most 120 words; tags contain 1–8 factual labels. URLs must be credential-free HTTPS. Document URLs cannot duplicate another item. Unknown fields are rejected because public data must never carry private selection material.
+
+Public summaries state the question or subject, evidence, and result. A qualification belongs
+only when it concretely describes the design, sample, comparison, model dependence, or record
+status and materially helps the reader interpret the evidence. Do not add generic warnings
+about generalizability or importance, tell the reader what a source establishes in the broad
+sense, or expose retrieval failures and other editorial process notes. Those remain private.
 
 A substantive revision of a currently upvoted original adds:
 

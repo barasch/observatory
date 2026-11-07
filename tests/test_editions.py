@@ -21,6 +21,14 @@ class EditionTests(unittest.TestCase):
 
     def test_accepts_plain_public_edition(self):
         self.assertEqual(validate_edition(copy.deepcopy(EXAMPLE)),EXAMPLE)
+    def test_optional_authors_are_validated_and_rendered(self):
+        value=copy.deepcopy(EXAMPLE)
+        value['items'][0]['authors']='Ada Example and Ben Example'
+        rendered=tile(validate_edition(value)['items'][0])
+        self.assertIn('class="tile-authors"',rendered)
+        self.assertIn('Ada Example and Ben Example',rendered)
+        value['items'][0]['authors']=' '
+        with self.assertRaises(ValueError):validate_edition(value)
     def test_private_fields_rejected_at_both_levels(self):
         for level in ('edition','item'):
             value=copy.deepcopy(EXAMPLE)

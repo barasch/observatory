@@ -1,7 +1,7 @@
 body{padding:0 12.5%;width:auto;max-width:1600px;margin:0 auto}
 .site-header,.site-footer{width:100%}
 .site-header{position:sticky;z-index:40;top:0;border-bottom:1px solid var(--rule);padding:24px 0;background:var(--paper)}
-.site-mark{width:24px;height:24px}
+.site-wordmark img{width:24px;height:24px}
 .site-wordmark span{font-size:15px;letter-spacing:.08em;text-transform:uppercase}
 .site-links{gap:22px;align-items:center;flex-wrap:wrap}
 .site-links button,.text-button{background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:4px;color:var(--muted);cursor:pointer}
@@ -23,6 +23,7 @@ body{padding:0 12.5%;width:auto;max-width:1600px;margin:0 auto}
 .source-tile h3{font-size:25px;line-height:1.18;font-weight:400;margin:0 0 14px}
 .tile-toggle{font:inherit;line-height:inherit;color:inherit;text-align:left;cursor:pointer;background:none;border:0;border-radius:0;padding:0;width:100%}
 .tile-toggle:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.tile-authors{font:14px/1.45 var(--sans);color:var(--muted);margin:-3px 0 14px}
 .tile-summary{font-size:19px;line-height:1.5;margin:0 0 18px;max-width:none;width:auto}
 .tile-labels{font:12px/1.5 var(--sans);color:var(--muted);margin:0}
 .tile-detail{border-top:1px solid var(--rule);margin-top:18px;padding-top:16px;font-size:18px}

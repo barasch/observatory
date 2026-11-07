@@ -1,0 +1,410 @@
+{
+  "schema_version": 2,
+  "date": "2026-11-06",
+  "prepared_at": "2026-11-07T01:40:52Z",
+  "window": {
+    "start": "2026-10-25",
+    "end": "2026-11-01"
+  },
+  "coverage_note": "This off-schedule edition covers primary documents first released October 25–31, 2026, following the weekly discovery redesign.",
+  "items": [
+    {
+      "id": "gdp-advance-2026-q3",
+      "category": "economy",
+      "title": "GDP (Advance Estimate), 3rd Quarter 2026",
+      "publisher": "U.S. Bureau of Economic Analysis",
+      "published": "2026-10-29",
+      "geography": "United States",
+      "summary": "The advance estimate reports that real gross domestic product increased at a 3.4 percent annual rate in the third quarter, following 2.2 percent growth in the second. Investment, consumer spending, and government spending contributed to the increase; exports declined and imports increased.",
+      "detail": "The release also reports 4.9 percent growth in real final sales to private domestic purchasers, a 3.0 percent increase in the gross domestic purchases price index, and 2.1 percent growth in the personal consumption expenditures price index.",
+      "source_url": "https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026",
+      "document_url": "https://www.bea.gov/sites/default/files/2026-10/gdp3q26-adv.pdf",
+      "source_type": "Statistical release",
+      "tags": [
+        "gross domestic product",
+        "national accounts",
+        "economic growth"
+      ],
+      "authors": "U.S. Bureau of Economic Analysis"
+    },
+    {
+      "id": "fomc-statement-2026-10-28",
+      "category": "economy",
+      "title": "Federal Reserve issues FOMC statement",
+      "publisher": "Federal Reserve Board",
+      "published": "2026-10-28",
+      "geography": "United States",
+      "summary": "By a 10–2 vote, the Federal Open Market Committee maintained the federal funds target range at 3¾ to 4 percent and continued its ample-reserves policy. Lisa D. Cook and Beth M. Hammack dissented, preferring a quarter-point increase.",
+      "detail": "The statement describes economic activity as expanding at a strong pace, domestic spending as resilient, productivity growth as strong, capital investment as robust, unemployment as little changed, and inflation as elevated.",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "document_url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20261028a1.pdf",
+      "source_type": "Institutional action",
+      "tags": [
+        "monetary policy",
+        "interest rates",
+        "Federal Reserve"
+      ],
+      "authors": "Federal Open Market Committee"
+    },
+    {
+      "id": "global-entrepreneurial-talent-flows",
+      "category": "economy",
+      "title": "Global Entrepreneurial Talent Flows: Widely Funded, Selectively Successful?",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "Global",
+      "summary": "Using career histories for 913,226 founder-firm pairs in 213 countries from 1990 through 2026, the authors compare expatriate and returning founders with comparable local founders. Mobile founders raise early funding more often; expatriate success premia concentrate in the United States and United Kingdom.",
+      "detail": "The reported success premium for expatriate founders is 18 percent in the United States and 26 percent in the United Kingdom. Returnees rarely show a comparable premium.",
+      "source_url": "https://www.nber.org/papers/w35943",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35943/w35943.pdf",
+      "source_type": "Working paper",
+      "tags": [
+        "entrepreneurship",
+        "migration",
+        "venture capital",
+        "firm performance"
+      ],
+      "authors": "Paul A. Gompers and Henry Woo"
+    },
+    {
+      "id": "network-approach-to-geopolitics",
+      "category": "economy",
+      "title": "A Network Approach to Geopolitics",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "Global",
+      "summary": "The authors model geopolitical action as a network of domestic interests, alignment incentives, and costly bilateral influence. Applied to United Nations voting and democratic-orientation data, the inferred low-dimensional network aligns with external measures of ties and recovers familiar historical cleavages.",
+      "detail": "The framework identifies latent geopolitical cleavages and their importance from cross-country covariance matrices of domestic interests and geopolitical actions, then uses the recovered network for equilibrium and counterfactual power analysis.",
+      "source_url": "https://www.nber.org/papers/w35951",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35951/w35951.pdf",
+      "source_type": "Working paper",
+      "tags": [
+        "geopolitics",
+        "networks",
+        "United Nations",
+        "political economy"
+      ],
+      "authors": "Ernest Liu, Stephen J. Redding, Bennett Smith-Worthington, and David Y. Yang"
+    },
+    {
+      "id": "foreign-ownership-regulation",
+      "category": "economy",
+      "title": "Who Can Control Our Firms? National Security and Foreign Ownership Regulation",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "United States",
+      "summary": "A theoretical model connects foreign ownership, noncontractible control rights, and geopolitical bargaining. When governments cannot regulate technology transfer, dependence, or sabotage directly, ownership restrictions can change control rights and operate as a second-best policy instrument.",
+      "detail": "The paper compares the model’s mechanisms with patterns in United States national-security review of foreign acquisitions. Its evidence is a theoretical mechanism with descriptive institutional comparison rather than an estimated policy effect.",
+      "source_url": "https://www.nber.org/papers/w35958",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35958/w35958.pdf",
+      "source_type": "Working paper",
+      "tags": [
+        "foreign ownership",
+        "national security",
+        "firm control",
+        "regulation"
+      ],
+      "authors": "Rodrigo Adão and Olivier Kooi"
+    },
+    {
+      "id": "generative-ai-managerial-expectations",
+      "category": "economy",
+      "title": "Generative AI, Managerial Expectations, and Economic Activity",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "United States",
+      "summary": "Generative-artificial-intelligence scores extracted from more than 120,000 corporate conference-call transcripts predict gross domestic product growth, production, employment, and wages five or more quarters ahead, beyond survey forecasts and other comparison measures.",
+      "detail": "Industry- and firm-level scores capture corresponding activity, while a composite of firm, industry, and macroeconomic expectations improves forecasting power. Predictability is concentrated among managers with stronger historical forecasting records.",
+      "source_url": "https://www.nber.org/papers/w35949",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35949/w35949.pdf",
+      "source_type": "Working paper",
+      "tags": [
+        "generative AI",
+        "manager expectations",
+        "corporate calls",
+        "forecasting"
+      ],
+      "authors": "Manish Jha, Jialin Qian, Michael Weber, and Baozhong Yang"
+    },
+    {
+      "id": "california-fast-food-synthetic-controls",
+      "category": "economy",
+      "title": "We Just Created More Than 1,000 Synthetic Controls To Study California's $20 Fast Food Minimum Wage",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "California",
+      "summary": "The authors construct 1,440 defensible synthetic-control specifications for California’s $20 fast-food minimum wage. More than 96 percent of estimated employment effects are negative, but their range is wide; difference-in-differences estimates lie near the centers of comparable synthetic-control distributions.",
+      "detail": "The paper uses the dispersion across specifications to measure sensitivity to researcher choices. It separately discloses Hoover Institution support and the use of artificial intelligence in the research process.",
+      "source_url": "https://www.nber.org/papers/w35931",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35931/w35931.pdf",
+      "source_type": "Working paper",
+      "tags": [
+        "minimum wage",
+        "fast food",
+        "synthetic control",
+        "specification sensitivity"
+      ],
+      "authors": "Jeffrey Clemens, Olivia Edwards, Jonathan Meer, and Joshua D. Nguyen"
+    },
+    {
+      "id": "llm-functional-form-sensitivity",
+      "category": "economy",
+      "title": "An LLM Workflow for Functional Form Sensitivity Analysis",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "Methods",
+      "summary": "The authors introduce a large-language-model workflow that searches analytically and then numerically for alternative functional forms that change an estimate without worsening model fit. The procedure returns a verifiable lower bound on in-sample sensitivity.",
+      "detail": "The numerical method preserves the fit constraint along the solver path. An application examines estimates of the welfare cost of adverse selection in health insurance.",
+      "source_url": "https://www.nber.org/papers/w35947",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35947/w35947.pdf",
+      "source_type": "Working paper",
+      "tags": [
+        "large language models",
+        "functional form",
+        "sensitivity analysis",
+        "econometrics"
+      ],
+      "authors": "Isaiah Andrews, Simon C. Essig Aberg, and Jesse M. Shapiro"
+    },
+    {
+      "id": "competition-generative-ai-demand",
+      "category": "economy",
+      "title": "Competition in Generative AI: Evidence from Consumer Demand",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "United States",
+      "summary": "Transaction data covering 174 million consumers and 114 billion card purchases show that 2.9 percent of United States consumers paid for a major generative-artificial-intelligence service by April 2026. Retention ranges from 20 to 45 percent, and switching rises around major model releases.",
+      "detail": "The authors combine the transaction data with a structural demand model. The observed purchases cover paid services; nearly all paid users subscribe to plans costing $30 or less per month.",
+      "source_url": "https://www.nber.org/papers/w35953",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35953/w35953.pdf",
+      "source_type": "Working paper",
+      "tags": [
+        "generative AI",
+        "consumer demand",
+        "competition",
+        "card transactions"
+      ],
+      "authors": "Mark L. Egan, Dominic Russel, Claire Shi, and Vincent Yao"
+    },
+    {
+      "id": "selective-nursing-home-admissions",
+      "category": "economy",
+      "title": "Selective Admissions in Nursing Homes: Evidence from a Randomized Audit Study",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "United States",
+      "summary": "A nationwide randomized audit sent approximately 5,500 standardized availability inquiries to about 3,000 nursing homes. Reported availability was 10–15 percent lower for Medicaid patients than private-pay patients and for patients with Alzheimer’s disease than otherwise similar patients; no statistically significant racial difference appeared.",
+      "detail": "The availability differences generally increase with nursing-home quality. The authors then embed the audit estimates in a model of constrained nursing-home choice.",
+      "source_url": "https://www.nber.org/papers/w35944",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35944/w35944.pdf",
+      "source_type": "Randomized audit study",
+      "tags": [
+        "nursing homes",
+        "Medicaid",
+        "Alzheimer's disease",
+        "access"
+      ],
+      "authors": "Liran Einav, Amy Finkelstein, Jesse Gubb, Neale Mahoney, and James Okun"
+    },
+    {
+      "id": "returns-temporary-migration-h2a",
+      "category": "economy",
+      "title": "The Returns to Temporary Migration: Experimental Evidence from the H-2A Program",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "Mexico and United States",
+      "summary": "In a preregistered random allocation of access to H-2A seasonal visas, Mexican workers earned more than $16,000 during one United States season and remitted 70 percent to their households. Household poverty fell by 10 percentage points, while respondents’ mental-health measures worsened.",
+      "detail": "The study reports changes in food security, home improvements, durable assets, debt reduction, risk avoidance, and intrahousehold dynamics. All participating migrants said they would migrate through the program again.",
+      "source_url": "https://www.nber.org/papers/w35941",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35941/w35941.pdf",
+      "source_type": "Randomized experiment",
+      "tags": [
+        "temporary migration",
+        "H-2A visas",
+        "earnings",
+        "household welfare"
+      ],
+      "authors": "Melanie Morten, Beatriz Magaloni, Sebastián Cubillos, and Alice Yiqian Wang"
+    },
+    {
+      "id": "householdbench",
+      "category": "economy",
+      "title": "HouseholdBench: Evaluating Large Language Models as Predictors of Household Economic Behavior",
+      "publisher": "National Bureau of Economic Research",
+      "published": "2026-10-26",
+      "geography": "United States",
+      "summary": "HouseholdBench combines six United States household surveys and 32 prediction tasks covering consumption, income, labor, expectations, housing, and policy responses. Thirteen language models generally beat a no-change baseline, while gradient-boosted trees outperform them across most tasks.",
+      "detail": "For numeric outcomes, the best language model reduces error by 12.2 percent relative to the no-change baseline. The tasks use past behavior, demographics, and macroeconomic conditions.",
+      "source_url": "https://www.nber.org/papers/w35927",
+      "document_url": "https://www.nber.org/system/files/working_papers/w35927/w35927.pdf",
+      "source_type": "Benchmark study",
+      "tags": [
+        "large language models",
+        "household behavior",
+        "prediction",
+        "benchmarking"
+      ],
+      "authors": "Jin Huang, Diego Ferreras Garrucho, Yutong Xie, Walter M. Yuan, Qiaozhu Mei, Chen Lian, and Jonathon Hazell"
+    },
+    {
+      "id": "cbo-nipa-projections-2026-2036",
+      "category": "government",
+      "title": "CBO's Projections of Federal Receipts and Expenditures in the National Income and Product Accounts: 2026 to 2036",
+      "publisher": "Congressional Budget Office",
+      "published": "2026-10-26",
+      "geography": "United States",
+      "summary": "Translating its February 2026 current-law baseline into the national-income accounts, the Congressional Budget Office projects negative federal saving of $1.8 trillion in 2026 and $3.0 trillion in 2036. The cumulative 2026–2036 total is $25.6 trillion; the cumulative deficit is $26.3 trillion.",
+      "detail": "The projections assume that laws governing taxes and spending generally remain unchanged. The annual deficit is projected at $1.9 trillion in 2026 and $3.1 trillion in 2036.",
+      "source_url": "https://www.cbo.gov/publication/62876",
+      "document_url": "https://www.cbo.gov/system/files/2026-10/62876-NIPA-2026.xlsx",
+      "source_type": "Estimate or analysis",
+      "tags": [
+        "federal budget",
+        "receipts",
+        "expenditures",
+        "national accounts"
+      ],
+      "authors": "Congressional Budget Office"
+    },
+    {
+      "id": "matter-of-jones-2026-06236",
+      "category": "law",
+      "title": "Matter of Jones (New York State Commission on Judicial Conduct)",
+      "publisher": "New York State Law Reporting Bureau",
+      "published": "2026-10-27",
+      "geography": "New York",
+      "summary": "New York’s Court of Appeals accepted the Commission on Judicial Conduct’s determination and removed Canandaigua Town Justice Walter W. Jones. The court sustained findings involving repeated use of a racial slur, comments concerning a Black defendant, adverse credibility findings, failure to accept responsibility, and two prior letters of caution.",
+      "detail": "Matter of Jones (New York State Commission on Judicial Conduct), 2026 NY Slip Op 06236, decided October 27, 2026. Chief Judge Wilson and Judges Garcia, Singas, Cannataro, Troutman, and Halligan concurred; Judge Rivera took no part.",
+      "source_url": "https://www.nycourts.gov/reporter/current/3dseries/2026/2026_06236.shtml",
+      "document_url": "https://www.nycourts.gov/reporter/current/3dseries/2026/2026_06236.shtml",
+      "source_type": "Court opinion",
+      "tags": [
+        "judicial conduct",
+        "removal",
+        "Court of Appeals",
+        "New York"
+      ],
+      "authors": "New York Court of Appeals, per curiam"
+    },
+    {
+      "id": "matter-of-jessica-lm-2026-06306",
+      "category": "law",
+      "title": "Matter of Jessica L.M. (Deborah M.)",
+      "publisher": "New York State Law Reporting Bureau",
+      "published": "2026-10-28",
+      "geography": "New York",
+      "summary": "The Appellate Division held that a person subject to an Article 17-A guardianship has the right to retain counsel of her own choosing. Finding that Jessica L.M. selected counsel freely and independently, the court reversed both orders below, reinstated her lawyer, and vacated the appointment of replacement counsel.",
+      "detail": "Matter of Jessica L.M. (Deborah M.), 2026 NY Slip Op 06306, Appellate Division, Second Department, decided October 28, 2026. Presiding Justice Dillon and Justices Landicino and Goldberg Velazquez concurred.",
+      "source_url": "https://www.nycourts.gov/reporter/current/3dseries/2026/2026_06306.shtml",
+      "document_url": "https://www.nycourts.gov/reporter/current/3dseries/2026/2026_06306.shtml",
+      "source_type": "Court opinion",
+      "tags": [
+        "guardianship",
+        "choice of counsel",
+        "disability rights",
+        "New York"
+      ],
+      "authors": "Opinion by Justice Colleen D. Duffy"
+    },
+    {
+      "id": "optimal-fusion-energy-distributions",
+      "category": "science",
+      "title": "Maximization of nuclear fusion reactivity via optimal energy distributions",
+      "publisher": "arXiv",
+      "published": "2026-10-26",
+      "geography": "Physics",
+      "summary": "The authors optimize fusion reactivity over energy probability distributions. A single Maxwell–Boltzmann distribution is optimal where reactivity is concave in average kinetic energy; a bimodal distribution is optimal in convex regions. For low-energy deuterium reactions, the modeled gain is approximately twofold.",
+      "detail": "The analysis applies empirical cross-section parameterizations to deuterium–deuterium and deuterium–tritium reactions and compares the optimum with three classes of generalized energy distributions represented as continua of Maxwell–Boltzmann distributions.",
+      "source_url": "https://arxiv.org/abs/2610.35507v1",
+      "document_url": "https://arxiv.org/pdf/2610.35507",
+      "source_type": "Research preprint",
+      "tags": [
+        "nuclear fusion",
+        "energy distributions",
+        "plasma physics",
+        "optimization"
+      ],
+      "authors": "Roberto Onofrio, Kamel Ourabah, and Carlo Presilla"
+    },
+    {
+      "id": "re-pure-noise-insufficient-data",
+      "category": "science",
+      "title": "[Re] Pure Noise to the Rescue of Insufficient Data",
+      "publisher": "arXiv",
+      "published": "2026-10-31",
+      "geography": "Machine learning",
+      "summary": "A reimplementation reproduces four claims that adding pure-noise images can improve generalization in image classification, including for imbalanced and balanced training data. Additional experiments find that the gains are partly orthogonal to those produced by larger networks or more complex augmentation.",
+      "detail": "The reproduction implements the published training pipeline in PyTorch and incorporates the original authors’ code snippets for generating noise images and separately normalizing noise and natural images. The experiments cover the selected datasets and pipeline choices reported in the paper.",
+      "source_url": "https://arxiv.org/abs/2611.01295v1",
+      "document_url": "https://arxiv.org/pdf/2611.01295",
+      "source_type": "Reproducibility study",
+      "tags": [
+        "noise augmentation",
+        "image classification",
+        "reproducibility",
+        "machine learning"
+      ],
+      "authors": "Seungjae Ryan Lee and Seungmin Brian Lee"
+    },
+    {
+      "id": "persona-dependent-smoking-advice",
+      "category": "science",
+      "title": "Same Question, Different Answers: Auditing Persona-Dependent Variation in Six LLMs on Smoking-Cessation Advice",
+      "publisher": "arXiv",
+      "published": "2026-10-30",
+      "geography": "Health and artificial intelligence",
+      "summary": "Across 2,880 responses from six language models, twelve personas, and four smoking-cessation questions, the advice varied with the presented user. A short factual-floor prompt narrowed persona differences in every model, while its effect on overall fact coverage varied by model.",
+      "detail": "Teen personas received mentions of approved prescription cessation medications 32–67 percentage points less often than adults. The personas vary several attributes simultaneously, so the paper reports scenario-level differences rather than isolated effects of age or expertise.",
+      "source_url": "https://arxiv.org/abs/2610.42039v1",
+      "document_url": "https://arxiv.org/pdf/2610.42039",
+      "source_type": "Research paper",
+      "tags": [
+        "large language models",
+        "smoking cessation",
+        "health advice",
+        "algorithmic audit"
+      ],
+      "authors": "Artin Yousefi, Aizierjiang Aiersilan, Lorien C. Abroms, and David A. Broniatowski"
+    },
+    {
+      "id": "global-wildlife-trade-data-gaps",
+      "category": "science",
+      "title": "The true scale of global wildlife trade is obscured by data gaps",
+      "publisher": "Science Advances",
+      "published": "2026-10-30",
+      "geography": "Global",
+      "summary": "A review of wildlife-use and trade monitoring programs identifies at least 107,356 species in use or trade worldwide—more than twice the earlier global estimate of 50,000. The total includes as many as 47,685 animal species and 42 percent of described vertebrate species.",
+      "detail": "The comparison covers national and international monitoring programs. Most countries lack systematic data outside species listed under the Convention on International Trade in Endangered Species; the authors call for standardized collection beyond those listings.",
+      "source_url": "https://doi.org/10.1126/sciadv.aei3504",
+      "document_url": "https://www.science.org/doi/pdf/10.1126/sciadv.aei3504",
+      "source_type": "Research article",
+      "tags": [
+        "wildlife trade",
+        "biodiversity",
+        "monitoring",
+        "data gaps"
+      ],
+      "authors": "Alice C. Hughes et al."
+    },
+    {
+      "id": "eagle-caddie-ai-endoscopy",
+      "category": "science",
+      "title": "EAGLE Trial CADDIE Artificial Intelligence Endoscopy",
+      "publisher": "ClinicalTrials.gov",
+      "published": "2026-10-26",
+      "geography": "Multicenter clinical trial",
+      "summary": "In a randomized multicenter trial, 841 participants entered the primary analysis. Artificial-intelligence-assisted colonoscopy found 0.82 adenomas per procedure, compared with 0.62 under standard colonoscopy: a mean ratio of 1.33, with a 95 percent confidence interval of 1.06–1.67.",
+      "detail": "The registry reports 985 enrolled participants and 973 randomized. Histology assessors were blinded to group assignment. Adenoma detection occurred in 180 of 417 analyzed CADDIE procedures and 152 of 424 standard procedures, a 7.3-percentage-point difference.",
+      "source_url": "https://clinicaltrials.gov/study/NCT05730192",
+      "document_url": "https://clinicaltrials.gov/study/NCT05730192?tab=results",
+      "source_type": "Clinical trial results record",
+      "tags": [
+        "colonoscopy",
+        "artificial intelligence",
+        "adenoma detection",
+        "randomized trial"
+      ],
+      "authors": "Principal investigator: Alessandro Repici; sponsor: Odin Medical"
+    }
+  ]
+}
