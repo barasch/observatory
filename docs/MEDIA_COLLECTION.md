@@ -147,4 +147,4 @@ python scripts/media_validate.py \
   .work/media-networks/RUN_ID/health.json
 ```
 
-Stage 3 may consume a validated collection batch, but it must add story identifiers through a separate clustering contract. Stage 2 does not fabricate singleton stories to satisfy the later observation-manifest schema.
+Stage 3 consumes this validated batch through a separate clustering contract. Stage 2 does not fabricate singleton stories to satisfy the later observation-manifest schema. See [STORY_EVENTS.md](STORY_EVENTS.md) for the private Stage 3 implementation, benchmark, and unresolved human-audit gate.

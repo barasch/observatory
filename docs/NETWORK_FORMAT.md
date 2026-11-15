@@ -99,6 +99,12 @@ Every configured channel appears exactly once. A channel row records observer an
 
 The admitted statuses are `ok`, `empty`, `disabled`, `http-error`, `network-error`, `parse-error`, `unsafe-redirect`, and `unsupported-method`. Only `ok` and `empty` count as a successful check. The validator recomputes configured, enabled, attempted, succeeded, failed, and disabled channel counts; successful and failed observer sets; attempted media; retained item count; and mirror-group count. When a collection batch is supplied, run identity, times, registry version, item counts, and per-channel yields must match it.
 
+## Private Stage 3 cluster audit
+
+`scripts/media_cluster.py` writes `media-story-cluster-audit` only under ignored `.work/` paths. The file records the source run, exact algorithm parameters, recomputed counts, comparison units, story assignments, up to three distinct-observer evidence links per story, and every retained review pair with its rule basis and component similarities. The score is an audit score, not a probability.
+
+This private file is deliberately distinct from a weekly observation manifest. It may contain rejected candidate pairs needed to diagnose thresholds; a public manifest contains only final assignments. No Stage 3 command writes under `data/`, `site/`, or `site_src/`.
+
 ## Weekly observation manifest
 
 Top-level fields: `document_type`, `schema_version`, `week`, `generated_at`, `observations`, `stories`.

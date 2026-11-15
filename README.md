@@ -11,6 +11,7 @@ A public weekly selection of primary sources, with private feedback for its owne
 - [Media-attention method contract](docs/MEDIA_NETWORKS.md)
 - [Media-attention data contract](docs/NETWORK_FORMAT.md)
 - [Media-attention Stage 2 collection](docs/MEDIA_COLLECTION.md)
+- [Media-attention Stage 3 story events](docs/STORY_EVENTS.md)
 
 ## Build and verify
 
