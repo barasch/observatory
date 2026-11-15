@@ -1,6 +1,6 @@
 # Media-attention networks: v1 method contract
 
-**Implementation status:** Stage 3 adds private, unscheduled story-event clustering, weekly observation manifests, canonical evidence selection, and an external labeled precision audit. The in-domain human audit remains incomplete. No inference, scoring, page, navigation link, schedule, active panel, or public data publication exists. See [MEDIA_COLLECTION.md](MEDIA_COLLECTION.md) and [STORY_EVENTS.md](STORY_EVENTS.md).
+**Implementation status:** Stage 4 adds synthetic-only offline weekly inference and lineage diagnostics. Stage 3's in-domain event audit remains incomplete, so no real batch may enter inference. No scoring, page, navigation link, schedule, active panel, or public network data publication exists. See [MEDIA_COLLECTION.md](MEDIA_COLLECTION.md), [STORY_EVENTS.md](STORY_EVENTS.md), and [WEEKLY_INFERENCE.md](WEEKLY_INFERENCE.md).
 
 ## Question and limit
 

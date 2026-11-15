@@ -1,0 +1,3 @@
+# Offline Stage 4 research only; not installed by the Pages workflow.
+numpy>=2,<3
+scipy>=1.13,<2
