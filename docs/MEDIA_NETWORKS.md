@@ -1,6 +1,6 @@
 # Media-attention networks: v1 method contract
 
-**Implementation status:** Stage 2 adds a private candidate reservoir, shadow observer registry, RSS/Atom collector, normalization, within-observer mirror collapse, and health reporting. No clustering, inference, scoring, page, navigation link, schedule, active panel, or public data publication exists. See [MEDIA_COLLECTION.md](MEDIA_COLLECTION.md).
+**Implementation status:** Stage 3 adds private, unscheduled story-event clustering, weekly observation manifests, canonical evidence selection, and an external labeled precision audit. The in-domain human audit remains incomplete. No inference, scoring, page, navigation link, schedule, active panel, or public data publication exists. See [MEDIA_COLLECTION.md](MEDIA_COLLECTION.md) and [STORY_EVENTS.md](STORY_EVENTS.md).
 
 ## Question and limit
 

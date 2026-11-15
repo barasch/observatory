@@ -1,0 +1,59 @@
+{
+  "document_type": "media-story-benchmark-report",
+  "schema_version": 1,
+  "generated_at": "2026-11-15T01:00:15Z",
+  "implementation": "precision-first-complete-link-title-v1",
+  "source": {
+    "name": "Headline Grouping Dataset classification release 0.1",
+    "paper": "Laban, Bandarkar, and Hearst (2021), News Headline Grouping as a Challenging NLU Task",
+    "release_url": "https://github.com/tingofurro/headline_grouping/releases/tag/0.1",
+    "archive_sha256": "8192c72e28766debf548f0ba1f0b5c3d592cf7097af26a5d67b172c908614601",
+    "development_sha256": "a7c45a08224a261a8f7718d36b5e5dca3f34acad8099bffae37f4814c943464a",
+    "test_sha256": "3e6f3cb6ea9764253f9f502a78bd7a30494952d2776d28bb70042e4f4acead67"
+  },
+  "gate": {
+    "minimum_precision": 0.95,
+    "minimum_proposed_merges": 100
+  },
+  "development": {
+    "row_count": 2069,
+    "proposed_merge_count": 65,
+    "true_positive": 62,
+    "false_positive": 3,
+    "true_negative": 1324,
+    "false_negative": 680,
+    "precision": 0.953846,
+    "recall": 0.083558,
+    "f1": 0.153656
+  },
+  "test": {
+    "row_count": 2495,
+    "proposed_merge_count": 52,
+    "true_positive": 51,
+    "false_positive": 1,
+    "true_negative": 1904,
+    "false_negative": 539,
+    "precision": 0.980769,
+    "recall": 0.086441,
+    "f1": 0.158879
+  },
+  "combined_audit": {
+    "row_count": 4564,
+    "proposed_merge_count": 117,
+    "true_positive": 113,
+    "false_positive": 4,
+    "true_negative": 3228,
+    "false_negative": 1219,
+    "precision": 0.965812,
+    "recall": 0.084835,
+    "f1": 0.15597,
+    "passes_precision_gate": true
+  },
+  "limitations": [
+    "The development split informed the fixed thresholds; the test split did not.",
+    "The combined count satisfies the proposed-merge sample gate, but it includes the development split and must not be described as an untouched holdout result.",
+    "HLGD contains newsroom headlines, not the compound episode and clip titles common in the Observatory panel.",
+    "Low recall is an intentional consequence of the precision-first rule, not evidence that most same-event pairs are detected.",
+    "A blind human audit of at least 100 locally proposed merges remains required before activation or publication."
+  ]
+}
